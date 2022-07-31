@@ -1,0 +1,38 @@
+// Media Queries
+
+// Small Tablet (580px)
+@mixin small-tablet {
+    @media (min-width: 580px){
+        @content;
+    }
+}
+
+// Large Tablet (768px)
+@mixin large-tablet {
+    @media (min-width: 768px){
+        @content;
+    }
+}
+
+// Small laptop (1024px)
+@mixin small-laptop {
+    @media (min-width: 1024px){
+        @content;
+    }
+}
+
+// large laptop + desktop (1920px)
+@mixin desktop {
+    @media (min-width: 1920px){
+        @content;
+    }
+}
+
+// extra small devices e.g galaxy fold (320px)
+@mixin extra-small-devices {
+    @media (max-width: 320px){
+        @content;
+    }
+}
+
+
