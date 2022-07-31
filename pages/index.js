@@ -1,12 +1,13 @@
 import Head from "next/head";
 import styles from "../ViewComponents/Home/home.module.scss";
 
-import ContactButton from "../ViewComponents/Home/ContactButton";
+import SideBar from "../ViewComponents/Home/SideBar";
 import EnterWebDev from "../ViewComponents/Home/EnterWebDev";
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      {/* // Todo: add more meta data */}
       <Head>
         <title>Edith Heidmann</title>
         <meta
@@ -17,23 +18,22 @@ export default function Home() {
       </Head>
 
       <main className={styles.background}>
-       
-        <ContactButton />
+        {/* Side bar with contact and social media links */}
+        <SideBar />
 
+        {/* Ladnign page text */}
         <section className={styles["intro-text-container"]}>
-          <p className={styles["intro-text"]}>Web <br/> Developer, <br/> Designer and <br/> Visual Artist.</p>
+          <p className={styles["intro-text"]}>
+            Web <br /> Developer/ <br /> Designer and <br /> Visual Artist.
+          </p>
         </section>
 
-<section className={styles["enter-components-container"]}>
-<EnterWebDev /> 
-
-<EnterWebDev /> 
-
-</section>
-      
-   
-       
-        
+        {/* Components section to enter either one of the split sites */}
+        <section className={styles["enter-components-container"]}>
+          <EnterWebDev />
+          {/* // Todo: EnterArt will go here */}
+          <EnterWebDev />
+        </section>
       </main>
     </div>
   );

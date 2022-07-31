@@ -2,7 +2,6 @@
 @import "/styles/mixins";
 
 .content-container {
-//   background-color: white;
   width: 15rem;
   height: 80%;
 
@@ -12,21 +11,12 @@
   border: solid red 3px;
 }
 
-// Breakpoints
+// ? Breakpoints
 
-@include small-tablet{
-  .content-container{
+@include small-tablet {
+  .content-container {
     width: 30rem;
 
     margin: 0 2.5rem 0 2.5rem;
   }
 }
-
-// @include large-tablet{
-//   .content-container{
-//     margin-right: 20%;
-//   }
-// }
-
-
-
