@@ -1,6 +1,8 @@
 import Head from "next/head";
 import styles from "../ViewComponents/Home/home.module.scss";
 
+import ContactButton from "../ViewComponents/Home/ContactButton";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -14,6 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.background}>
+        <ContactButton/>
         {" "}
         This will be the landing page Component
       </main>

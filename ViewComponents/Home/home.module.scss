@@ -1,13 +1,14 @@
 @import "/styles/variables";
 
-// .background {
-//   height: 100vh;
-//   width: 100vw;
+.background {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 
-//   background-color: $bg-black;
+  background-color: $bg-black;
 //   background-image: -webkit-linear-gradient(
 //     -40deg,
 //     $bg-black 50%,
 //     $bg-grey 50.1%
 //   );
-// }
+}
