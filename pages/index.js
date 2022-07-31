@@ -20,6 +20,10 @@ export default function Home() {
        
         <ContactButton />
 
+        <section className={styles["intro-text-container"]}>
+          <p className={styles["intro-text"]}>Web <br/> Developer, <br/> Designer and <br/> Visual Artist.</p>
+        </section>
+
 <section className={styles["enter-components-container"]}>
 <EnterWebDev /> 
 

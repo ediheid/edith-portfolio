@@ -1,4 +1,5 @@
 @import "/styles/variables";
+@import "/styles/mixins";
 
 .background {
   display: flex;
@@ -10,16 +11,89 @@
   overflow: hidden;
 
   background-color: $bg-black;
-  //   background-image: -webkit-linear-gradient(
-  //     -40deg,
-  //     $bg-black 50%,
-  //     $bg-grey 50.1%
-  //   );
+}
+
+.intro-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 40%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  // border: solid 3px white;
+}
+
+.intro-text {
+  color: $home-page-main-text-colour;
+  font-size: 5rem;
 }
 
 .enter-components-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   width: 80vw;
+  height: 60%;
+
+  position: absolute;
+  bottom: 0;
 }
+
+// Breakpoints
+
+@include extra-small-devices {
+  .intro-text {
+    font-size: 3.2rem;
+    margin: 0 5rem 0 5rem;
+  }
+
+  .enter-components-container {
+    width: 70%;
+  }
+}
+
+@include large-tablet {
+  .intro-text-container {
+    height: 100vh;
+    width: 50%;
+  }
+
+  .intro-text {
+    margin-left: 10rem;
+    font-size: 6rem;
+  }
+
+  .enter-components-container {
+    height: 100vh;
+    width: 50%;
+    right: 0;
+
+    padding-right: 5rem;
+  }
+}
+
+@include small-laptop {
+
+  .intro-text{
+    font-size: 7rem;
+  }
+}
+
+// Todo: Check on Macbook for larger screen sizes
+
+// @include desktop{
+
+//   .intro-text{
+//     font-size: 10rem;
+//   }
+
+//   .enter-components-container{
+//     padding-right: 10rem;
+//   }
+// }
