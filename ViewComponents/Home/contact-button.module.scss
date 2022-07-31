@@ -1,11 +1,16 @@
 @import "/styles/variables";
+@import "/styles/mixins";
 
 .button-container{
 display: flex;
 align-items: center;
 justify-content: center;
 
- width: 10rem;
+position: absolute;
+left: 0;
+top: 0;
+
+ width: 5rem;
  height: 100vh;
 }
 
@@ -17,4 +22,13 @@ justify-content: center;
     cursor: pointer;
 
     color: $home-page-main-text-colour;
+}
+
+// Breakpoints
+
+@include small-tablet{
+
+    .button-container{
+        width: 10rem;
+    }
 }
