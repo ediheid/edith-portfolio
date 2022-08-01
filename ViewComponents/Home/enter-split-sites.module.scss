@@ -6,7 +6,7 @@
   height: 80%;
 
   border-radius: 15rem;
-  margin: 0 1.5rem 0 1.5rem;
+  margin: 0 0 0 2.5rem;
 
   border: solid red 3px;
 }
@@ -14,6 +14,14 @@
 // ? Breakpoints
 
 @include small-tablet {
+  .content-container {
+    width: 30rem;
+
+    margin: 0 0 0 3rem;
+  }
+}
+
+@include large-tablet {
   .content-container {
     width: 30rem;
 
