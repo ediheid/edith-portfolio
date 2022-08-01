@@ -28,7 +28,8 @@
 
 .intro-text {
   color: $home-page-main-text-colour;
-  font-size: 5rem;
+  font-size: 4rem;
+  margin-left: 4rem;
   letter-spacing: 0.15rem;
 
   font-family: $home-heading-font;
@@ -67,7 +68,7 @@
 
   .intro-text {
     margin-left: 10rem;
-    font-size: 6rem;
+    font-size: 5rem;
   }
 
   .enter-components-container {
@@ -87,13 +88,12 @@
 
 // Todo: Check on Macbook for larger screen sizes
 
-// @include desktop{
+@include desktop {
+  .intro-text {
+    font-size: 10rem;
+  }
 
-//   .intro-text{
-//     font-size: 10rem;
-//   }
-
-//   .enter-components-container{
-//     padding-right: 10rem;
-//   }
-// }
+  .enter-components-container {
+    padding-right: 12rem;
+  }
+}
