@@ -1,6 +1,8 @@
 @import "/styles/variables";
 @import "/styles/mixins";
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap");
+
 .background {
   display: flex;
   justify-content: center;
@@ -13,13 +15,33 @@
   background-color: $bg-black;
 }
 
+// .intro-text,
+// .name-heading {
+//   margin: 0 0 0 4rem;
+// }
+
+.name-heading {
+  color: $home-page-main-text-colour;
+  //   font-family: $name-heading-font;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+
+  letter-spacing: 0.1rem;
+  font-size: 2rem !important;
+
+  padding: 1.5rem 0 0 0;
+  text-transform: lowercase;
+}
+
 .intro-text-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   width: 100vw;
-  height: 40%;
+  height: 50%;
 
   position: absolute;
   top: 0;
@@ -28,8 +50,8 @@
 
 .intro-text {
   color: $home-page-main-text-colour;
-  font-size: 4rem;
-  margin-left: 4rem;
+  font-size: 3.5em;
+  //   margin-left: 4rem;
   letter-spacing: 0.15rem;
 
   font-family: $home-heading-font;
@@ -51,8 +73,12 @@
 
 @include extra-small-devices {
   .intro-text {
-    font-size: 3.2rem;
-    margin: 0 5rem 0 5rem;
+    font-size: 2.5rem;
+  }
+
+  .intro-text,
+  .name-heading {
+    margin: 0 0 0 4rem;
   }
 
   .enter-components-container {
@@ -60,14 +86,38 @@
   }
 }
 
+@include small-tablet {
+  .name-heading {
+    font-size: 2.5rem !important;
+  }
+
+  .intro-text {
+    font-size: 4.5rem;
+  }
+
+  .intro-text,
+  .name-heading {
+    margin-left: 8rem !important;
+  }
+}
+
 @include large-tablet {
   .intro-text-container {
     height: 100vh;
     width: 50%;
+    align-items: center;
+  }
+
+  .intro-text,
+  .name-heading {
+    margin-left: 5rem;
+  }
+
+  .name-heading {
+    font-size: 3rem !important;
   }
 
   .intro-text {
-    margin-left: 10rem;
     font-size: 5rem;
   }
 
@@ -82,15 +132,24 @@
 
 @include small-laptop {
   .intro-text {
-    font-size: 7rem;
+    font-size: 6rem;
   }
 }
+
+// .name-heading {
+//   font-size: 3.8rem;
+// }
 
 // Todo: Check on Macbook for larger screen sizes
 
 @include desktop {
   .intro-text {
     font-size: 10rem;
+  }
+
+  .name-heading {
+    font-size: 4.8rem !important;
+    padding-top: 3rem;
   }
 
   .enter-components-container {

@@ -21,11 +21,14 @@ export default function Home() {
         {/* Side bar with contact and social media links */}
         <SideBar />
 
-        {/* Ladnign page text */}
+        {/* Landing page headings */}
         <section className={styles["intro-text-container"]}>
-          <p className={styles["intro-text"]}>
-            Web <br /> Developer/ <br /> Designer and <br /> Visual Artist.
-          </p>
+          <div>
+            <h1 className={styles["intro-text"]}>
+              Web <br /> Developer/ <br /> Designer and <br /> Visual Artist.
+            </h1>
+            <h2 className={styles["name-heading"]}>Edith Heidmann</h2>
+          </div>
         </section>
 
         {/* Components section to enter either one of the split sites */}
