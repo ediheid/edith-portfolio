@@ -1,9 +1,24 @@
-
+@import "/public/fonts";
 
 // Palette
-
 $pale-grey: #cececc;
 
+// Fonts
+$jakarta-font-bold: Plus Jakarta Sans Bold, sans-serif;
+$jakarta-font-bold-italic: Plus Jakarta Sans Bold Italic, sans-serif;
+$jakarta-font-extra-bold: Plus Jakarta Sans Extra Bold, sans-serif;
+$jakarta-font-extra-bold-italic: Plus Jakarta Sans Extra Bold Italic, sans-serif;
+$jakarta-font-extra-light: Plus Jakarta Sans Extra Light, sans-serif;
+$jakarta-font-extra-light-italic: Plus Jakarta Sans Extra Light Italic,
+  sans-serif;
+$jakarta-font-italic: Plus Jakarta Italic, sans-serif;
+$jakarta-font-light: Plus Jakarta Light, sans-serif;
+$jakarta-font-light-italic: Plus Jakarta Light Italic, sans-serif;
+$jakarta-font-medium: Plus Jakarta Medium, sans-serif;
+$jakarta-font-medium-italic: Plus Jakarta Medium Italic, sans-serif;
+$jakarta-font-regular: Plus Jakarta Regular, sans-serif;
+$jakarta-font-semi-bold: Plus Jakarta Semi Bold, sans-serif;
+$jakarta-font-semi-bold-italic: Plus Jakarta Semi Bold Italic, sans-serif;
 
 //  Home Variables
 
@@ -12,4 +27,4 @@ $bg-grey: $pale-grey;
 
 $home-page-main-text-colour: $pale-grey;
 
-
+$home-heading-font: $jakarta-font-semi-bold;

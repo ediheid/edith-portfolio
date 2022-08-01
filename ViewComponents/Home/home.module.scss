@@ -29,6 +29,9 @@
 .intro-text {
   color: $home-page-main-text-colour;
   font-size: 5rem;
+  letter-spacing: 0.15rem;
+
+  font-family: $home-heading-font;
 }
 
 .enter-components-container {
@@ -77,8 +80,7 @@
 }
 
 @include small-laptop {
-
-  .intro-text{
+  .intro-text {
     font-size: 7rem;
   }
 }
