@@ -7,11 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  width: 5rem;
+  width: 15vw;
   height: 100vh;
 }
 
@@ -76,14 +72,16 @@
 
 // ? Breakpoints
 
+
+
 @include small-tablet {
+.side-bar-container{
+  width: 10vw;
+  max-width: 10rem;
+}
+
   .button-container {
     width: 10rem;
   }
 }
 
-@include small-laptop {
-  .side-bar-container {
-    width: 8rem;
-  }
-}

@@ -23,6 +23,7 @@ export default function Home() {
         {/* Side bar with contact and social media links */}
         <SideBar />
 
+<div className={styles["landing-page-content-container"]}>
         {/* Landing page headings */}
         <section className={styles["intro-text-container"]}>
           <div>
@@ -44,6 +45,8 @@ export default function Home() {
             return <EnterSitesComponent key={index} site={site} />;
           })}
         </section>
+        </div>
+
       </main>
     </div>
   );
