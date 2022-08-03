@@ -1,5 +1,5 @@
 @import "/public/fonts";
-@import "/public/Fonts/PlusJakartaSans-2.6/montserrat-cufonfonts-webfont/style.css";
+
 // Palette
 $pale-grey: #cececc;
 
@@ -20,6 +20,17 @@ $jakarta-font-regular: Plus Jakarta Regular, sans-serif;
 $jakarta-font-semi-bold: Plus Jakarta Semi Bold, sans-serif;
 $jakarta-font-semi-bold-italic: Plus Jakarta Semi Bold Italic, sans-serif;
 
+$montserrat-black: Montserrat Black, sans-serif;
+$montserrat-black-italic: Montserrat Black Italic, sans-serif;
+$montserrat-bold: Montserrat Bold, sans-serif;
+$montserrat-bold-italic: Montserrat Bold Italic, sans-serif;
+$montserrat-extra-light: Montserrat Extra Light, sans-serif;
+$montserrat-light: Montserrat Light, sans-serif;
+$montserrat-medium: Montserrat Medium, sans-serif;
+$montserrat-regular: Montserrat Regular, sans-serif;
+$montserrat-semi-bold: Montserrat Semi Bold, sans-serif;
+$montserrat-thin: Montserrat Thin, sans-serif;
+
 //  Home Variables
 
 $bg-black: #0d1117;
@@ -30,4 +41,4 @@ $home-page-main-text-colour: $pale-grey;
 $home-heading-font: $jakarta-font-semi-bold;
 $name-heading-font: $jakarta-font-extra-light;
 $side-bar-contact-font: $jakarta-font-medium;
-// $name-heading-font: $montserrat-thin;
+$name-heading-font: $montserrat-thin;
