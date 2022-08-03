@@ -31,7 +31,7 @@
   font-weight: 600;
   letter-spacing: 0.18rem;
   word-spacing: 0.5rem;
-  color: $home-page-main-text-colour;
+  color: $home-side-bar-elements;
 
   &:active {
     font-weight: bold;
@@ -52,12 +52,12 @@
   height: 10rem;
   margin: 7rem 0 0 0;
 
-  background-color: $home-page-main-text-colour;
+  background-color: $home-side-bar-elements;
 }
 
 // Social Media Links
 .social-media-links {
-  color: $home-page-main-text-colour;
+  color: $home-side-bar-elements;
   font-size: 2rem;
   padding: 2.8rem 0 0 0;
   cursor: pointer;

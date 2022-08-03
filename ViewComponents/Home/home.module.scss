@@ -10,7 +10,7 @@
   width: 100vw;
   overflow: hidden;
 
-  background-color: $bg-black;
+  background-color: $home-bg;
 }
 
 .name-heading {
@@ -22,7 +22,7 @@
   letter-spacing: 0.1rem;
   font-size: 2.2rem !important;
 
-  padding: 1.5rem 0 0 0;
+  padding: 1.5rem 0 0 1rem;
   text-transform: lowercase;
 }
 
@@ -44,6 +44,8 @@
   color: $home-page-main-text-colour;
   font-size: 3.5em;
   letter-spacing: 0.15rem;
+
+  padding: 1.5rem 0 0 1rem;
 
   font-family: $home-heading-font;
 }
@@ -74,6 +76,7 @@
   .intro-text,
   .name-heading {
     margin: 0 0 0 4rem;
+    padding: 1.5rem 0 0 0;
   }
 
   .enter-components-container {
@@ -89,6 +92,11 @@
   .intro-text {
     font-size: 4.5rem;
   }
+
+  .name-heading,
+  .intro-text {
+    padding: 1.5rem 0 0;
+  }
 }
 
 @include large-tablet {
@@ -101,6 +109,7 @@
   .intro-text,
   .name-heading {
     margin-left: 8rem;
+    padding: 1.5rem 0 0 0;
   }
 
   .name-heading {

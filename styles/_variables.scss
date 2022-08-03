@@ -1,6 +1,7 @@
 @import "/public/fonts";
 
 // Palette
+$soft-black: #0d1117;
 $pale-grey: #cececc;
 $linen: #fffcf7;
 $evergreen: #093a1c;
@@ -57,11 +58,10 @@ $montserrat-thin: Montserrat Thin, sans-serif;
 
 // Todo: update variable to 'home-bg'
 // Todo: Use Evergreen as text colour?
-$bg-black: $papaya;
-// $bg-black: #0d1117;
-$bg-grey: $pale-grey;
+$home-bg: $papaya;
 
 $home-page-main-text-colour: lighten($pale-grey, 2%);
+$home-side-bar-elements: lighten($pale-grey, 5%);
 
 $home-heading-font: $jakarta-font-semi-bold;
 $name-heading-font: $jakarta-font-extra-light;
