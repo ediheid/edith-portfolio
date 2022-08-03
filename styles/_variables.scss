@@ -2,6 +2,16 @@
 
 // Palette
 $pale-grey: #cececc;
+$linen: #fffcf7;
+$evergreen: #093a1c;
+$indigo: #143464;
+$light-blue: #408faa;
+$pale-blue: #82b5c7;
+$papaya: #e49435;
+$jam: #b21071;
+$jade: #099a4d;
+
+$bg-black: $papaya;
 
 // Fonts
 // Headings
@@ -45,10 +55,13 @@ $montserrat-thin: Montserrat Thin, sans-serif;
 
 //  Home Variables
 
-$bg-black: #0d1117;
+// Todo: update variable to 'home-bg'
+// Todo: Use Evergreen as text colour?
+// $bg-black: $linen;
+// $bg-black: #0d1117;
 $bg-grey: $pale-grey;
 
-$home-page-main-text-colour: $pale-grey;
+$home-page-main-text-colour: $jam;
 
 $home-heading-font: $jakarta-font-semi-bold;
 $name-heading-font: $jakarta-font-extra-light;
