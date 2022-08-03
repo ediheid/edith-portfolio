@@ -1,8 +1,9 @@
 import Head from "next/head";
 import styles from "../ViewComponents/Home/home.module.scss";
-import { enterSiteData } from "../ViewComponents/Home/enterSiteData";
 
 import SideBar from "../ViewComponents/Home/SideBar";
+
+import { enterSiteData } from "../ViewComponents/Home/enterSiteData";
 import EnterSitesComponent from "../ViewComponents/Home/EnterSitesComponent";
 
 export default function Home() {
@@ -25,9 +26,14 @@ export default function Home() {
         {/* Landing page headings */}
         <section className={styles["intro-text-container"]}>
           <div>
-            <h1 className={styles["intro-text"]}>
+            <h1
+              data-aos="slide-left"
+              data-aos-duration="800"
+              className={styles["intro-text"]}
+            >
               Web <br /> Developer/ <br /> Designer and <br /> Visual Artist.
             </h1>
+
             <h2 className={styles["name-heading"]}>Edith Heidmann</h2>
           </div>
         </section>

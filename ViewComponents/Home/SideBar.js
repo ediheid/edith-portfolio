@@ -6,7 +6,11 @@ import { FiGithub } from "react-icons/fi";
 
 const SideBar = () => {
   return (
-    <div className={styles["side-bar-container"]}>
+    <div
+      data-aos="slide-up"
+      data-aos-duration="800"
+      className={styles["side-bar-container"]}
+    >
       {/* Contact Button - opens contact form modal */}
       <button className={styles["contact-button"]}>Contact Form</button>
 
@@ -25,7 +29,7 @@ const SideBar = () => {
         <FiLinkedin />
       </a>
 
-  {/* GitHub */}
+      {/* GitHub */}
       <a
         className={styles["social-media-links"]}
         href="https://github.com/ediheid"
@@ -35,7 +39,6 @@ const SideBar = () => {
       >
         <FiGithub />
       </a>
-
 
       {/* Instagram */}
       <a
@@ -47,8 +50,6 @@ const SideBar = () => {
       >
         <FiInstagram />
       </a>
-
-    
     </div>
   );
 };
