@@ -176,8 +176,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Black"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-Black.ttf")
-      format("truetype");
+    url("./Fonts/Montserrat/static/Montserrat-Black.ttf") format("truetype");
 }
 
 @font-face {
@@ -186,8 +185,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Black"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-Black.ttf")
-      format("truetype");
+    url("./Fonts/Montserrat/static/Montserrat-Black.ttf") format("truetype");
 }
 
 @font-face {
@@ -196,7 +194,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Black Italic"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-BlackItalic.ttf")
+    url("./Fonts/Montserrat/static/Montserrat-BlackItalic.ttf")
       format("truetype");
 }
 
@@ -206,8 +204,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Bold"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-Bold.ttf")
-      format("truetype");
+    url("./Fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -216,7 +213,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Bold Italic"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-BoldItalic.ttf")
+    url("./Fonts/Montserrat/static/Montserrat-BoldItalic.ttf")
       format("truetype");
 }
 
@@ -226,7 +223,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Extra Light"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-ExtraLight.ttf")
+    url("./Fonts/Montserrat/static/Montserrat-ExtraLight.ttf")
       format("truetype");
 }
 
@@ -236,8 +233,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Light"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-Light.ttf")
-      format("truetype");
+    url("./Fonts/Montserrat/static/Montserrat-Light.ttf") format("truetype");
 }
 
 @font-face {
@@ -246,8 +242,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Medium"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-Medium.ttf")
-      format("truetype");
+    url("./Fonts/Montserrat/static/Montserrat-Medium.ttf") format("truetype");
 }
 
 @font-face {
@@ -256,8 +251,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Regular"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-Regular.ttf")
-      format("truetype");
+    url("./Fonts/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -266,8 +260,7 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Semi Bold"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-SemiBold.ttf")
-      format("truetype");
+    url("./Fonts/Montserrat/static/Montserrat-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -276,6 +269,78 @@
   font-weight: normal;
   font-display: fallback;
   src: local("Montserrat Thin"),
-    url("./Fonts/PlusJakartaSans-2.6/Montserrat/static/Montserrat-Thin.ttf")
-      format("truetype");
+    url("./Fonts/Montserrat/static/Montserrat-Thin.ttf") format("truetype");
+}
+
+// Barlow
+@font-face {
+  font-family: "Barlow Light";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Barlow Light"),
+    url("./Fonts/Barlow/Barlow-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Extra Light";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Barlow Extra Light"),
+    url("./Fonts/Barlow/Barlow-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Bold";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Barlow Bold"),
+    url("./Fonts/Barlow/Barlow-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Extra Bold";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Barlow Extra Bold"),
+    url("./Fonts/Barlow/Barlow-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Medium";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Barlow Medium"),
+    url("./Fonts/Barlow/Barlow-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Barlow Regular"),
+    url("./Fonts/Barlow/Barlow-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Semi Bold";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Barlow Semi Bold"),
+    url("./Fonts/Barlow/Barlow-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Thin";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Barlow Thin"),
+    url("./Fonts/Barlow/Barlow-Thin.ttf") format("truetype");
 }

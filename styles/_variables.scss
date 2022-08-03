@@ -4,6 +4,7 @@
 $pale-grey: #cececc;
 
 // Fonts
+// Headings
 $jakarta-font-bold: Plus Jakarta Sans Bold, sans-serif;
 $jakarta-font-bold-italic: Plus Jakarta Sans Bold Italic, sans-serif;
 $jakarta-font-extra-bold: Plus Jakarta Sans Extra Bold, sans-serif;
@@ -20,6 +21,17 @@ $jakarta-font-regular: Plus Jakarta Regular, sans-serif;
 $jakarta-font-semi-bold: Plus Jakarta Semi Bold, sans-serif;
 $jakarta-font-semi-bold-italic: Plus Jakarta Semi Bold Italic, sans-serif;
 
+// Sub-headings
+$barlow-bold: Barlow Bold, sans-serif;
+$barlow-extra-bold: Barlow Extra Bold, sans-serif;
+$barlow-medium: Barlow Medium, sans-serif;
+$barlow-regular: Barlow Regular, sans-serif;
+$barlow-semi-bold: Semi Bold, sans-serif;
+$barlow-thin: Barlow Thin, sans-serif;
+$barlow-light: Barlow Light, sans-serif;
+$barlow-extra-light: Barlow Light, sans-serif;
+
+// Regular text
 $montserrat-black: Montserrat Black, sans-serif;
 $montserrat-black-italic: Montserrat Black Italic, sans-serif;
 $montserrat-bold: Montserrat Bold, sans-serif;
@@ -41,4 +53,5 @@ $home-page-main-text-colour: $pale-grey;
 $home-heading-font: $jakarta-font-semi-bold;
 $name-heading-font: $jakarta-font-extra-light;
 $side-bar-contact-font: $jakarta-font-medium;
-$name-heading-font: $montserrat-light;
+
+$name-heading-font: $barlow-extra-light;
