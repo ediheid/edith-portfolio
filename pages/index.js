@@ -1,8 +1,9 @@
 import Head from "next/head";
 import styles from "../ViewComponents/Home/home.module.scss";
+import { enterSiteData } from "../ViewComponents/Home/enterSiteData";
 
 import SideBar from "../ViewComponents/Home/SideBar";
-import EnterWebDev from "../ViewComponents/Home/EnterWebDev";
+import EnterSitesComponent from "../ViewComponents/Home/EnterSitesComponent";
 
 export default function Home() {
   return (
@@ -31,11 +32,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Components section to enter either one of the split sites */}
+        {/* Mapped individual site data to return Components to enter individual sites -  */}
         <section className={styles["enter-components-container"]}>
-          <EnterWebDev />
-          {/* // Todo: EnterArt will go here */}
-          <EnterWebDev />
+          {enterSiteData.map((site, index) => {
+            return <EnterSitesComponent key={index} site={site} />;
+          })}
         </section>
       </main>
     </div>
