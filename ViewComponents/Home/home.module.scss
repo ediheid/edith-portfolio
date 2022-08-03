@@ -20,7 +20,7 @@
   font-style: italic;
 
   letter-spacing: 0.1rem;
-  font-size: 2rem !important;
+  font-size: 2.2rem !important;
 
   padding: 1.5rem 0 0 0;
   text-transform: lowercase;
@@ -67,6 +67,10 @@
     font-size: 2.5rem;
   }
 
+  .name-heading {
+    font-size: 2rem !important;
+  }
+
   .intro-text,
   .name-heading {
     margin: 0 0 0 4rem;
@@ -79,16 +83,11 @@
 
 @include small-tablet {
   .name-heading {
-    font-size: 2.5rem !important;
+    font-size: 2.8rem !important;
   }
 
   .intro-text {
     font-size: 4.5rem;
-  }
-
-  .intro-text,
-  .name-heading {
-    margin-left: 8rem !important;
   }
 }
 
@@ -101,11 +100,11 @@
 
   .intro-text,
   .name-heading {
-    margin-left: 5rem;
+    margin-left: 8rem;
   }
 
   .name-heading {
-    font-size: 3rem !important;
+    font-size: 3.2rem !important;
   }
 
   .intro-text {
@@ -127,15 +126,15 @@
   }
 }
 
-// .name-heading {
-//   font-size: 3.8rem;
-// }
-
 // Todo: Check on Macbook for larger screen sizes
 
 @include desktop {
   .intro-text {
     font-size: 10rem;
+  }
+
+  .name-heading {
+    font-size: 4rem;
   }
 
   .name-heading {
