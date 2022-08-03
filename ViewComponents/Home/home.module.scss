@@ -1,8 +1,6 @@
 @import "/styles/variables";
 @import "/styles/mixins";
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap");
-
 .background {
   display: flex;
   justify-content: center;
@@ -18,9 +16,6 @@
 .name-heading {
   color: $home-page-main-text-colour;
   font-family: $name-heading-font;
-
-  // font-family: "Montserrat", sans-serif;
-  // font-weight: 100;
 
   letter-spacing: 0.1rem;
   font-size: 2rem !important;
@@ -46,7 +41,6 @@
 .intro-text {
   color: $home-page-main-text-colour;
   font-size: 3.5em;
-  //   margin-left: 4rem;
   letter-spacing: 0.15rem;
 
   font-family: $home-heading-font;
