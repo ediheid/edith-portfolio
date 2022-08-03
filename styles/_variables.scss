@@ -61,7 +61,7 @@ $bg-black: $papaya;
 // $bg-black: #0d1117;
 $bg-grey: $pale-grey;
 
-$home-page-main-text-colour: $pale-grey;
+$home-page-main-text-colour: lighten($pale-grey, 2%);
 
 $home-heading-font: $jakarta-font-semi-bold;
 $name-heading-font: $jakarta-font-extra-light;
