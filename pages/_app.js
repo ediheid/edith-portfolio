@@ -6,6 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     // AppWrapper Holds Context
     <AppWrapper>
+      {/*  Main App Component */}
       <Component {...pageProps} />
     </AppWrapper>
   );
