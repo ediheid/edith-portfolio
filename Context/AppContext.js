@@ -40,7 +40,12 @@ export const AppWrapper = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ isContactFormOpen, setIsContactFormOpen, openContactFormModal }}
+      value={{
+        isContactFormOpen,
+        setIsContactFormOpen,
+        openContactFormModal,
+        closeContactFormModal,
+      }}
     >
       {children}
     </AppContext.Provider>

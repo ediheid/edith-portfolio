@@ -6,6 +6,7 @@ import { enterSiteData } from "../ViewComponents/Home/enterSiteData";
 import EnterSitesComponent from "../ViewComponents/Home/EnterSitesComponent";
 
 import AnimatedText from "react-animated-text-content";
+import { useAppContext } from "../Context/AppContext";
 
 export default function Home() {
   return (
@@ -28,15 +29,13 @@ export default function Home() {
           {/* Landing page headings */}
           <section className={styles["intro-text-container"]}>
             <div>
-              {/* <h1
-                data-aos="slide-left"
-                data-aos-duration="800"
-                className={styles["intro-text"]}
-              >
-                Web <br /> Developer/ <br /> Designer and <br /> Visual Artist.
-              </h1> */}
               <AnimatedText
-                className={styles["intro-text"]}
+                // if contact from is open, hide animated text
+                className={
+                  !useAppContext().isContactFormOpen
+                    ? `${styles["intro-text"]}`
+                    : `${styles["intro-text-low-index"]}`
+                }
                 type="words" // animate words or chars
                 animation={{
                   x: "200px",
