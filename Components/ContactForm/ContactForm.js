@@ -12,6 +12,7 @@ const ContactForm = () => {
           Close
         </button>
         <form className={styles["form"]}>
+          {/* Name, email and subject */}
           <div>
             <div className={styles["label-input-containers"]}>
               <label>Name</label>
@@ -28,6 +29,7 @@ const ContactForm = () => {
               <input type="text"></input>
             </div>
           </div>
+          {/* Message and button */}
           <div>
             <div className={styles["label-input-containers"]}>
               <label>Message</label>
