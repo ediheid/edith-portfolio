@@ -9,9 +9,9 @@ export const AppWrapper = ({ children }) => {
   // Contact form state
   let [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
-  //  Global Window events
+  // ?  Global Window events
   useEffect(() => {
-    // Initialise AOS on every render
+    //  Initialise AOS
     AOS.init();
 
     // Todo: Seperate nav for web and art
@@ -29,8 +29,19 @@ export const AppWrapper = ({ children }) => {
     // ! (Page needs to be rendered before accessing window)
   }, []);
 
+  // ? ContactForm functions
+  const openContactFormModal = () => {
+    setIsContactFormOpen(true);
+  };
+
+  const closeContactFormModal = () => {
+    setIsContactFormOpen(false);
+  };
+
   return (
-    <AppContext.Provider value={{ isContactFormOpen }}>
+    <AppContext.Provider
+      value={{ isContactFormOpen, setIsContactFormOpen, openContactFormModal }}
+    >
       {children}
     </AppContext.Provider>
   );

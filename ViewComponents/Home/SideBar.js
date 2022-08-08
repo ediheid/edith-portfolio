@@ -1,9 +1,12 @@
 import styles from "./side-bar.module.scss";
 
+import ContactForm from "../../Components/ContactForm/ContactForm";
+
 import { FiLinkedin } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
+import { useAppContext } from "../../Context/AppContext";
 
 const SideBar = () => {
   return (
@@ -13,7 +16,15 @@ const SideBar = () => {
       className={styles["side-bar-container"]}
     >
       {/* Contact Button - opens contact form modal */}
-      <button className={styles["contact-button"]}>Contact Form</button>
+      <button
+        className={styles["contact-button"]}
+        onClick={useAppContext().openContactFormModal}
+      >
+        Contact Form
+      </button>
+
+      {/* Display contact form when state is set to true */}
+      {useAppContext().isContactFormOpen && <ContactForm />}
 
       {/* Vertical dividing line */}
       <div className={styles["vertical-line"]}></div>
