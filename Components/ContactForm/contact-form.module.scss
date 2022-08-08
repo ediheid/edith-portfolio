@@ -13,8 +13,31 @@
   align-items: center;
   justify-content: center;
 
-  background: rgb(13, 17, 23, 0.9);
+  background: rgba(113, 113, 112, 0.6);
+  backdrop-filter: blur(5px);
+
   z-index: 5000;
 
   color: white;
+}
+
+.contact-modal {
+  width: 50rem;
+  height: 30rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: black;
+  border-radius: 15rem;
+
+  position: relative;
+  z-index: 6000;
+}
+
+.close-button {
+  position: absolute;
+  top: 10%;
+  cursor: pointer;
 }
