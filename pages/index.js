@@ -1,10 +1,11 @@
 import Head from "next/head";
 import styles from "../ViewComponents/Home/home.module.scss";
-
 import SideBar from "../ViewComponents/Home/SideBar";
 
 import { enterSiteData } from "../ViewComponents/Home/enterSiteData";
 import EnterSitesComponent from "../ViewComponents/Home/EnterSitesComponent";
+
+import AnimatedText from "react-animated-text-content";
 
 export default function Home() {
   return (
@@ -23,30 +24,48 @@ export default function Home() {
         {/* Side bar with contact and social media links */}
         <SideBar />
 
-<div className={styles["landing-page-content-container"]}>
-        {/* Landing page headings */}
-        <section className={styles["intro-text-container"]}>
-          <div>
-            <h1
-              data-aos="slide-left"
-              data-aos-duration="800"
-              className={styles["intro-text"]}
-            >
-              Web <br /> Developer/ <br /> Designer and <br /> Visual Artist.
-            </h1>
+        <div className={styles["landing-page-content-container"]}>
+          {/* Landing page headings */}
+          <section className={styles["intro-text-container"]}>
+            <div>
+              {/* <h1
+                data-aos="slide-left"
+                data-aos-duration="800"
+                className={styles["intro-text"]}
+              >
+                Web <br /> Developer/ <br /> Designer and <br /> Visual Artist.
+              </h1> */}
+              <AnimatedText
+                className={styles["intro-text"]}
+                type="words" // animate words or chars
+                animation={{
+                  x: "200px",
+                  y: "-20px",
+                  scale: 1.1,
+                  ease: "ease-in-out",
+                }}
+                animationType="float"
+                interval={0.06}
+                duration={0.8}
+                // tag="p"
+                // includeWhiteSpaces
+                threshold={0.1}
+                rootMargin="20%"
+              >
+                Web Developer/ Designer and Visual Artist.
+              </AnimatedText>
 
-            <h2 className={styles["name-heading"]}>Edith Heidmann</h2>
-          </div>
-        </section>
+              <h2 className={styles["name-heading"]}>Edith Heidmann</h2>
+            </div>
+          </section>
 
-        {/* Mapped individual site data to return Components to enter individual sites -  */}
-        <section className={styles["enter-components-container"]}>
-          {enterSiteData.map((site, index) => {
-            return <EnterSitesComponent key={index} site={site} />;
-          })}
-        </section>
+          {/* Mapped individual site data to return Components to enter individual sites -  */}
+          <section className={styles["enter-components-container"]}>
+            {enterSiteData.map((site, index) => {
+              return <EnterSitesComponent key={index} site={site} />;
+            })}
+          </section>
         </div>
-
       </main>
     </div>
   );
