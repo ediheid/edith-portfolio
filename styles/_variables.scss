@@ -2,6 +2,7 @@
 
 // Palette
 $soft-black: #0d1117;
+$black: black;
 $pale-grey: #cececc;
 $linen: #fffcf7;
 $evergreen: #093a1c;
@@ -11,8 +12,6 @@ $pale-blue: #82b5c7;
 $papaya: #e49435;
 $jam: #b21071;
 $jade: #099a4d;
-
-
 
 // Fonts
 // Headings
@@ -54,7 +53,11 @@ $montserrat-regular: Montserrat Regular, sans-serif;
 $montserrat-semi-bold: Montserrat Semi Bold, sans-serif;
 $montserrat-thin: Montserrat Thin, sans-serif;
 
-//  Home Variables
+// ? Global Variables
+$contact-form-modal-bg: $black;
+$contact-form-bg: rgba(113, 113, 112, 0.6);
+
+// ?  Home Variables
 
 // Todo: update variable to 'home-bg'
 // Todo: Use Evergreen as text colour?

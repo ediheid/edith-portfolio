@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
 
-  background: rgba(113, 113, 112, 0.6);
+  background: $contact-form-bg;
   backdrop-filter: blur(5px);
 
   z-index: 5000;
@@ -22,22 +22,51 @@
 }
 
 .contact-modal {
-  width: 50rem;
-  height: 30rem;
+  width: 80%;
+  height: auto;
+
+  padding: 9rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: black;
+  background: $contact-form-modal-bg;
   border-radius: 15rem;
 
   position: relative;
-  z-index: 6000;
+  //   z-index: 6000;
 }
 
 .close-button {
   position: absolute;
   top: 10%;
+
   cursor: pointer;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.label-input-containers {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  width: 20rem;
+}
+
+.text-area {
+  height: 8rem;
+  resize: none;
+}
+
+.submit-button {
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  margin-left: 1rem;
 }
