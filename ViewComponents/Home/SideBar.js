@@ -3,6 +3,7 @@ import styles from "./side-bar.module.scss";
 import { FiLinkedin } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
+import { FiShoppingBag } from "react-icons/fi";
 
 const SideBar = () => {
   return (
@@ -49,6 +50,17 @@ const SideBar = () => {
         alt="Link to Instagram artist profile."
       >
         <FiInstagram />
+      </a>
+
+      {/* Darkroom Shop */}
+      <a
+        className={styles["social-media-links"]}
+        href="https://edithheidmann.darkroom.tech/"
+        target="_blank"
+        rel="noreferrer noopener"
+        alt="Link to Darkroom online photo store."
+      >
+        <FiShoppingBag />
       </a>
     </div>
   );
