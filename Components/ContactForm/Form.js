@@ -25,6 +25,7 @@ const Form = () => {
     setMessageText("");
   };
 
+
   // Submit message function with validation and error handling
   const submitMessage = (e) => {
     e.preventDefault();
@@ -50,7 +51,9 @@ const Form = () => {
       emailjs
         .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
         .then((response) => console.log(response))
-        .then((error) => console.log(error));
+        .then((error) => {
+          console.log(error);
+        });
 
       // Reset form
       clearForm();
