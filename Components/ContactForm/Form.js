@@ -53,6 +53,12 @@ const Form = () => {
           </div>
         </div>
         <div className={styles["button-wrapper"]}>
+          <button
+            className={styles["clear-button"]}
+            // onClick={useAppContext().closeContactFormModal}
+          >
+            Clear
+          </button>
           <button className={styles["submit-button"]}>Send</button>
         </div>
       </form>

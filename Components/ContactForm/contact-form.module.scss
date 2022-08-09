@@ -25,7 +25,7 @@
   width: 80%;
   height: auto;
 
-  padding: 9rem;
+  padding: 9rem 9rem 7rem 9rem;
 
   display: flex;
   align-items: center;
@@ -46,25 +46,39 @@
 .close-button {
   position: absolute;
   top: 10%;
+  font-size: 1.5rem;
+}
 
+.close-button,
+.clear-button {
   font-family: $contact-form-font;
   color: $contact-form-text-colour;
-  font-size: 1.5rem;
   letter-spacing: 0.1rem;
   background: none;
   border: none;
   outline: none;
-  text-decoration: underline;
-  text-underline-offset: 0.5rem;
 
   cursor: pointer;
+
+  &:active {
+    color: $contact-form-focus-colour;
+  }
+}
+
+@media (hover: hover) {
+  .close-button:hover,
+  .clear-button:hover {
+    color: $contact-form-focus-colour;
+    transform: scale(1.1);
+  }
 }
 
 .form {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin: 3rem 0 0 0;
 }
 
 .label-input-containers {
@@ -96,10 +110,19 @@
   color: $contact-form-text-colour;
 }
 
-// .input:focus,
-// .text-area:focus {
-//   border-bottom: 0.2rem solid $contact-form-focus-colour;
-// }
+.label-input-containers {
+  &:focus-within {
+    .labels {
+      color: lighten($contact-form-focus-colour, 3%);
+      font-size: 1.7rem;
+    }
+
+    .input,
+    .text-area {
+      border-bottom: 0.2rem solid lighten($contact-form-focus-colour, 3%);
+    }
+  }
+}
 
 .input:-webkit-autofill,
 .input:-webkit-autofill:hover,
@@ -124,28 +147,24 @@
 
 .button-wrapper {
   width: 100%;
+
   display: flex;
   justify-content: center;
 }
 
-.submit-button {
-  margin: 3rem 0 0 0;
+.submit-button,
+.clear-button {
+  margin: 4rem 1rem 0 1rem;
   padding: 0.2rem 1rem 0.2rem 1rem;
-
-  // align-self: baseline;
-  // justify-self: flex-end;
 }
 
-.label-input-containers {
-  &:focus-within {
-    .labels {
-      color: lighten($contact-form-focus-colour, 3%);
-      font-size: 1.7rem;
-    }
+.clear-button {
+  font-size: 1.2rem;
+}
 
-    .input,
-    .text-area {
-      border-bottom: 0.2rem solid lighten($contact-form-focus-colour, 3%);
-    }
-  }
+.submit-button {
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  color: $jade;
 }
