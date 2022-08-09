@@ -21,9 +21,6 @@ const Form = () => {
   let [messageError, setMessageError] = useState(false);
   let [isMessageSent, setIsMessageSent] = useState(false);
 
-  console.log("Test", process.env.SERVICE_ID);
-  console.log("Test 2", process.env.NEXT_PUBLIC_TEMPLATE_ID);
-
   // clear form function
   const clearForm = () => {
     setUserName("");
@@ -45,12 +42,7 @@ const Form = () => {
       messageText.trim().split(/\s+/).length >= 5 &&
       /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail)
     ) {
-      // Todo: Send email code here try catch block
-      //   console.log(messageText.trim().split(/\s+/).length);
-
-      let serviceId = SERVICE_ID;
-      let templateId = TEMPLATE_ID;
-      let userId = USER_ID;
+      // Set EmailJS parameters
       const templateParams = {
         userName,
         userEmail,
@@ -58,20 +50,21 @@ const Form = () => {
         messageText,
       };
 
+      // Try sending email
       emailjs
-        .send(serviceId, templateId, templateParams, userId)
+        .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
         .then((response) => console.log(response))
         .then((error) => console.log(error));
+
       // Reset form
       setUserName("");
       setUserEmail("");
       setMessageSubject("");
       setMessageText("");
-      //   setNameError(false);
-      //   setLastNameError(false);
-      //   setEmailError(false);
-      //   setSubjectError(false);
-      //   setMessageError(false);
+      setNameError(false);
+      setEmailError(false);
+      setSubjectError(false);
+      setMessageError(false);
 
       // Clears AND disables form after successful submit
       setIsMessageSent(true);
@@ -95,8 +88,8 @@ const Form = () => {
         ? setMessageError(true)
         : setMessageError(false);
 
-      // Todo: Think of a better message and add a toast message
-      alert("Message not sent. Please see  validation messages and try again.");
+      //   // Todo: Think of a better message and add a toast message
+      //   alert("Message couldn't send. Please check input and try again.");
     }
   };
 
@@ -104,11 +97,21 @@ const Form = () => {
     <>
       <form className={styles["form"]}>
         {/* Name, email and subject */}
+        {/* // ? Name */}
         <div>
           <div className={styles["label-input-containers"]}>
             <label className={styles["labels"]} htmlFor="inputName">
               Name
             </label>
+
+            {/* Error handler */}
+            {nameError ? (
+              <span className={styles["error-message"]}>
+                {" "}
+                * Please enter at least 2 characters
+              </span>
+            ) : null}
+
             <input
               className={styles["input"]}
               type="text"
@@ -118,10 +121,20 @@ const Form = () => {
             ></input>
           </div>
 
+          {/* // ? Email */}
           <div className={styles["label-input-containers"]}>
             <label className={styles["labels"]} htmlFor="inputEmail">
               email
             </label>
+
+            {/* Error handler */}
+            {emailError ? (
+              <span className={styles["error-message"]}>
+                {" "}
+                * Please enter a valid email address
+              </span>
+            ) : null}
+
             <input
               className={styles["input"]}
               type="text"
@@ -131,10 +144,18 @@ const Form = () => {
             ></input>
           </div>
 
+          {/* // ? Subject */}
           <div className={styles["label-input-containers"]}>
             <label className={styles["labels"]} htmlFor="inputSubject">
               Subject
             </label>
+            {/* Error handler */}
+            {subjectError ? (
+              <span className={styles["error-message"]}>
+                {" "}
+                * Please enter at least 2 characters
+              </span>
+            ) : null}
             <input
               className={styles["input"]}
               type="text"
@@ -144,21 +165,32 @@ const Form = () => {
             ></input>
           </div>
         </div>
-        {/* Message and button */}
+
+        {/* // ? Message */}
         <div>
           <div className={styles["label-input-containers"]}>
             <label className={styles["labels"]} htmlFor="inputMessage">
               Message
             </label>
+            {/* Error handler */}
+            {messageError ? (
+              <span className={styles["error-message"]}>
+                {" "}
+                * Please enter at least 5 words
+              </span>
+            ) : null}
             <textarea
               className={styles["text-area"]}
               type="text"
               id="inputMessage"
               value={messageText}
+              maxLength="2000"
               onChange={(e) => setMessageText(e.target.value)}
             ></textarea>
           </div>
         </div>
+
+        {/* // ? Buttons */}
         <div className={styles["button-wrapper"]}>
           <button
             className={styles["clear-button"]}
