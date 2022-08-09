@@ -35,7 +35,12 @@
   border-radius: 15rem;
 
   position: relative;
+
   //   z-index: 6000;
+}
+
+.contact-modal * {
+  font-family: $contact-form-font;
 }
 
 .close-button {
@@ -69,6 +74,17 @@
   padding: 1rem;
 
   width: 20rem;
+}
+
+.labels {
+  font-size: 1.4rem;
+  padding-bottom: 0.5rem;
+}
+
+.input,
+.text-area {
+  font-size: 1.4rem;
+  font-family: $contact-form-input-font;
 }
 
 .text-area {
