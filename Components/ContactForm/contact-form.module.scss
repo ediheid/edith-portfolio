@@ -24,6 +24,7 @@
 .contact-modal {
   width: 80%;
   height: auto;
+  max-height: 90%;
 
   padding: 9rem 9rem 7rem 9rem;
 
@@ -47,6 +48,8 @@
   position: absolute;
   top: 10%;
   font-size: 1.4rem;
+
+  text-decoration: underline;
 }
 
 .close-button,
@@ -148,7 +151,7 @@
 }
 
 .text-area {
-  height: 14.8rem;
+  height: auto;
   resize: none;
 }
 
@@ -184,3 +187,48 @@
   background-color: $contact-form-text-colour;
   cursor: pointer;
 }
+
+// ? Breakpoints
+
+// @include large-tablet {
+//   .contact-modal {
+//     width: 65rem;
+//     height: 65rem;
+//     border-radius: 50%;
+//   }
+
+//   .close-button{
+//     top: 15%;
+  
+//   }
+
+//   .seperating-containers {
+//     height: 22rem;
+// padding-top: 4rem;
+
+//   }
+
+//   .text-area {
+//     height: 16.3rem;
+//   }
+
+//   .button-wrapper{
+//     flex-direction: column-reverse;
+//     align-items: center;
+//     padding-top: 2rem;
+
+   
+//   }
+
+//   .submit-button{
+//     width: 15rem;
+  
+//   }
+
+
+//   .clear-button{
+//     font-size: 1.5rem;
+//     margin: 2rem;
+//   }
+
+// }

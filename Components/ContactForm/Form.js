@@ -73,7 +73,7 @@ const Form = () => {
         <form className={styles["form"]}>
           {/* Name, email and subject */}
           {/* // ? Name */}
-          <div>
+          <div className={styles["seperating-containers"]}>
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputName">
                 Name
@@ -146,7 +146,7 @@ const Form = () => {
           </div>
 
           {/* // ? Message */}
-          <div>
+          <div className={styles["seperating-containers"]}>
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputMessage">
                 Message
@@ -166,7 +166,7 @@ const Form = () => {
               {messageText.length >= 2000 ? (
                 <span className={styles["error-message"]}>
                   {" "}
-                  Sorry, you have reached the maximum message length.
+                  Sorry, you have reached the maximum message length 2000 characters
                 </span>
               ) : null}
 
@@ -183,6 +183,8 @@ const Form = () => {
 
           {/* // ? Buttons */}
           <div className={styles["button-wrapper"]}>
+
+
             <button
               className={styles["clear-button"]}
               onClick={clearForm}
@@ -197,7 +199,11 @@ const Form = () => {
             >
               Send
             </button>
+
+         
           </div>
+
+       
         </form>
       ) : (
         // If Message has been sent successfully then render thank you message
