@@ -65,135 +65,141 @@ const Form = () => {
 
   return (
     <>
-      <form className={styles["form"]}>
-        {/* Name, email and subject */}
-        {/* // ? Name */}
-        <div>
-          <div className={styles["label-input-containers"]}>
-            <label className={styles["labels"]} htmlFor="inputName">
-              Name
-            </label>
+      {/*  Render from id message has not been sent */}
+      {!isMessageSent ? (
+        <form className={styles["form"]}>
+          {/* Name, email and subject */}
+          {/* // ? Name */}
+          <div>
+            <div className={styles["label-input-containers"]}>
+              <label className={styles["labels"]} htmlFor="inputName">
+                Name
+              </label>
 
-            {/* Real time error handler */}
-            {userName.length >= 1 && userName.length < 2 ? (
-              <span className={styles["error-message"]}>
-                {" "}
-                * Please enter at least 2 characters
-              </span>
-            ) : null}
+              {/* Real time error handler */}
+              {userName.length >= 1 && userName.length < 2 ? (
+                <span className={styles["error-message"]}>
+                  {" "}
+                  * Please enter at least 2 characters
+                </span>
+              ) : null}
 
-            <input
-              className={styles["input"]}
-              type="text"
-              id="inputName"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-            ></input>
+              <input
+                className={styles["input"]}
+                type="text"
+                id="inputName"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+              ></input>
+            </div>
+
+            {/* // ? Email */}
+            <div className={styles["label-input-containers"]}>
+              <label className={styles["labels"]} htmlFor="inputEmail">
+                email
+              </label>
+
+              {/* Real time error handler */}
+              {userEmail.length >= 1 &&
+              // (!) for not at beginning of regex email validation
+              !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail) ? (
+                <span className={styles["error-message"]}>
+                  {" "}
+                  * Please enter a valid email address
+                </span>
+              ) : null}
+
+              <input
+                className={styles["input"]}
+                type="text"
+                id="inputEmail"
+                value={userEmail}
+                onChange={(e) => setUserEmail(e.target.value)}
+              ></input>
+            </div>
+
+            {/* // ? Subject */}
+            <div className={styles["label-input-containers"]}>
+              <label className={styles["labels"]} htmlFor="inputSubject">
+                Subject
+              </label>
+
+              {/* Real time error handler */}
+              {messageSubject.length >= 1 && messageSubject.length < 2 ? (
+                <span className={styles["error-message"]}>
+                  {" "}
+                  * Please enter at least 2 characters
+                </span>
+              ) : null}
+
+              <input
+                className={styles["input"]}
+                type="text"
+                id="inputSubject"
+                value={messageSubject}
+                onChange={(e) => setMessageSubject(e.target.value)}
+              ></input>
+            </div>
           </div>
 
-          {/* // ? Email */}
-          <div className={styles["label-input-containers"]}>
-            <label className={styles["labels"]} htmlFor="inputEmail">
-              email
-            </label>
+          {/* // ? Message */}
+          <div>
+            <div className={styles["label-input-containers"]}>
+              <label className={styles["labels"]} htmlFor="inputMessage">
+                Message
+              </label>
 
-            {/* Real time error handler */}
-            {userEmail.length >= 1 &&
-            // (!) for not at beginning of regex email validation
-            !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail) ? (
-              <span className={styles["error-message"]}>
-                {" "}
-                * Please enter a valid email address
-              </span>
-            ) : null}
+              {/* Real time error handler */}
+              {/* Minimum length */}
+              {messageText.length >= 1 &&
+              messageText.trim().split(/\s+/).length < 5 ? (
+                <span className={styles["error-message"]}>
+                  {" "}
+                  * Please enter at least 5 words
+                </span>
+              ) : null}
 
-            <input
-              className={styles["input"]}
-              type="text"
-              id="inputEmail"
-              value={userEmail}
-              onChange={(e) => setUserEmail(e.target.value)}
-            ></input>
+              {/* Maximum lenght */}
+              {messageText.length >= 2000 ? (
+                <span className={styles["error-message"]}>
+                  {" "}
+                  Sorry, you have reached the maximum message length.
+                </span>
+              ) : null}
+
+              <textarea
+                className={styles["text-area"]}
+                type="text"
+                id="inputMessage"
+                value={messageText}
+                maxLength="2000"
+                onChange={(e) => setMessageText(e.target.value)}
+              ></textarea>
+            </div>
           </div>
 
-          {/* // ? Subject */}
-          <div className={styles["label-input-containers"]}>
-            <label className={styles["labels"]} htmlFor="inputSubject">
-              Subject
-            </label>
-
-            {/* Real time error handler */}
-            {messageSubject.length >= 1 && messageSubject.length < 2 ? (
-              <span className={styles["error-message"]}>
-                {" "}
-                * Please enter at least 2 characters
-              </span>
-            ) : null}
-
-            <input
-              className={styles["input"]}
-              type="text"
-              id="inputSubject"
-              value={messageSubject}
-              onChange={(e) => setMessageSubject(e.target.value)}
-            ></input>
+          {/* // ? Buttons */}
+          <div className={styles["button-wrapper"]}>
+            <button
+              className={styles["clear-button"]}
+              onClick={clearForm}
+              type="reset"
+            >
+              Clear
+            </button>
+            <button
+              className={styles["submit-button"]}
+              onClick={submitMessage}
+              type="submit"
+            >
+              Send
+            </button>
           </div>
-        </div>
-
-        {/* // ? Message */}
-        <div>
-          <div className={styles["label-input-containers"]}>
-            <label className={styles["labels"]} htmlFor="inputMessage">
-              Message
-            </label>
-
-            {/* Real time error handler */}
-            {/* Minimum length */}
-            {messageText.length >= 1 &&
-            messageText.trim().split(/\s+/).length < 5 ? (
-              <span className={styles["error-message"]}>
-                {" "}
-                * Please enter at least 5 words
-              </span>
-            ) : null}
-
-            {/* Maximum lenght */}
-            {messageText.length >= 2000 ? (
-              <span className={styles["error-message"]}>
-                {" "}
-                Sorry, you have reached the maximum message length.
-              </span>
-            ) : null}
-
-            <textarea
-              className={styles["text-area"]}
-              type="text"
-              id="inputMessage"
-              value={messageText}
-              maxLength="2000"
-              onChange={(e) => setMessageText(e.target.value)}
-            ></textarea>
-          </div>
-        </div>
-
-        {/* // ? Buttons */}
-        <div className={styles["button-wrapper"]}>
-          <button
-            className={styles["clear-button"]}
-            onClick={clearForm}
-            type="reset"
-          >
-            Clear
-          </button>
-          <button
-            className={styles["submit-button"]}
-            onClick={submitMessage}
-            type="submit"
-          >
-            Send
-          </button>
-        </div>
-      </form>
+        </form>
+      ) : (
+        // If Message has been sent successfully then render thank you message
+        <div>Thanks for your message, I'll get back to you in a jiffy! 🙂 </div>
+      )}
     </>
   );
 };
