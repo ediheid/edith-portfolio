@@ -1,6 +1,14 @@
 import { useState } from "react";
-import { useAppContext } from "../../Context/AppContext";
+import emailjs from "emailjs-com";
+
 import styles from "./contact-form.module.scss";
+
+import { init } from "emailjs-com";
+init("userId");
+
+let SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
+let TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+let USER_ID = process.env.NEXT_PUBLIC_USER_ID;
 
 const Form = () => {
   const [userName, setUserName] = useState("");
@@ -12,6 +20,9 @@ const Form = () => {
   let [subjectError, setSubjectError] = useState(false);
   let [messageError, setMessageError] = useState(false);
   let [isMessageSent, setIsMessageSent] = useState(false);
+
+  console.log("Test", process.env.SERVICE_ID);
+  console.log("Test 2", process.env.NEXT_PUBLIC_TEMPLATE_ID);
 
   // clear form function
   const clearForm = () => {
@@ -36,6 +47,34 @@ const Form = () => {
     ) {
       // Todo: Send email code here try catch block
       //   console.log(messageText.trim().split(/\s+/).length);
+
+      let serviceId = SERVICE_ID;
+      let templateId = TEMPLATE_ID;
+      let userId = USER_ID;
+      const templateParams = {
+        userName,
+        userEmail,
+        messageSubject,
+        messageText,
+      };
+
+      emailjs
+        .send(serviceId, templateId, templateParams, userId)
+        .then((response) => console.log(response))
+        .then((error) => console.log(error));
+      // Reset form
+      setUserName("");
+      setUserEmail("");
+      setMessageSubject("");
+      setMessageText("");
+      //   setNameError(false);
+      //   setLastNameError(false);
+      //   setEmailError(false);
+      //   setSubjectError(false);
+      //   setMessageError(false);
+
+      // Clears AND disables form after successful submit
+      setIsMessageSent(true);
     } else {
       // ? Error Message state
       // Username char length
