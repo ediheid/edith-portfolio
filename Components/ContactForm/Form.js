@@ -15,10 +15,6 @@ const Form = () => {
   const [userEmail, setUserEmail] = useState("");
   const [messageSubject, setMessageSubject] = useState("");
   const [messageText, setMessageText] = useState("");
-  let [nameError, setNameError] = useState(false);
-  let [emailError, setEmailError] = useState(false);
-  let [subjectError, setSubjectError] = useState(false);
-  let [messageError, setMessageError] = useState(false);
   let [isMessageSent, setIsMessageSent] = useState(false);
 
   // clear form function
@@ -57,39 +53,13 @@ const Form = () => {
         .then((error) => console.log(error));
 
       // Reset form
-      setUserName("");
-      setUserEmail("");
-      setMessageSubject("");
-      setMessageText("");
-      setNameError(false);
-      setEmailError(false);
-      setSubjectError(false);
-      setMessageError(false);
+      clearForm();
 
       // Clears AND disables form after successful submit
       setIsMessageSent(true);
     } else {
-      // ? Error Message state
-      // Username char length
-      userName < 2 ? setNameError(true) : setNameError(false);
-
-      // Email validation
-      if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail)) {
-        setEmailError(false);
-      } else {
-        setEmailError(true);
-      }
-
-      // Subject char length
-      messageSubject < 2 ? setSubjectError(true) : setSubjectError(false);
-
-      // message word length
-      messageText.trim().split(/\s+/).length < 5
-        ? setMessageError(true)
-        : setMessageError(false);
-
-      //   // Todo: Think of a better message and add a toast message
-      //   alert("Message couldn't send. Please check input and try again.");
+      // Todo: Think of a better message and add a toast message
+      alert("Message couldn't send. Please check input and try again.");
     }
   };
 
@@ -104,8 +74,8 @@ const Form = () => {
               Name
             </label>
 
-            {/* Error handler */}
-            {nameError ? (
+            {/* Real time error handler */}
+            {userName.length >= 1 && userName.length < 2 ? (
               <span className={styles["error-message"]}>
                 {" "}
                 * Please enter at least 2 characters
@@ -127,8 +97,10 @@ const Form = () => {
               email
             </label>
 
-            {/* Error handler */}
-            {emailError ? (
+            {/* Real time error handler */}
+            {userEmail.length >= 1 &&
+            // (!) for not at beginning of regex email validation
+            !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail) ? (
               <span className={styles["error-message"]}>
                 {" "}
                 * Please enter a valid email address
@@ -149,13 +121,15 @@ const Form = () => {
             <label className={styles["labels"]} htmlFor="inputSubject">
               Subject
             </label>
-            {/* Error handler */}
-            {subjectError ? (
+
+            {/* Real time error handler */}
+            {messageSubject.length >= 1 && messageSubject.length < 2 ? (
               <span className={styles["error-message"]}>
                 {" "}
                 * Please enter at least 2 characters
               </span>
             ) : null}
+
             <input
               className={styles["input"]}
               type="text"
@@ -172,13 +146,25 @@ const Form = () => {
             <label className={styles["labels"]} htmlFor="inputMessage">
               Message
             </label>
-            {/* Error handler */}
-            {messageError ? (
+
+            {/* Real time error handler */}
+            {/* Minimum length */}
+            {messageText.length >= 1 &&
+            messageText.trim().split(/\s+/).length < 5 ? (
               <span className={styles["error-message"]}>
                 {" "}
                 * Please enter at least 5 words
               </span>
             ) : null}
+
+            {/* Maximum lenght */}
+            {messageText.length >= 2000 ? (
+              <span className={styles["error-message"]}>
+                {" "}
+                Sorry, you have reached the maximum message length.
+              </span>
+            ) : null}
+
             <textarea
               className={styles["text-area"]}
               type="text"
@@ -196,8 +182,6 @@ const Form = () => {
             className={styles["clear-button"]}
             onClick={clearForm}
             type="reset"
-
-            // onClick={useAppContext().closeContactFormModal}
           >
             Clear
           </button>
