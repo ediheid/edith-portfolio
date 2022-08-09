@@ -108,6 +108,10 @@
   border-right: none;
   outline: none;
   color: $contact-form-text-colour;
+
+  border-radius: 0;
+  box-shadow: 0;
+  -webkit-appearance: none;
 }
 
 .label-input-containers {
