@@ -109,6 +109,7 @@
   outline: none;
   color: $contact-form-text-colour;
 
+  // Stops input from rounding
   border-radius: 0;
   box-shadow: 0;
   -webkit-appearance: none;
