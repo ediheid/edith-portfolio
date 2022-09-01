@@ -16,9 +16,11 @@ const Form = () => {
   const [messageSubject, setMessageSubject] = useState("");
   const [messageText, setMessageText] = useState("");
   const [isMessageSent, setIsMessageSent] = useState(false);
-
+  /* For real time error handler when user clicks away from input - set via onBlur on corresponding input*/
   const [nameErrorMessage, setNameErrorMessage] = useState(false);
-  // const isNameValid = userName.length >= 1 && userName.length < 2;
+  const [emailErrorMessage, setEmailErrorMessage] = useState(false);
+  const [subjectErrorMessage, setSubjectErrorMessage] = useState(false);
+  const [messageTextErrorMessage, setMessageTextErrorMessage] = useState(false);
 
   // clear form function
   const clearForm = () => {
@@ -57,31 +59,32 @@ const Form = () => {
 
       // Reset form
       clearForm();
-
-      // Clears AND disables form after successful submit
+      // Message sent
       setIsMessageSent(true);
     } else {
       // Todo: Think of a better message and add a toast message
-      alert("Message couldn't send. Please check input and try again.");
+      // alert("Please make sure to fill in all fields and try again.");
+      setNameErrorMessage(true);
+      setEmailErrorMessage(true);
+      setSubjectErrorMessage(true);
+      setMessageTextErrorMessage(true);
     }
   };
 
   return (
     <>
-      {/*  Render from id message has not been sent */}
+      {/*  Render form if message has not been sent */}
       {!isMessageSent ? (
         <form className={styles["form"]}>
-          {/* Name, email and subject */}
-          {/* // ? Name */}
+          {/*  Name */}
           <div>
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputName">
                 Name
               </label>
 
-              {/* Real time error handler when user clicks away from input */}
               {nameErrorMessage ? (
-                userName.length >= 1 && userName.length < 2 ? (
+                userName.length < 2 ? (
                   <span className={styles["error-message"]}>
                     {" "}
                     * Please enter at least 2 characters
@@ -99,20 +102,19 @@ const Form = () => {
               ></input>
             </div>
 
-            {/* // ? Email */}
+            {/*  Email */}
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputEmail">
                 email
               </label>
 
-              {/* Real time error handler */}
-              {userEmail.length >= 1 &&
-              // (!) for not at beginning of regex email validation
-              !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail) ? (
-                <span className={styles["error-message"]}>
-                  {" "}
-                  * Please enter a valid email address
-                </span>
+              {emailErrorMessage ? (
+                !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail) ? (
+                  <span className={styles["error-message"]}>
+                    {" "}
+                    * Please enter a valid email address
+                  </span>
+                ) : null
               ) : null}
 
               <input
@@ -121,21 +123,23 @@ const Form = () => {
                 id="inputEmail"
                 value={userEmail}
                 onChange={(e) => setUserEmail(e.target.value)}
+                onBlur={() => setEmailErrorMessage(true)}
               ></input>
             </div>
 
-            {/* // ? Subject */}
+            {/* Subject */}
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputSubject">
                 Subject
               </label>
 
-              {/* Real time error handler */}
-              {messageSubject.length >= 1 && messageSubject.length < 2 ? (
-                <span className={styles["error-message"]}>
-                  {" "}
-                  * Please enter at least 2 characters
-                </span>
+              {subjectErrorMessage ? (
+                messageSubject.length < 2 ? (
+                  <span className={styles["error-message"]}>
+                    {" "}
+                    * Please enter at least 2 characters
+                  </span>
+                ) : null
               ) : null}
 
               <input
@@ -144,28 +148,28 @@ const Form = () => {
                 id="inputSubject"
                 value={messageSubject}
                 onChange={(e) => setMessageSubject(e.target.value)}
+                onBlur={() => setSubjectErrorMessage(true)}
               ></input>
             </div>
           </div>
 
-          {/* // ? Message */}
+          {/* Message */}
           <div>
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputMessage">
                 Message
               </label>
 
-              {/* Real time error handler */}
-              {/* Minimum length */}
-              {messageText.length >= 1 &&
-              messageText.trim().split(/\s+/).length < 5 ? (
-                <span className={styles["error-message"]}>
-                  {" "}
-                  * Please enter at least 5 words
-                </span>
+              {messageTextErrorMessage ? (
+                messageText.trim().split(/\s+/).length < 5 ? (
+                  <span className={styles["error-message"]}>
+                    {" "}
+                    * Please enter at least 5 words
+                  </span>
+                ) : null
               ) : null}
 
-              {/* Maximum lenght */}
+              {/* Maximum length */}
               {messageText.length >= 2000 ? (
                 <span className={styles["error-message"]}>
                   {" "}
@@ -180,6 +184,7 @@ const Form = () => {
                 value={messageText}
                 maxLength="2000"
                 onChange={(e) => setMessageText(e.target.value)}
+                onBlur={() => setMessageTextErrorMessage(true)}
               ></textarea>
             </div>
           </div>
