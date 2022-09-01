@@ -157,9 +157,9 @@
 
 .error-message {
   color: $error-message-text;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   letter-spacing: 0.05rem;
-  padding-bottom: 1rem;
+  // padding-bottom: 1rem;
 }
 
 .button-wrapper {
@@ -190,6 +190,12 @@
 
 // ? Breakpoints
 
+@include large-tablet {
+  .text-area {
+    height: 16.3rem;
+  }
+}
+
 // @include large-tablet {
 //   .contact-modal {
 //     width: 65rem;
@@ -197,38 +203,22 @@
 //     border-radius: 50%;
 //   }
 
-//   .close-button{
+//   .close-button {
 //     top: 15%;
-  
 //   }
 
 //   .seperating-containers {
 //     height: 22rem;
-// padding-top: 4rem;
-
+//     // padding-top: 4rem;
 //   }
 
-//   .text-area {
-//     height: 16.3rem;
-//   }
-
-//   .button-wrapper{
+//   .button-wrapper {
 //     flex-direction: column-reverse;
 //     align-items: center;
 //     padding-top: 2rem;
-
-   
 //   }
 
-//   .submit-button{
+//   .submit-button {
 //     width: 15rem;
-  
 //   }
-
-
-//   .clear-button{
-//     font-size: 1.5rem;
-//     margin: 2rem;
-//   }
-
 // }
