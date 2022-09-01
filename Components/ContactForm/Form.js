@@ -59,7 +59,8 @@ const Form = () => {
 
       // Reset form
       clearForm();
-      // Message sent
+
+      // Clears AND disables form after successful submit
       setIsMessageSent(true);
     } else {
       // Todo: Think of a better message and add a toast message
@@ -76,8 +77,9 @@ const Form = () => {
       {/*  Render form if message has not been sent */}
       {!isMessageSent ? (
         <form className={styles["form"]}>
-          {/*  Name */}
-          <div>
+          {/* Name, email and subject */}
+          {/* // ? Name */}
+          <div className={styles["seperating-containers"]}>
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputName">
                 Name
@@ -148,13 +150,12 @@ const Form = () => {
                 id="inputSubject"
                 value={messageSubject}
                 onChange={(e) => setMessageSubject(e.target.value)}
-                onBlur={() => setSubjectErrorMessage(true)}
               ></input>
             </div>
           </div>
 
           {/* Message */}
-          <div>
+          <div className={styles["seperating-containers"]}>
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputMessage">
                 Message
@@ -173,7 +174,8 @@ const Form = () => {
               {messageText.length >= 2000 ? (
                 <span className={styles["error-message"]}>
                   {" "}
-                  Sorry, you have reached the maximum message length.
+                  Sorry, you have reached the maximum message length 2000
+                  characters
                 </span>
               ) : null}
 
@@ -184,7 +186,6 @@ const Form = () => {
                 value={messageText}
                 maxLength="2000"
                 onChange={(e) => setMessageText(e.target.value)}
-                onBlur={() => setMessageTextErrorMessage(true)}
               ></textarea>
             </div>
           </div>
