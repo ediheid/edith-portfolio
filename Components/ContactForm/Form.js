@@ -15,7 +15,10 @@ const Form = () => {
   const [userEmail, setUserEmail] = useState("");
   const [messageSubject, setMessageSubject] = useState("");
   const [messageText, setMessageText] = useState("");
-  let [isMessageSent, setIsMessageSent] = useState(false);
+  const [isMessageSent, setIsMessageSent] = useState(false);
+
+  const [nameErrorMessage, setNameErrorMessage] = useState(false);
+  // const isNameValid = userName.length >= 1 && userName.length < 2;
 
   // clear form function
   const clearForm = () => {
@@ -76,12 +79,14 @@ const Form = () => {
                 Name
               </label>
 
-              {/* Real time error handler */}
-              {userName.length >= 1 && userName.length < 2 ? (
-                <span className={styles["error-message"]}>
-                  {" "}
-                  * Please enter at least 2 characters
-                </span>
+              {/* Real time error handler when user clicks away from input */}
+              {nameErrorMessage ? (
+                userName.length >= 1 && userName.length < 2 ? (
+                  <span className={styles["error-message"]}>
+                    {" "}
+                    * Please enter at least 2 characters
+                  </span>
+                ) : null
               ) : null}
 
               <input
@@ -90,6 +95,7 @@ const Form = () => {
                 id="inputName"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
+                onBlur={() => setNameErrorMessage(true)}
               ></input>
             </div>
 
@@ -180,13 +186,6 @@ const Form = () => {
 
           {/* // ? Buttons */}
           <div className={styles["button-wrapper"]}>
-            <button
-              className={styles["clear-button"]}
-              onClick={clearForm}
-              type="reset"
-            >
-              Clear
-            </button>
             <button
               className={styles["submit-button"]}
               onClick={submitMessage}
