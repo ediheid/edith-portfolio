@@ -169,6 +169,7 @@ const Form = () => {
                 id="inputSubject"
                 value={messageSubject}
                 onChange={(e) => setMessageSubject(e.target.value)}
+                onBlur={() => setSubjectErrorMessage(true)}
               ></input>
             </div>
           </div>
@@ -207,6 +208,7 @@ const Form = () => {
                 value={messageText}
                 maxLength="2000"
                 onChange={(e) => setMessageText(e.target.value)}
+                onBlur={() => setMessageTextErrorMessage(true)}
               ></textarea>
             </div>
           </div>
@@ -224,7 +226,9 @@ const Form = () => {
         </form>
       ) : (
         // If Message has been sent successfully then render thank you message
-        <div>Thanks for your message, I'll get back to you in a jiffy! 🙂 </div>
+        <span className={styles["message-sent-notification"]}>
+          Thanks for your message, I'll get back to you in a jiffy!
+        </span>
       )}
     </>
   );
