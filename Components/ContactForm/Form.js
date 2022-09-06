@@ -30,19 +30,38 @@ const Form = () => {
     setMessageText("");
   };
 
-  // Submit message function with validation and error handling
-  const submitMessage = (e) => {
-    e.preventDefault();
+  // Validation Check function
+  const validationCheck = () => {
+    let validationSuccessful = false;
 
-    userEmail = userEmail.toLowerCase();
-
-    // ? Validation Check
     if (
       userName.length >= 2 &&
       messageSubject.length >= 2 &&
       messageText.trim().split(/\s+/).length >= 5 &&
       /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail)
     ) {
+      validationSuccessful = true;
+    } else {
+      validationSuccessful = false;
+
+      // Todo: Think of a better message and add a toast message
+      // alert("Please make sure to fill in all fields and try again.");
+      setNameErrorMessage(true);
+      setEmailErrorMessage(true);
+      setSubjectErrorMessage(true);
+      setMessageTextErrorMessage(true);
+    }
+
+    return validationSuccessful;
+  };
+
+  // Submit message function with error handling
+  const submitMessage = (e) => {
+    e.preventDefault();
+
+    userEmail = userEmail.toLowerCase();
+
+    if (validationCheck()) {
       // Set EmailJS parameters
       const templateParams = {
         userName,
@@ -51,24 +70,21 @@ const Form = () => {
         messageText,
       };
 
-      // Try sending email
-      emailjs
-        .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
-        .then((response) => console.log(response))
-        .then((error) => console.log(error));
+      try {
+        emailjs
+          .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+          .then((response) => {
+            console.log("response status", response.status);
 
-      // Reset form
-      clearForm();
-
-      // Clears AND disables form after successful submit
-      setIsMessageSent(true);
-    } else {
-      // Todo: Think of a better message and add a toast message
-      // alert("Please make sure to fill in all fields and try again.");
-      setNameErrorMessage(true);
-      setEmailErrorMessage(true);
-      setSubjectErrorMessage(true);
-      setMessageTextErrorMessage(true);
+            if (response.status === 200) {
+              clearForm();
+              setIsMessageSent(true);
+            }
+          });
+      } catch (e) {
+        alert("Network error, please try again", e.ReferenceError);
+        console.log("ERROR!!!", e);
+      }
     }
   };
 
@@ -85,6 +101,7 @@ const Form = () => {
                 Name
               </label>
 
+              {/* Real time validation message */}
               {nameErrorMessage ? (
                 userName.length < 2 ? (
                   <span className={styles["error-message"]}>
@@ -110,6 +127,7 @@ const Form = () => {
                 email
               </label>
 
+              {/* Real time validation message */}
               {emailErrorMessage ? (
                 !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail) ? (
                   <span className={styles["error-message"]}>
@@ -135,6 +153,7 @@ const Form = () => {
                 Subject
               </label>
 
+              {/* Real time validation message */}
               {subjectErrorMessage ? (
                 messageSubject.length < 2 ? (
                   <span className={styles["error-message"]}>
@@ -161,6 +180,7 @@ const Form = () => {
                 Message
               </label>
 
+              {/* Real time validation message */}
               {messageTextErrorMessage ? (
                 messageText.trim().split(/\s+/).length < 5 ? (
                   <span className={styles["error-message"]}>
@@ -170,6 +190,7 @@ const Form = () => {
                 ) : null
               ) : null}
 
+              {/* Real time validation message */}
               {/* Maximum length */}
               {messageText.length >= 2000 ? (
                 <span className={styles["error-message"]}>
