@@ -1,4 +1,4 @@
-# Building a new portfolio for my web development/design and art whilst teaching myself NextJS and TypeScript
+# Building a new portfolio for my web development/design and art whilst teaching myself NextJS and TypeScript - styled with SCSS modules
 
 ## Setup
 
