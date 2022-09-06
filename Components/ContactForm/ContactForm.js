@@ -12,7 +12,6 @@ const ContactForm = () => {
         >
           Close
         </button>
-        {/* Form */}
         <Form />
       </div>
     </div>

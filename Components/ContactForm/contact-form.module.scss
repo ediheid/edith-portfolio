@@ -50,6 +50,7 @@
   font-size: 1.4rem;
 
   text-decoration: underline;
+  text-underline-offset: 0.7rem;
 }
 
 .close-button,
@@ -188,37 +189,21 @@
   cursor: pointer;
 }
 
+.message-sent-notification {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
 // ? Breakpoints
 
 @include large-tablet {
   .text-area {
     height: 16.3rem;
   }
+
+  .contact-modal {
+    max-width: 80rem;
+    min-height: 26rem;
+  }
 }
-
-// @include large-tablet {
-//   .contact-modal {
-//     width: 65rem;
-//     height: 65rem;
-//     border-radius: 50%;
-//   }
-
-//   .close-button {
-//     top: 15%;
-//   }
-
-//   .seperating-containers {
-//     height: 22rem;
-//     // padding-top: 4rem;
-//   }
-
-//   .button-wrapper {
-//     flex-direction: column-reverse;
-//     align-items: center;
-//     padding-top: 2rem;
-//   }
-
-//   .submit-button {
-//     width: 15rem;
-//   }
-// }

@@ -1,7 +1,9 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./contact-form.module.scss";
+import React from "react";
 
 import { init } from "emailjs-com";
 init("userId");
@@ -21,6 +23,37 @@ const Form = () => {
   const [emailErrorMessage, setEmailErrorMessage] = useState(false);
   const [subjectErrorMessage, setSubjectErrorMessage] = useState(false);
   const [messageTextErrorMessage, setMessageTextErrorMessage] = useState(false);
+
+  // Toast alerts
+  const fillAllFieldsNotification = () => {
+    toast.warning(
+      "Message not sent - Please fill out all fields and try again. 👀 ",
+      {
+        position: "top-center",
+        autoClose: false,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      }
+    );
+  };
+
+  const networkErrorNotification = () => {
+    toast.error(
+      "Something went wrong 😔 Please check your connection and try again.",
+      {
+        position: "top-center",
+        autoClose: false,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      }
+    );
+  };
 
   // clear form function
   const clearForm = () => {
@@ -44,8 +77,9 @@ const Form = () => {
     } else {
       validationSuccessful = false;
 
-      // Todo: Think of a better message and add a toast message
-      // alert("Please make sure to fill in all fields and try again.");
+      // Show toast alert
+      fillAllFieldsNotification();
+      // Set error messages
       setNameErrorMessage(true);
       setEmailErrorMessage(true);
       setSubjectErrorMessage(true);
@@ -82,7 +116,8 @@ const Form = () => {
             }
           });
       } catch (e) {
-        alert("Network error, please try again", e.ReferenceError);
+        // Show toast alert
+        networkErrorNotification();
         console.log("ERROR!!!", e);
       }
     }
@@ -90,6 +125,7 @@ const Form = () => {
 
   return (
     <>
+      <ToastContainer />
       {/*  Render form if message has not been sent */}
       {!isMessageSent ? (
         <form className={styles["form"]}>
