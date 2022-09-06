@@ -18,6 +18,7 @@ const Form = () => {
   const [messageSubject, setMessageSubject] = useState("");
   const [messageText, setMessageText] = useState("");
   const [isMessageSent, setIsMessageSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   /* For real time error handler when user clicks away from input - set via onBlur on corresponding input*/
   const [nameErrorMessage, setNameErrorMessage] = useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = useState(false);
@@ -105,6 +106,9 @@ const Form = () => {
       };
 
       try {
+        // Set is sending to true for button change
+        setIsSending(true);
+        // Try sending email via emailJS
         emailjs
           .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
           .then((response) => {
@@ -251,13 +255,17 @@ const Form = () => {
 
           {/* // ? Buttons */}
           <div className={styles["button-wrapper"]}>
-            <button
-              className={styles["submit-button"]}
-              onClick={submitMessage}
-              type="submit"
-            >
-              Send
-            </button>
+            {isSending ? (
+              <button className={styles["submit-button"]}>Sending</button>
+            ) : (
+              <button
+                className={styles["submit-button"]}
+                onClick={submitMessage}
+                type="submit"
+              >
+                Send
+              </button>
+            )}
           </div>
         </form>
       ) : (

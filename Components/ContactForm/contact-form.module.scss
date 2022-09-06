@@ -53,8 +53,7 @@
   text-underline-offset: 0.7rem;
 }
 
-.close-button,
-.clear-button {
+.close-button {
   font-family: $contact-form-font;
   color: $contact-form-text-colour;
   letter-spacing: 0.1rem;
@@ -70,8 +69,7 @@
 }
 
 @media (hover: hover) {
-  .close-button:hover,
-  .clear-button:hover {
+  .close-button:hover {
     color: $contact-form-focus-colour;
     transform: scale(1.1);
   }
@@ -170,23 +168,48 @@
   justify-content: center;
 }
 
-.submit-button,
-.clear-button {
-  margin: 4rem 1rem 0 1rem;
-  padding: 0.2rem 1rem 0.2rem 1rem;
-}
-
-.clear-button {
-  font-size: 1.2rem;
-}
-
 .submit-button {
-  border: none;
-  outline: none;
+  margin: 4rem 1rem 0 1rem;
+  // padding: 0.2rem 1rem 0.2rem 1rem;
+
   font-size: 1.8rem;
-  color: $jade;
-  background-color: $contact-form-text-colour;
+  color: $home-page-main-text-colour;
+
+  width: 14rem;
+  height: 4.5rem;
+
   cursor: pointer;
+  // border: none;
+  // outline: none;
+  background: transparent;
+
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+.submit-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.submit-button:hover::before {
+  width: 100%;
+}
+
+.submit-button:hover {
+  color: black;
+}
+
+.submit-button:active:before {
+  background: #b9b9b9;
 }
 
 .message-sent-notification {
