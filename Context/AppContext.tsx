@@ -2,10 +2,32 @@ import { createContext, useContext, useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const AppContext = createContext();
+// export interface AppProps {
+//   children: React.ReactNode;
+// }
+
+type AppContextProps = {
+  children: React.ReactNode;
+};
+
+interface GlobalContextProps {
+  isContactFormOpen: boolean;
+  setIsContactFormOpen: (isContactFormOpen: boolean) => void;
+  openContactFormModal: (isContactFormOpen: boolean) => void;
+  closeContactFormModal: (isContactFormOpen: boolean) => void;
+}
+
+export const AppContext = createContext<GlobalContextProps>({
+  isContactFormOpen: false,
+  setIsContactFormOpen: () => {},
+  openContactFormModal: () => {},
+  closeContactFormModal: () => {},
+});
+
+// const AppContext = createContext();
 
 // App Wrapper - (wrapped around App Component)
-export const AppWrapper = ({ children }) => {
+export const AppWrapper = ({ children }: AppContextProps) => {
   // Contact form state
   let [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
