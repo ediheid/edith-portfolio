@@ -5,9 +5,16 @@ import "react-toastify/dist/ReactToastify.css";
 import styles from "./contact-form.module.scss";
 import React from "react";
 import PulseLoader from "react-spinners/PulseLoader";
-
 import { init } from "emailjs-com";
 init("userId");
+
+declare let process: {
+  env: {
+    NEXT_PUBLIC_SERVICE_ID: string;
+    NEXT_PUBLIC_TEMPLATE_ID: string;
+    NEXT_PUBLIC_USER_ID: string;
+  };
+};
 
 let SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
 let TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
@@ -15,7 +22,7 @@ let USER_ID = process.env.NEXT_PUBLIC_USER_ID;
 
 const Form = () => {
   const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
+  let [userEmail, setUserEmail] = useState("");
   const [messageSubject, setMessageSubject] = useState("");
   const [messageText, setMessageText] = useState("");
   const [isMessageSent, setIsMessageSent] = useState(false);
@@ -25,8 +32,6 @@ const Form = () => {
   const [emailErrorMessage, setEmailErrorMessage] = useState(false);
   const [subjectErrorMessage, setSubjectErrorMessage] = useState(false);
   const [messageTextErrorMessage, setMessageTextErrorMessage] = useState(false);
-
-  // let [color, setColor] = "#cececc");
 
   // Toast alerts
   const fillAllFieldsNotification = () => {
@@ -94,7 +99,7 @@ const Form = () => {
   };
 
   // Submit message function with error handling
-  const submitMessage = (e) => {
+  const submitMessage = (e: React.MouseEvent) => {
     e.preventDefault();
 
     userEmail = userEmail.toLowerCase();
@@ -236,22 +241,10 @@ const Form = () => {
                 ) : null
               ) : null}
 
-              {/* Real time validation message */}
-              {/* Maximum length */}
-              {messageText.length >= 2000 ? (
-                <span className={styles["error-message"]}>
-                  {" "}
-                  Sorry, you have reached the maximum message length 2000
-                  characters
-                </span>
-              ) : null}
-
               <textarea
                 className={styles["text-area"]}
-                type="text"
                 id="inputMessage"
                 value={messageText}
-                maxLength="2000"
                 onChange={(e) => setMessageText(e.target.value)}
                 onBlur={() => setMessageTextErrorMessage(true)}
               ></textarea>
