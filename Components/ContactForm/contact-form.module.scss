@@ -168,24 +168,30 @@
   justify-content: center;
 }
 
-.submit-button {
+.submit-button,
+.sending-button {
+  display: flex;
+  align-items: center;
   margin: 4rem 1rem 0 1rem;
-  // padding: 0.2rem 1rem 0.2rem 1rem;
-
-  font-size: 1.8rem;
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 1.6rem;
   color: $home-page-main-text-colour;
-
-  width: 14rem;
-  height: 4.5rem;
-
   cursor: pointer;
-  // border: none;
-  // outline: none;
+  border: 0.2rem solid $home-page-main-text-colour;
+  outline: none;
   background: transparent;
-
   position: relative;
   transition: all 0.5s;
   z-index: 1;
+
+  // Only applies to 'sending-button'
+  span {
+    margin-right: 1rem;
+  }
+}
+
+.sending-button {
+  border: none;
 }
 
 .submit-button::before {
@@ -195,7 +201,7 @@
   left: 0;
   width: 0;
   height: 100%;
-  background-color: white;
+  background-color: $home-page-main-text-colour;
   z-index: -1;
   transition: all 0.5s;
 }
@@ -205,11 +211,11 @@
 }
 
 .submit-button:hover {
-  color: black;
+  color: $black;
 }
 
 .submit-button:active:before {
-  background: #b9b9b9;
+  background: $home-page-main-text-colour;
 }
 
 .message-sent-notification {
@@ -219,6 +225,12 @@
 }
 
 // ? Breakpoints
+
+@include small-tablet {
+  .sending-button {
+    border: 0.2rem solid $home-page-main-text-colour;
+  }
+}
 
 @include large-tablet {
   .text-area {

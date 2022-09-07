@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./contact-form.module.scss";
 import React from "react";
+import PulseLoader from "react-spinners/PulseLoader";
 
 import { init } from "emailjs-com";
 init("userId");
@@ -24,6 +25,8 @@ const Form = () => {
   const [emailErrorMessage, setEmailErrorMessage] = useState(false);
   const [subjectErrorMessage, setSubjectErrorMessage] = useState(false);
   const [messageTextErrorMessage, setMessageTextErrorMessage] = useState(false);
+
+  // let [color, setColor] = "#cececc");
 
   // Toast alerts
   const fillAllFieldsNotification = () => {
@@ -122,6 +125,8 @@ const Form = () => {
       } catch (e) {
         // Show toast alert
         networkErrorNotification();
+        // switch back to 'send button'
+        setIsSending(false);
         console.log("ERROR!!!", e);
       }
     }
@@ -256,7 +261,10 @@ const Form = () => {
           {/* // ? Buttons */}
           <div className={styles["button-wrapper"]}>
             {isSending ? (
-              <button className={styles["submit-button"]}>Sending</button>
+              <button className={styles["sending-button"]}>
+                <span> Sending </span>
+                <PulseLoader color="#cececc" size={8} />
+              </button>
             ) : (
               <button
                 className={styles["submit-button"]}
