@@ -1,6 +1,6 @@
 import styles from "./side-bar.module.scss";
 
-import ContactForm from "../../Components/ContactForm/ContactForm";
+import ContactForm from "../ContactForm/ContactForm";
 
 import { FiLinkedin } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";

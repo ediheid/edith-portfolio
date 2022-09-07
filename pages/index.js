@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../ViewComponents/Home/home.module.scss";
-import SideBar from "../ViewComponents/Home/SideBar";
+import SideBar from "../Components/SideBarContact/SideBar";
 
 import { enterSiteData } from "../ViewComponents/Home/enterSiteData";
 import EnterSitesComponent from "../ViewComponents/Home/EnterSitesComponent";

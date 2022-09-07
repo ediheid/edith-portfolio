@@ -32,6 +32,7 @@
   &:active {
     font-weight: bold;
     font-size: 1.6rem;
+    color: $side-bar-hover-colour;
   }
 }
 
@@ -39,6 +40,7 @@
   .contact-button:hover {
     font-weight: bold;
     font-size: 1.6rem;
+    color: $side-bar-hover-colour;
   }
 }
 
@@ -61,27 +63,26 @@
 
   &:active {
     transform: scale(1.2);
+    color: $side-bar-hover-colour;
   }
 }
 
 @media (hover: hover) {
   .social-media-links:hover {
     transform: scale(1.2);
+    color: $side-bar-hover-colour;
   }
 }
 
 // ? Breakpoints
 
-
-
 @include small-tablet {
-.side-bar-container{
-  width: 10vw;
-  max-width: 10rem;
-}
+  .side-bar-container {
+    width: 10vw;
+    max-width: 10rem;
+  }
 
   .button-container {
     width: 10rem;
   }
 }
-
