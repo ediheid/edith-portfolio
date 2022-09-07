@@ -4,20 +4,15 @@
 .contact-form-page-container {
   width: 100vw;
   height: 100vh;
-
   position: absolute;
   top: 0;
   left: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: $contact-form-bg;
   backdrop-filter: blur(5px);
-
   z-index: 5000;
-
   color: $contact-form-text-colour;
 }
 
@@ -25,54 +20,62 @@
   width: 80%;
   height: auto;
   max-height: 90%;
-
   padding: 9rem 9rem 7rem 9rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: $contact-form-modal-bg;
   border-radius: 15rem;
-
   position: relative;
-
-  //   z-index: 6000;
 }
 
 .contact-modal * {
   font-family: $contact-form-font;
 }
 
-.close-button {
+.button-container {
   position: absolute;
   top: 10%;
   font-size: 1.4rem;
-
-  text-decoration: underline;
-  text-underline-offset: 0.7rem;
 }
 
 .close-button {
   font-family: $contact-form-font;
   color: $contact-form-text-colour;
   letter-spacing: 0.1rem;
-  background: none;
+  background: transparent;
   border: none;
   outline: none;
-
   cursor: pointer;
-
-  &:active {
-    color: $contact-form-focus-colour;
-  }
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  width: 7rem;
+  height: 2.5rem;
 }
 
-@media (hover: hover) {
-  .close-button:hover {
-    color: $contact-form-focus-colour;
-    transform: scale(1.1);
-  }
+.close-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: $home-page-main-text-colour;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.close-button:hover::before {
+  width: 100%;
+}
+
+.close-button:hover {
+  color: $black;
+}
+
+.close-button:active:before {
+  background: $home-page-main-text-colour;
 }
 
 .form {
@@ -86,9 +89,7 @@
 .label-input-containers {
   display: flex;
   flex-direction: column;
-
   padding: 1rem;
-
   width: 20rem;
 }
 
@@ -102,7 +103,6 @@
   font-size: 1.5rem;
   font-family: $contact-form-input-font;
   letter-spacing: 0.1rem;
-
   background: transparent;
   border-bottom: 0.1rem solid $contact-form-text-colour;
   border-top: none;
@@ -115,7 +115,6 @@
   border-radius: 0;
   box-shadow: 0;
   -webkit-appearance: none;
-
   padding-bottom: 0.5rem;
 }
 

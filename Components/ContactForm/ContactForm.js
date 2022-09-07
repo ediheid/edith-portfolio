@@ -6,12 +6,14 @@ const ContactForm = () => {
   return (
     <div className={styles["contact-form-page-container"]}>
       <div className={styles["contact-modal"]}>
-        <button
-          className={styles["close-button"]}
-          onClick={useAppContext().closeContactFormModal}
-        >
-          Close
-        </button>
+        <div className={styles["button-container"]}>
+          <button
+            className={styles["close-button"]}
+            onClick={useAppContext().closeContactFormModal}
+          >
+            close
+          </button>
+        </div>
         <Form />
       </div>
     </div>
