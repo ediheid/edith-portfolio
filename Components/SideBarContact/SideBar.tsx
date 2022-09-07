@@ -7,6 +7,7 @@ import { FiInstagram } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
 import { useAppContext } from "../../Context/AppContext";
+import React from "react";
 
 const SideBar = () => {
   return (
@@ -36,7 +37,6 @@ const SideBar = () => {
         href="https://www.linkedin.com/in/edith-heidmann/"
         target="_blank"
         rel="noreferrer noopener"
-        alt="Link to LinkedIn profile page."
       >
         <FiLinkedin />
       </a>
@@ -47,7 +47,6 @@ const SideBar = () => {
         href="https://github.com/ediheid"
         target="_blank"
         rel="noreferrer noopener"
-        alt="Link to GitHub profile."
       >
         <FiGithub />
       </a>
@@ -58,7 +57,6 @@ const SideBar = () => {
         href="https://www.instagram.com/e.d.ith_/?igshid=YmMyMTA2M2Y%3D"
         target="_blank"
         rel="noreferrer noopener"
-        alt="Link to Instagram artist profile."
       >
         <FiInstagram />
       </a>
@@ -69,7 +67,6 @@ const SideBar = () => {
         href="https://edithheidmann.darkroom.tech/"
         target="_blank"
         rel="noreferrer noopener"
-        alt="Link to Darkroom online photo store."
       >
         <FiShoppingBag />
       </a>
