@@ -21,7 +21,11 @@
     "sass": "^1.54.0"
   },
   "devDependencies": {
+    "@types/react": "^18.0.18",
+    "awesome-typescript-loader": "^5.2.1",
     "eslint": "8.20.0",
-    "eslint-config-next": "12.2.3"
+    "eslint-config-next": "12.2.3",
+    "source-map-loader": "^4.0.0",
+    "typescript": "^4.8.2"
   }
 }
