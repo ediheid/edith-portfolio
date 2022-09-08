@@ -9,16 +9,22 @@ type Props = {
 
 interface GlobalContextProps {
   contactOpen: boolean;
-  setContactOpen: (contactOpen: boolean) => void;
+  // setContactOpen: (contactOpen: boolean) => void;
+  setContactOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  navOpen: boolean;
+  setNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const GlobalContext = React.createContext<GlobalContextProps>({
   contactOpen: false,
   setContactOpen: () => {},
+  navOpen:false,
+  setNavOpen: () => {},
 });
 
 export const GlobalContextProvider = ({ children }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   // ?  Global Window events
   useEffect(() => {
@@ -45,6 +51,8 @@ export const GlobalContextProvider = ({ children }: Props) => {
       value={{
         contactOpen: isOpen,
         setContactOpen: setIsOpen,
+        navOpen: isNavOpen,
+        setNavOpen: setIsNavOpen,
       }}
     >
       {children}
