@@ -56,7 +56,7 @@ export default function Home() {
                 Web Developer/ Designer and Visual Artist.
               </AnimatedText>
 
-              <h2>Edith Heidmann</h2>
+              <h2 className={styles["name-heading"]}>Edith Heidmann</h2>
             </div>
           </section>
 
