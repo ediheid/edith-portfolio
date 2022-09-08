@@ -1,15 +1,15 @@
 import type { AppProps } from "next/app";
-import { AppWrapper } from "../Context/AppContext";
+
+import { GlobalContextProvider } from "../Context/globalContext";
 
 import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    // AppWrapper Holds Context
-    <AppWrapper>
+    <GlobalContextProvider>
       {/*  Main App Component */}
       <Component {...pageProps} />
-    </AppWrapper>
+    </GlobalContextProvider>
   );
 }
 

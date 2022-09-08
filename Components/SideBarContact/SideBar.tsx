@@ -1,3 +1,5 @@
+import React from "react";
+import { useGlobalContext } from "../../Context";
 import styles from "./side-bar.module.scss";
 
 import ContactForm from "../ContactForm/ContactForm";
@@ -6,10 +8,15 @@ import { FiLinkedin } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
-import { useAppContext } from "../../Context/AppContext";
-import React from "react";
 
 const SideBar = () => {
+  const { contactOpen } = useGlobalContext();
+  const { setContactOpen } = useGlobalContext();
+
+  const openContactFormModal = () => {
+    setContactOpen(true);
+  };
+
   return (
     <div
       data-aos="slide-up"
@@ -19,13 +26,13 @@ const SideBar = () => {
       {/* Contact Button - opens contact form modal */}
       <button
         className={styles["contact-button"]}
-        onClick={useAppContext().openContactFormModal}
+        onClick={openContactFormModal}
       >
         Contact Form
       </button>
 
       {/* Display contact form when state is set to true */}
-      {useAppContext().isContactFormOpen && <ContactForm />}
+      {contactOpen && <ContactForm />}
 
       {/* Vertical dividing line */}
       <div className={styles["vertical-line"]}></div>
