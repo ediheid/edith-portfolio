@@ -21,17 +21,19 @@ let TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 let USER_ID = process.env.NEXT_PUBLIC_USER_ID;
 
 const Form = () => {
-  const [userName, setUserName] = useState("");
-  let [userEmail, setUserEmail] = useState("");
-  const [messageSubject, setMessageSubject] = useState("");
-  const [messageText, setMessageText] = useState("");
-  const [isMessageSent, setIsMessageSent] = useState(false);
-  const [isSending, setIsSending] = useState(false);
+  const [userName, setUserName] = useState<string>("");
+  let [userEmail, setUserEmail] = useState<string>("");
+  const [messageSubject, setMessageSubject] = useState<string>("");
+  const [messageText, setMessageText] = useState<string>("");
+  const [isMessageSent, setIsMessageSent] = useState<boolean>(false);
+  const [isSending, setIsSending] = useState<boolean>(false);
   /* For real time error handler when user clicks away from input - set via onBlur on corresponding input*/
-  const [nameErrorMessage, setNameErrorMessage] = useState(false);
-  const [emailErrorMessage, setEmailErrorMessage] = useState(false);
-  const [subjectErrorMessage, setSubjectErrorMessage] = useState(false);
-  const [messageTextErrorMessage, setMessageTextErrorMessage] = useState(false);
+  const [nameErrorMessage, setNameErrorMessage] = useState<boolean>(false);
+  const [emailErrorMessage, setEmailErrorMessage] = useState<boolean>(false);
+  const [subjectErrorMessage, setSubjectErrorMessage] =
+    useState<boolean>(false);
+  const [messageTextErrorMessage, setMessageTextErrorMessage] =
+    useState<boolean>(false);
 
   // Toast alerts
   const fillAllFieldsNotification = () => {
