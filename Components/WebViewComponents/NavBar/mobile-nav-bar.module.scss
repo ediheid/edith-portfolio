@@ -18,20 +18,22 @@
 }
 
 .nav-dropdown-container {
+  display: flex;
+justify-content: flex-end;
   position: absolute;
   top: 0;
   margin-top: 6rem;
   width: 100%;
   overflow: hidden;
   z-index: 10;
+  background-color: $mobile-nav-bg;
 }
 
 .nav-list {
   list-style: none;
-  background-color: $mobile-nav-bg;
-
   text-align: right;
   padding: 1rem 2rem 2rem 0;
+  width: auto;
 
   li {
     padding: 1rem 0 1rem 0;
@@ -51,5 +53,12 @@
   .nav-list > li:hover {
     color: $mobile-nav-hover-colour;
     font-family: $jakarta-font-bold-italic;
+  }
+}
+
+@include large-tablet {
+
+  .nav-container{
+    display: none;
   }
 }

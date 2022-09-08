@@ -9,9 +9,10 @@ type Props = {
 
 interface GlobalContextProps {
   contactOpen: boolean;
-  setContactOpen: (contactOpen: boolean) => void;
+  // setContactOpen: (contactOpen: boolean) => void;
+  setContactOpen: React.Dispatch<React.SetStateAction<boolean>>;
   navOpen: boolean;
-  setNavOpen: (navOpen: boolean) => void;
+  setNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const GlobalContext = React.createContext<GlobalContextProps>({

@@ -15,9 +15,8 @@ const MobileNavBar = () => {
         <Hamburger
           label="Show menu"
           size={20}
-          onToggle={(toggled) => {
-            toggled ? setNavOpen(true) : setNavOpen(false);
-          }}
+          toggled={navOpen}
+          toggle={setNavOpen}
         />
       </div>
 
