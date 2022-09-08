@@ -1,10 +1,10 @@
 import { useGlobalContext } from "../Context";
 import Head from "next/head";
-import styles from "../ViewComponents/Home/home.module.scss";
+import styles from "../Components/ViewComponents/Home/home.module.scss";
 import SideBar from "../Components/SideBarContact/SideBar";
 
-import { enterSiteData } from "../ViewComponents/Home/enterSiteData";
-import EnterSitesComponent from "../ViewComponents/Home/EnterSitesComponent";
+import { enterSiteData } from "../Components/ViewComponents/Home/enterSiteData";
+import EnterSitesComponent from "../Components/ViewComponents/Home/EnterSitesComponent";
 
 import AnimatedText from "react-animated-text-content";
 
@@ -56,7 +56,13 @@ export default function Home() {
                 Web Developer/ Designer and Visual Artist.
               </AnimatedText>
 
-              <h2 className={styles["name-heading"]}>Edith Heidmann</h2>
+              <h2
+                data-aos="flip-down"
+                data-aos-duration="500"
+                className={styles["name-heading"]}
+              >
+                Edith Heidmann
+              </h2>
             </div>
           </section>
 
