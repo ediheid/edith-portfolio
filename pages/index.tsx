@@ -1,10 +1,10 @@
 import { useGlobalContext } from "../Context";
 import Head from "next/head";
-import styles from "../Components/ViewComponents/Home/home.module.scss";
+import styles from "../Components/BothViewComponents/Home/home.module.scss";
 import SideBar from "../Components/SideBarContact/SideBar";
 
-import { enterSiteData } from "../Components/ViewComponents/Home/enterSiteData";
-import EnterSitesComponent from "../Components/ViewComponents/Home/EnterSitesComponent";
+import { enterSiteData } from "../Components/BothViewComponents/Home/enterSiteData";
+import EnterSitesComponent from "../Components/BothViewComponents/Home/EnterSitesComponent";
 
 import AnimatedText from "react-animated-text-content";
 

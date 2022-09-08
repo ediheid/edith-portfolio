@@ -1,4 +1,4 @@
-import MobileNavBar from "./mobileNavBar";
+import MobileNavBar from "./MobileNavBar";
 import styles from "./nav-bar.module.scss";
 
 type NavBarProps = {

@@ -1,5 +1,6 @@
-import { Divide as Hamburger } from "hamburger-react";
 import { useState } from "react";
+import MobileNavLinks from "./MobileNavLinks";
+import { Divide as Hamburger } from "hamburger-react";
 import styles from "./mobile-nav-bar.module.scss";
 
 
@@ -10,7 +11,7 @@ const [isNavOpen, setIsNavOpen] = useState<boolean>(false)
       <>
         <div className={styles["nav-container"]}>
 
-<div>Will be the logo/home link</div>
+
 
 <div>
 
@@ -22,6 +23,8 @@ toggle={setIsNavOpen}
 />
 
 </div>
+
+{isNavOpen && <MobileNavLinks/>}
 
         </div>
       </>
