@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useGlobalContext } from "../../../Context";
 import ContactForm from "../../ContactForm/ContactForm";
 import styles from "./mobile-nav-bar.module.scss";
@@ -7,14 +8,19 @@ const MobileNavLinks = () => {
   const { setContactOpen } = useGlobalContext();
   const { setNavOpen } = useGlobalContext();
 
-  const openContactFormModal = async () => {
+  const openContactFormModal = () => {
     setContactOpen(true);
   };
+
+  
 
   // Todo: debug  hamburger not changing - perhaps I will need a useEffect?
   const closeNav = () => {
     setNavOpen(false)
   }
+
+
+
 
   return (
     <>

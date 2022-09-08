@@ -56,13 +56,7 @@ export default function Home() {
                 Web Developer/ Designer and Visual Artist.
               </AnimatedText>
 
-              <h2
-                data-aos="flip-down"
-                data-aos-duration="500"
-                className={styles["name-heading"]}
-              >
-                Edith Heidmann
-              </h2>
+              <h2>Edith Heidmann</h2>
             </div>
           </section>
 
