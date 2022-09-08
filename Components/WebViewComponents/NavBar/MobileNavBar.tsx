@@ -9,12 +9,12 @@ const MobileNavBar = () => {
   return (
     
       <div className={styles["nav-container"]}>
-      
+      {/* //Todo: Logo / home link will go here */}
 
-        <div>
+        <div className={styles["hamburger-container"]}>
           <Hamburger
             label="Show menu"
-            size={25}
+            size={20}
             toggled={isNavOpen}
             toggle={setIsNavOpen}
           />
