@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useGlobalContext } from "../../../Context";
 import MobileNavLinks from "./MobileNavLinks";
 import { Divide as Hamburger } from "hamburger-react";

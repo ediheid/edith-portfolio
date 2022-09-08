@@ -5,10 +5,16 @@ import styles from "./mobile-nav-bar.module.scss";
 const MobileNavLinks = () => {
   const { contactOpen } = useGlobalContext();
   const { setContactOpen } = useGlobalContext();
+  const { setNavOpen } = useGlobalContext();
 
-  const openContactFormModal = () => {
+  const openContactFormModal = async () => {
     setContactOpen(true);
   };
+
+  // Todo: debug  hamburger not changing - perhaps I will need a useEffect?
+  const closeNav = () => {
+    setNavOpen(false)
+  }
 
   return (
     <>
@@ -18,7 +24,7 @@ const MobileNavLinks = () => {
           <li>Websites</li>
           <li>Web Design</li>
           <li>Web Apps</li>
-          <li>Home</li>
+          <li onClick={closeNav}>Home</li>
           <li onClick={openContactFormModal}>Contact</li>
         </ul>
       </div>
