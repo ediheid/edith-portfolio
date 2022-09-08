@@ -1,3 +1,4 @@
+import { useGlobalContext } from "../Context";
 import Head from "next/head";
 import styles from "../ViewComponents/Home/home.module.scss";
 import SideBar from "../Components/SideBarContact/SideBar";
@@ -6,9 +7,10 @@ import { enterSiteData } from "../ViewComponents/Home/enterSiteData";
 import EnterSitesComponent from "../ViewComponents/Home/EnterSitesComponent";
 
 import AnimatedText from "react-animated-text-content";
-import { useAppContext } from "../Context/AppContext";
 
 export default function Home() {
+  const { contactOpen } = useGlobalContext();
+
   return (
     <div className={styles.container}>
       {/* // Todo: add more meta data */}
@@ -32,7 +34,7 @@ export default function Home() {
               <AnimatedText
                 // if contact from is open, hide animated text
                 className={
-                  !useAppContext().isContactFormOpen
+                  !contactOpen
                     ? `${styles["intro-text"]}`
                     : `${styles["intro-text-low-index"]}`
                 }
