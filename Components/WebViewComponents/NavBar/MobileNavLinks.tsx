@@ -17,7 +17,7 @@ const MobileNavLinks = () => {
 
   return (
     <>
-      <div className={styles["nav-dropdown-container"]}>
+      <div data-aos="fade-down" className={styles["nav-dropdown-container"]}>
         <ul className={styles["nav-list"]}>
           <li onClick={closeNav}>About</li>
           <li onClick={closeNav}>Websites</li>
