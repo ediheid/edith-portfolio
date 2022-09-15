@@ -23,7 +23,7 @@ const ContactForm = () => {
             className={styles["close-button"]}
             onClick={closeContactFormModal}
           >
-            close
+            testing
           </button>
         </div>
         <Form />
