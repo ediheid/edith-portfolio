@@ -20,9 +20,9 @@ const MobileNavLinks = () => {
       <div data-aos="fade-down" className={styles["nav-dropdown-container"]}>
         <ul className={styles["nav-list"]}>
           <li onClick={closeNav}>About</li>
-          <li onClick={closeNav}>Websites</li>
-          <li onClick={closeNav}>Web Design</li>
-          <li onClick={closeNav}>Web Apps</li>
+          <li onClick={closeNav}>Web-Pages</li>
+          <li onClick={closeNav}>Web-Design</li>
+          <li onClick={closeNav}>Web-Apps</li>
           <li onClick={closeNav}>Home</li>
           <li onClick={openContactFormModal}>Contact</li>
         </ul>

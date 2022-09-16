@@ -10,8 +10,6 @@ const MobileNavBar = () => {
 
   return (
     <div className={styles["nav-container"]}>
-      {/* //Todo: Logo / home link will go here */}
-
       <LogoLink />
 
       <div className={styles["hamburger-container"]}>

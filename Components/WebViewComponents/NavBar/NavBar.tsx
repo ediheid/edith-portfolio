@@ -1,23 +1,21 @@
 import MobileNavBar from "./MobileNavBar";
-import styles from "./nav-bar.module.scss";
+import DesktopNavBar from "./DesktopNavBar";
 
 type NavBarProps = {
+  // eg.
+  // message:string;
+  // const App = ({ message }: AppProps) => <div>{message}</div>;
+};
 
-    // eg.
-    // message:string;
-  
-    // const App = ({ message }: AppProps) => <div>{message}</div>;
-  }
-  
-  const NavBar = ({} : NavBarProps) => {
-    return (
-      <>
-        <nav className={styles["nav-bar-element"]}>
-            <MobileNavBar/>
+const NavBar = ({}: NavBarProps) => {
+  return (
+    <>
+      <nav>
+        <MobileNavBar />
+        <DesktopNavBar />
+      </nav>
+    </>
+  );
+};
 
-        </nav>
-      </>
-    );
-  };
-  
-  export default NavBar;
+export default NavBar;

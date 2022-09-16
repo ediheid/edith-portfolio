@@ -1,0 +1,25 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+// Set to display none until large-tablet breakpoint kicks in
+.nav-container {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+@include large-tablet {
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 6rem;
+    width: 100vw;
+
+    background-color: $web-nav-bg;
+  }
+}
