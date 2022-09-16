@@ -7,14 +7,11 @@ const EnterSitesComponent = ({ site }: { [key: string]: any }) => {
       <Link href={site.href}>
         <div
           className={styles["content-container"]}
-          // id={styles[`${site.imageId}`]}
-
-
+          id={styles[`${site.imageId}`]}
         >
-
-<h2 className={styles["site-name"]} ><span id={styles[`${site.id}`]}> </span></h2>
-
-
+          <h2 className={styles["site-name"]}>
+            <span id={styles[`${site.id}`]}> </span>
+          </h2>
         </div>
       </Link>
     </>

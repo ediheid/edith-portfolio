@@ -7,11 +7,7 @@
 
   border-radius: 15rem;
   margin: 0 1.5rem 0 1.5rem;
-
-  // border: solid black 6rem;
-
   background-color: $black;
-
   cursor: pointer;
 
   @keyframes color {
@@ -35,16 +31,54 @@
     }
   }
 
-  background: $black;
   animation: color 9s infinite linear;
 }
-
-#art-bg {
-  background-image: url("./static/art-bg.png");
+#web-bg:active {
+  animation: none;
+  opacity: 0.8;
+  background-image: url("./static/web-bg-2.png");
+  #web::before {
+    animation: none;
+    color: $jam;
+    content: "enter";
+  }
 }
 
-#web-bg {
-  background-image: url("./static/web-bg-2.png");
+@media (hover: hover) {
+  #web-bg:hover {
+    animation: none;
+    opacity: 0.8;
+    background-image: url("./static/web-bg-2.png");
+    #web::before {
+      animation: none;
+      color: $jam;
+      content: "enter";
+    }
+  }
+}
+
+#art-bg:active {
+  animation: none;
+  opacity: 0.8;
+  background: url("./static/art-bg.png");
+  #art::before {
+    animation: none;
+    color: $jam;
+    content: "enter";
+  }
+}
+
+@media (hover: hover) {
+  #art-bg:hover {
+    animation: none;
+    opacity: 0.8;
+    background: url("./static/art-bg.png");
+    #art::before {
+      animation: none;
+      color: $jam;
+      content: "enter";
+    }
+  }
 }
 
 .site-name {
@@ -60,7 +94,7 @@
   font-size: 4rem;
 }
 
-#web::before{
+#web::before {
   content: "web";
   animation: animate-web infinite 3s;
 }
@@ -68,20 +102,20 @@
 #web {
   @keyframes animate-web {
     0% {
-      content: "web"
+      content: "web";
     }
-  
+
     50% {
       content: "enter";
     }
-  
-    100%{
-      content: "web"
+
+    100% {
+      content: "web";
     }
   }
 }
 
-#art::before{
+#art::before {
   content: "art";
   animation: animate-art infinite 3s;
 }
@@ -89,26 +123,23 @@
 #art {
   @keyframes animate-art {
     0% {
-      content: "art"
+      content: "art";
     }
-  
+
     50% {
-      content: "enter"
+      content: "enter";
     }
-  
-    100%{
-      content: "art"
+
+    100% {
+      content: "art";
     }
   }
 }
 
-
-
-
 // ? Breakpoints
 
 @include extra-small-devices {
-  .site-name{
+  .site-name {
     font-size: 3rem;
   }
 }
@@ -126,20 +157,20 @@
     margin: 0 2.5rem 0 2.5rem;
   }
 
-  .site-name{
+  .site-name {
     font-size: 6rem;
   }
 }
 
-@include small-laptop{
-  .site-name{
+@include small-laptop {
+  .site-name {
     font-size: 7rem;
   }
 }
 
 // ! Todo: test when I'm on my macbook
-@include desktop{
-  .site-name{
+@include desktop {
+  .site-name {
     font-size: 8rem;
   }
 }
