@@ -57,15 +57,65 @@
   font-family: $montserrat-medium;
   writing-mode: vertical-rl;
   text-orientation: upright;
-  font-size: 9rem;
+  font-size: 4rem;
 }
 
+#web::before{
+  content: "web";
+  animation: animate-web infinite 3s;
+}
+
+#web {
+  @keyframes animate-web {
+    0% {
+      content: "web"
+    }
+  
+    50% {
+      content: "enter";
+    }
+  
+    100%{
+      content: "web"
+    }
+  }
+}
+
+#art::before{
+  content: "art";
+  animation: animate-art infinite 3s;
+}
+
+#art {
+  @keyframes animate-art {
+    0% {
+      content: "art"
+    }
+  
+    50% {
+      content: "enter"
+    }
+  
+    100%{
+      content: "art"
+    }
+  }
+}
+
+
+
+
 // ? Breakpoints
+
+@include extra-small-devices {
+  .site-name{
+    font-size: 3rem;
+  }
+}
 
 @include small-tablet {
   .content-container {
     width: 30rem;
-
     margin: 0 0 0 3rem;
   }
 }
@@ -73,7 +123,23 @@
 @include large-tablet {
   .content-container {
     width: 30rem;
-
     margin: 0 2.5rem 0 2.5rem;
+  }
+
+  .site-name{
+    font-size: 6rem;
+  }
+}
+
+@include small-laptop{
+  .site-name{
+    font-size: 7rem;
+  }
+}
+
+// ! Todo: test when I'm on my macbook
+@include desktop{
+  .site-name{
+    font-size: 8rem;
   }
 }

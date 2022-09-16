@@ -12,7 +12,7 @@ const EnterSitesComponent = ({ site }: { [key: string]: any }) => {
 
         >
 
-<h2 className={styles["site-name"]}>{site.id}</h2>
+<h2 className={styles["site-name"]} ><span id={styles[`${site.id}`]}> </span></h2>
 
 
         </div>
