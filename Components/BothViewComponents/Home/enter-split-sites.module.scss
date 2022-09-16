@@ -66,6 +66,9 @@
     color: $jam;
     content: "enter";
   }
+  .site-name {
+    padding-bottom: 0;
+  }
   .enter-heading {
     display: none;
   }
@@ -83,6 +86,9 @@
       color: $jam;
       content: "enter";
     }
+    .site-name {
+      padding-bottom: 0;
+    }
     .enter-heading {
       display: none;
     }
@@ -96,6 +102,9 @@
   #art::before {
     color: $jam;
     content: "enter";
+  }
+  .site-name {
+    padding-bottom: 0;
   }
   .enter-heading {
     display: none;
@@ -111,6 +120,9 @@
       color: $jam;
       content: "enter";
     }
+    .site-name {
+      padding-bottom: 0;
+    }
     .enter-heading {
       display: none;
     }
@@ -121,7 +133,7 @@
   color: $pale-grey;
   font-family: $montserrat-light;
   font-size: 1.3rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 // ? Breakpoints
@@ -142,7 +154,7 @@
     margin: 0 0 0 3rem;
   }
 
-  .site-name{
+  .site-name {
     font-size: 5rem;
     padding-bottom: 3.5rem;
   }
@@ -172,7 +184,6 @@
     font-size: 7rem;
     padding-bottom: 10rem;
   }
-
 }
 
 // ! Todo: test when I'm on my macbook
