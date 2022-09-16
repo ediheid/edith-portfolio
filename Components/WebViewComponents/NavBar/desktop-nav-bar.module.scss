@@ -9,6 +9,28 @@
 .nav-list {
   display: flex;
   list-style: none;
+  width: auto;
+  padding: 0 2rem 0 0;
+
+  li {
+    margin: 0 0 0 2rem;
+    color: $web-navbar-text-colour;
+    font-family: $nav-font;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:active {
+      color: $web-nav-hover-colour;
+      font-family: $desktop-nav-hover-font;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .nav-list > li:hover {
+    color: $web-nav-hover-colour;
+    font-family: $desktop-nav-hover-font;
+  }
 }
 
 @include large-tablet {
@@ -16,10 +38,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     height: 6rem;
     width: 100vw;
-
     background-color: $web-nav-bg;
   }
 }

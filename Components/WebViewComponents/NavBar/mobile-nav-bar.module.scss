@@ -47,22 +47,22 @@
 
   li {
     padding: 1rem 0 1rem 0;
-    color: $navbar-text-colour;
-    font-family: $mobile-nav-font;
+    color: $web-navbar-text-colour;
+    font-family: $nav-font;
     font-size: 1.5rem;
     cursor: pointer;
 
     &:active {
-      color: $mobile-nav-hover-colour;
-      font-family: $jakarta-font-bold-italic;
+      color: $web-nav-hover-colour;
+      font-family: $mobile-nav-hover-font;
     }
   }
 }
 
 @media (hover: hover) {
   .nav-list > li:hover {
-    color: $mobile-nav-hover-colour;
-    font-family: $jakarta-font-bold-italic;
+    color: $web-nav-hover-colour;
+    font-family: $mobile-nav-hover-font;
   }
 }
 

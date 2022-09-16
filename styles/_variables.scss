@@ -82,9 +82,13 @@ $logo-font: $jakarta-font-regular;
 $logo-font-italic: $jakarta-font-light-italic;
 $logo-colour: $jam;
 
+// ? Global Nav Variables
+$nav-font: $jakarta-font-medium;
+$mobile-nav-hover-font: $jakarta-font-bold-italic;
+$desktop-nav-hover-font: $jakarta-font-medium-italic;
+
 // ? Web View Nav Variables
-$web-nav-bg: $papaya;
-$navbar-text-colour: lighten($pale-grey, 15%);
-$mobile-nav-font: $jakarta-font-medium;
-$mobile-nav-hover-colour: $jam;
 $web-view-hamburger-colour: $jam;
+$web-nav-bg: $papaya;
+$web-navbar-text-colour: lighten($pale-grey, 15%);
+$web-nav-hover-colour: $jam;
