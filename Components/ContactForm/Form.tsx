@@ -273,7 +273,7 @@ const Form = () => {
         </form>
       ) : (
         // If Message has been sent successfully then render thank you message
-        <span className={styles["message-sent-notification"]}>
+        <span data-aos="zoom-in" className={styles["message-sent-notification"]}>
           Thanks for your message, I'll get back to you in a jiffy!
         </span>
       )}
