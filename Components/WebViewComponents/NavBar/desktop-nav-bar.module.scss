@@ -16,7 +16,7 @@
     margin: 0 0 0 2rem;
     color: $web-navbar-text-colour;
     font-family: $nav-font;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
 
     &:active {
@@ -38,8 +38,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 6rem;
+    height: 7rem;
     width: 100vw;
     background-color: $web-nav-bg;
+  }
+}
+
+@include desktop {
+  .nav-container {
+    height: 8.5rem;
+    padding: 0 3rem 0 0;
+  }
+
+  .nav-list > li {
+    font-size: 1.8rem;
   }
 }
