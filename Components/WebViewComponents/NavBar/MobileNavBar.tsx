@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../../../Context";
 import MobileNavLinks from "./MobileNavLinks";
 import { Divide as Hamburger } from "hamburger-react";
-import LogoLink from "../../BothViewComponents/LogoLink/LogoLink";
+import LogoLink from "../LogoLink/LogoLink";
 import styles from "./mobile-nav-bar.module.scss";
 
 const MobileNavBar = () => {
