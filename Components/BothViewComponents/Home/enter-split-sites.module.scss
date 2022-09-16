@@ -2,9 +2,11 @@
 @import "/styles/mixins";
 
 .content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 15rem;
   height: 80%;
-
   border-radius: 15rem;
   margin: 0 1.5rem 0 1.5rem;
   background-color: $black;
@@ -63,6 +65,9 @@
     color: $jam;
     content: "enter";
   }
+  .enter-heading {
+    display: none;
+  }
 }
 
 @media (hover: hover) {
@@ -70,9 +75,15 @@
     animation: none;
     opacity: 0.8;
     background-image: url("./static/web-bg-2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     #web::before {
       color: $jam;
       content: "enter";
+    }
+    .enter-heading {
+      display: none;
     }
   }
 }
@@ -85,6 +96,9 @@
     color: $jam;
     content: "enter";
   }
+  .enter-heading {
+    display: none;
+  }
 }
 
 @media (hover: hover) {
@@ -96,7 +110,19 @@
       color: $jam;
       content: "enter";
     }
+    .enter-heading {
+      display: none;
+    }
   }
+}
+
+.enter-heading {
+  position: absolute;
+  align-self: center;
+  bottom: 14%;
+  color: $pale-grey;
+  font-family: $montserrat-regular;
+  font-size: 1.3rem;
 }
 
 // ? Breakpoints
@@ -105,12 +131,21 @@
   .site-name {
     font-size: 3rem;
   }
+
+  .enter-heading {
+    font-size: 1.2rem;
+  }
 }
 
 @include small-tablet {
   .content-container {
     width: 30rem;
     margin: 0 0 0 3rem;
+  }
+
+  .enter-heading {
+    margin-bottom: 20%;
+    font-size: 2rem;
   }
 }
 
@@ -122,6 +157,10 @@
 
   .site-name {
     font-size: 6rem;
+  }
+
+  .enter-heading {
+    font-size: 2.2rem;
   }
 }
 
