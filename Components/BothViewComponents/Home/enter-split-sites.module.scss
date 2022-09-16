@@ -33,53 +33,6 @@
 
   animation: color 9s infinite linear;
 }
-#web-bg:active {
-  animation: none;
-  opacity: 0.8;
-  background-image: url("./static/web-bg-2.png");
-  #web::before {
-    animation: none;
-    color: $jam;
-    content: "enter";
-  }
-}
-
-@media (hover: hover) {
-  #web-bg:hover {
-    animation: none;
-    opacity: 0.8;
-    background-image: url("./static/web-bg-2.png");
-    #web::before {
-      animation: none;
-      color: $jam;
-      content: "enter";
-    }
-  }
-}
-
-#art-bg:active {
-  animation: none;
-  opacity: 0.8;
-  background: url("./static/art-bg.png");
-  #art::before {
-    animation: none;
-    color: $jam;
-    content: "enter";
-  }
-}
-
-@media (hover: hover) {
-  #art-bg:hover {
-    animation: none;
-    opacity: 0.8;
-    background: url("./static/art-bg.png");
-    #art::before {
-      animation: none;
-      color: $jam;
-      content: "enter";
-    }
-  }
-}
 
 .site-name {
   height: 100%;
@@ -96,42 +49,52 @@
 
 #web::before {
   content: "web";
-  animation: animate-web infinite 3s;
-}
-
-#web {
-  @keyframes animate-web {
-    0% {
-      content: "web";
-    }
-
-    50% {
-      content: "enter";
-    }
-
-    100% {
-      content: "web";
-    }
-  }
 }
 
 #art::before {
   content: "art";
-  animation: animate-art infinite 3s;
 }
 
-#art {
-  @keyframes animate-art {
-    0% {
-      content: "art";
-    }
+#web-bg:active {
+  animation: none;
+  opacity: 0.8;
+  background-image: url("./static/web-bg-2.png");
+  #web::before {
+    color: $jam;
+    content: "enter";
+  }
+}
 
-    50% {
+@media (hover: hover) {
+  #web-bg:hover {
+    animation: none;
+    opacity: 0.8;
+    background-image: url("./static/web-bg-2.png");
+    #web::before {
+      color: $jam;
       content: "enter";
     }
+  }
+}
 
-    100% {
-      content: "art";
+#art-bg:active {
+  animation: none;
+  opacity: 0.8;
+  background: url("./static/art-bg.png");
+  #art::before {
+    color: $jam;
+    content: "enter";
+  }
+}
+
+@media (hover: hover) {
+  #art-bg:hover {
+    animation: none;
+    opacity: 0.8;
+    background: url("./static/art-bg.png");
+    #art::before {
+      color: $jam;
+      content: "enter";
     }
   }
 }
