@@ -1,0 +1,27 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.home-link-container {
+  font-family: $logo-font;
+  font-size: 2rem;
+  padding: 0 0 0 1.2rem;
+  color: $logo-colour;
+  cursor: pointer;
+
+  span {
+    &:nth-child(2) {
+      font-family: $logo-font-italic;
+      font-size: 1.4rem;
+    }
+  }
+
+  &:active {
+    font-weight: bold;
+  }
+}
+
+@media (hover: hover) {
+  .home-link-container:hover {
+    font-weight: bold;
+  }
+}

@@ -19,7 +19,7 @@
 
 .nav-dropdown-container {
   display: flex;
-justify-content: flex-end;
+  justify-content: flex-end;
   position: absolute;
   top: 0;
   margin-top: 6rem;
@@ -57,8 +57,7 @@ justify-content: flex-end;
 }
 
 @include large-tablet {
-
-  .nav-container{
+  .nav-container {
     display: none;
   }
 }

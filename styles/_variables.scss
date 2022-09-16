@@ -77,10 +77,14 @@ $name-heading-font: $jakarta-font-extra-light;
 $side-bar-contact-font: $jakarta-font-medium;
 $side-bar-hover-colour: $jam;
 
+// ? Logo variables
+$logo-font: $jakarta-font-regular;
+$logo-font-italic: $jakarta-font-light-italic;
+$logo-colour: $jam;
+
 // ? Mobile Nav Variables
 $mobile-nav-bg: $papaya;
-$navbar-text-colour:lighten($pale-grey, 15%);
+$navbar-text-colour: lighten($pale-grey, 15%);
 $mobile-nav-font: $jakarta-font-medium;
-$mobile-nav-hover-colour:$jam;
+$mobile-nav-hover-colour: $jam;
 $web-view-hamburger-colour: $jam;
-
