@@ -1,8 +1,8 @@
 import React from "react";
-import { useGlobalContext } from "../../Context";
+import { useGlobalContext } from "../../../Context";
 import styles from "./side-bar.module.scss";
 
-import ContactForm from "../ContactForm/ContactForm";
+import ContactForm from "../../SharedComponents/ContactForm/ContactForm";
 
 import { FiLinkedin } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";

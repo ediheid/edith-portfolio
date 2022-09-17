@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../../../Context";
-import ContactForm from "../../ContactForm/ContactForm";
+import ContactForm from "../../SharedComponents/ContactForm/ContactForm";
 import styles from "./desktop-nav-bar.module.scss";
 
 const DesktopNavLinks = () => {

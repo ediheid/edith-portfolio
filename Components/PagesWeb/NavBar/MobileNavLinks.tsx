@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../../../Context";
-import ContactForm from "../../ContactForm/ContactForm";
+import ContactForm from "../../SharedComponents/ContactForm/ContactForm";
 import styles from "./mobile-nav-bar.module.scss";
 
 const MobileNavLinks = () => {

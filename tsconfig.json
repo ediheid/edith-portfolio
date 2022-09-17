@@ -19,7 +19,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "Components/SideBarContact/SideBar.tsx",
+    "Components/PagesHome/SideBarContact/SideBar.tsx",
     "Context/AppContext.js"
   ],
   "exclude": ["node_modules"]

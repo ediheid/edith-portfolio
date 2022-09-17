@@ -1,5 +1,5 @@
 import Head from "next/head";
-import NavBar from "../../Components/WebViewComponents/NavBar/NavBar";
+import NavBar from "../../Components/PagesWeb/NavBar/NavBar";
 
 import styles from "./web.module.scss";
 

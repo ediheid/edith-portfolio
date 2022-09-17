@@ -1,6 +1,6 @@
-import { useGlobalContext } from "../../Context";
+import { useGlobalContext } from "../../../Context";
 import Form from "./Form";
-import Web from "../../pages/web";
+import Web from "../../../pages/web";
 import styles from "./contact-form.module.scss";
 
 const ContactForm = () => {
