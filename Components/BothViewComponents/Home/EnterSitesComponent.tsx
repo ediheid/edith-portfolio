@@ -8,6 +8,7 @@ const EnterSitesComponent = ({ site }: { [key: string]: any }) => {
         <div
           className={styles["content-container"]}
           id={styles[`${site.imageId}`]}
+          aria-label={site.aria}
         >
           <h2 className={styles["site-name"]} id={styles[`${site.id}`]}></h2>
           <h2 className={styles["enter-heading"]}>enter</h2>
