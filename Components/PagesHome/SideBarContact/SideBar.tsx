@@ -86,7 +86,3 @@ export const SideBar = (props: Props) => {
 };
 
 
-// let sideBar = <SideBar 
-// buttonText = "Contact Form"
-// />
-
