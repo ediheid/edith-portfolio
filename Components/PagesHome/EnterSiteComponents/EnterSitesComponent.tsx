@@ -1,12 +1,14 @@
 import Link from "next/link";
 import styles from "./enter-split-sites.module.scss";
 
-const EnterSitesComponent = ({ site }: { [key: string]: any }) => {
+
+
+const EnterSitesComponent = ({ site }: { [key: string]: any}) => {
   return (
     <>
       <Link href={site.href}>
         <div
-          className={styles["content-container"]}
+          className={styles["content-container"]} 
           id={styles[`${site.imageId}`]}
           aria-label={site.aria}
         >
