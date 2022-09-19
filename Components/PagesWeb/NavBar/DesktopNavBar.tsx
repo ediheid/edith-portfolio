@@ -5,7 +5,7 @@ import styles from "./desktop-nav-bar.module.scss";
 const DesktopNavBar = () => {
   return (
     <div className={styles["nav-container"]}>
-      <LogoLink />
+      <LogoLink initials={""} extraText={""}  />
 
       <DesktopNavLinks />
     </div>

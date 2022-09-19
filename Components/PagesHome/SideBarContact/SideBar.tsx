@@ -10,10 +10,22 @@ import { FiGithub } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
 
 type Props = {
-  buttonText: string
-}
+  contactButtonText: string;
+  linkedIn: string;
+  gitHub: string;
+  instagram: string;
+  darkroom: string;
+};
 
-export const SideBar = (props: Props) => {
+let sideBarData = {
+  contactButtonText: "Contact Form",
+  linkedIn: "https://www.linkedin.com/in/edith-heidmann/",
+  gitHub: "https://github.com/ediheid",
+  instagram: "https://www.instagram.com/e.d.ith_/?igshid=YmMyMTA2M2Y%3D",
+  darkroom: "https://edithheidmann.darkroom.tech/",
+};
+
+export const SideBar = ({}: Props) => {
   const { contactOpen } = useGlobalContext();
   const { setContactOpen } = useGlobalContext();
 
@@ -32,7 +44,7 @@ export const SideBar = (props: Props) => {
         className={styles["contact-button"]}
         onClick={openContactFormModal}
       >
-    {props.buttonText}
+        {sideBarData.contactButtonText}
       </button>
 
       {/* Display contact form when state is set to true */}
@@ -45,7 +57,7 @@ export const SideBar = (props: Props) => {
       {/* LinkedIn */}
       <a
         className={styles["social-media-links"]}
-        href="https://www.linkedin.com/in/edith-heidmann/"
+        href={sideBarData.linkedIn}
         target="_blank"
         rel="noreferrer noopener"
       >
@@ -55,7 +67,7 @@ export const SideBar = (props: Props) => {
       {/* GitHub */}
       <a
         className={styles["social-media-links"]}
-        href="https://github.com/ediheid"
+        href={sideBarData.gitHub}
         target="_blank"
         rel="noreferrer noopener"
       >
@@ -65,7 +77,7 @@ export const SideBar = (props: Props) => {
       {/* Instagram */}
       <a
         className={styles["social-media-links"]}
-        href="https://www.instagram.com/e.d.ith_/?igshid=YmMyMTA2M2Y%3D"
+        href={sideBarData.instagram}
         target="_blank"
         rel="noreferrer noopener"
       >
@@ -75,7 +87,7 @@ export const SideBar = (props: Props) => {
       {/* Darkroom Shop */}
       <a
         className={styles["social-media-links"]}
-        href="https://edithheidmann.darkroom.tech/"
+        href={sideBarData.darkroom}
         target="_blank"
         rel="noreferrer noopener"
       >
@@ -84,5 +96,3 @@ export const SideBar = (props: Props) => {
     </div>
   );
 };
-
-

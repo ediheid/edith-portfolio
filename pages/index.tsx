@@ -9,13 +9,11 @@ import AnimatedText from "react-animated-text-content";
 interface HomeProps {
   fullName: string;
   animatedText: string;
-  contactButtonText: string;
 }
 
 let homeData = {
   fullName: "Edith Heidmann",
   animatedText: "Web Developer/ Designer and Visual Artist.",
-  contactButtonText: "Contact Form",
 };
 
 export default function Home({}: HomeProps) {
@@ -34,7 +32,7 @@ export default function Home({}: HomeProps) {
 
       <main className={styles.background}>
         {/* Side bar with contact and social media links */}
-        <SideBar buttonText={homeData.contactButtonText} />
+        <SideBar contactButtonText={""} linkedIn={""} gitHub={""} instagram={""} darkroom={""} />
 
         <div className={styles["landing-page-content-container"]}>
           {/* Landing page headings */}

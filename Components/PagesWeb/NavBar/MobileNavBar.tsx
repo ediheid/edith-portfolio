@@ -10,7 +10,7 @@ const MobileNavBar = () => {
 
   return (
     <div className={styles["nav-container"]}>
-      <LogoLink />
+      <LogoLink initials={""} extraText={""} />
 
       <div className={styles["hamburger-container"]}>
         <Hamburger

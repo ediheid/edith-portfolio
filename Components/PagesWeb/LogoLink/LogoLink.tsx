@@ -1,13 +1,24 @@
 import Link from "next/link";
 import styles from "./logo-link.module.scss";
 
-const LogoLink = () => {
+type LogoProps = {
+  initials: string
+  extraText: string
+}
+
+let logoData = {
+initials: "eh",
+extraText: " .home"
+
+}
+
+const LogoLink = ({} : LogoProps) => {
   return (
     <div className={styles["home-link-container"]}>
       <Link href="/">
         <div>
-          <span>eh</span>
-          <span> .home</span>
+          <span>{logoData.initials}</span>
+          <span>{logoData.extraText}</span>
         </div>
       </Link>
     </div>
