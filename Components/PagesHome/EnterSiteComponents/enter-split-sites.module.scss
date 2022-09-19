@@ -13,6 +13,9 @@
   background-color: $black;
   cursor: pointer;
 
+  background-repeat: no-repeat;
+  background-size: cover;
+
   @keyframes color {
     0% {
       background: $black;
