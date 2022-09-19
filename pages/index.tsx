@@ -1,21 +1,30 @@
 import { useGlobalContext } from "../Context";
 import Head from "next/head";
 import styles from "./home.module.scss";
-import SideBar from "../Components/PagesHome/SideBarContact/SideBar";
-
+import { SideBar } from "../Components/PagesHome/SideBarContact/SideBar";
 import { enterSiteData } from "../Components/PagesHome/EnterSiteComponents/enterSiteData";
 import EnterSitesComponent from "../Components/PagesHome/EnterSiteComponents/EnterSitesComponent";
-
 import AnimatedText from "react-animated-text-content";
 
-export default function Home() {
+interface HomeProps {
+  fullName: string;
+  animatedText: string;
+  contactButtonText: string;
+}
+
+let homeData = {
+  fullName: "Edith Heidmann",
+  animatedText: "Web Developer/ Designer and Visual Artist.",
+  contactButtonText: "Contact Form",
+};
+
+export default function Home({}: HomeProps) {
   const { contactOpen } = useGlobalContext();
 
   return (
     <div className={styles.container}>
-      {/* // Todo: add more meta data */}
       <Head>
-        <title>Edith Heidmann</title>
+        <title>{homeData.fullName}</title>
         <meta
           name="description"
           content="Web Developer - Web Designer - Visual Artist based in Berlin, hailing from Sydney, Australia. Available for contract and freelance projects."
@@ -25,7 +34,7 @@ export default function Home() {
 
       <main className={styles.background}>
         {/* Side bar with contact and social media links */}
-        <SideBar />
+        <SideBar buttonText={homeData.contactButtonText} />
 
         <div className={styles["landing-page-content-container"]}>
           {/* Landing page headings */}
@@ -48,19 +57,17 @@ export default function Home() {
                 animationType="float"
                 interval={0.06}
                 duration={0.8}
-                // tag="p"
-                // includeWhiteSpaces
                 threshold={0.1}
                 rootMargin="20%"
               >
-                Web Developer/ Designer and Visual Artist.
+                {homeData.animatedText}
               </AnimatedText>
 
-              <h2 className={styles["name-heading"]}>Edith Heidmann</h2>
+              <h2 className={styles["name-heading"]}>{homeData.fullName}</h2>
             </div>
           </section>
 
-          {/* Mapped individual site data to return Components to enter individual sites -  */}
+          {/* Components to enter art or web  */}
           <section className={styles["enter-components-container"]}>
             {enterSiteData.map((site, index) => {
               return <EnterSitesComponent key={index} site={site} />;

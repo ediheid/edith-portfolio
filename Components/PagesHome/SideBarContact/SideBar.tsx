@@ -9,7 +9,11 @@ import { FiInstagram } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
 
-const SideBar = () => {
+type Props = {
+  buttonText: string
+}
+
+export const SideBar = (props: Props) => {
   const { contactOpen } = useGlobalContext();
   const { setContactOpen } = useGlobalContext();
 
@@ -28,7 +32,7 @@ const SideBar = () => {
         className={styles["contact-button"]}
         onClick={openContactFormModal}
       >
-        Contact Form
+    {props.buttonText}
       </button>
 
       {/* Display contact form when state is set to true */}
@@ -81,4 +85,8 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+
+// let sideBar = <SideBar 
+// buttonText = "Contact Form"
+// />
+
