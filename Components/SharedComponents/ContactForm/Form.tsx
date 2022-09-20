@@ -20,7 +20,36 @@ let SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
 let TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 let USER_ID = process.env.NEXT_PUBLIC_USER_ID;
 
-const Form = () => {
+type FormProps = {
+  nameLabel: string;
+  emailLabel: string;
+  subjectLabel: string;
+  messageLabel: string;
+  nameErrorMessage: string;
+  emailErrorMessage: string;
+  subjectErrorMessage: string;
+  messageErrorMessage: string;
+  sentSuccessfullyMessage: string;
+  buttonSend: string;
+  buttonSending: string;
+};
+
+let formData = {
+  nameLabel: "Name",
+  emailLabel: "email",
+  subjectLabel: "Subject",
+  messageLabel: "Message",
+  nameErrorMessage: "* Please enter at least 2 characters",
+  emailErrorMessage: "* Please enter a valid email address",
+  subjectErrorMessage: "* Please enter at least 2 characters",
+  messageErrorMessage: "* Please enter at least 5 words",
+  sentSuccessfullyMessage:
+    "Thanks for your message, I'll get back to you in a jiffy!",
+  buttonSend: "Send",
+  buttonSending: "Sending",
+};
+
+const Form = ({} : FormProps) => {
   const [userName, setUserName] = useState<string>("");
   let [userEmail, setUserEmail] = useState<string>("");
   const [messageSubject, setMessageSubject] = useState<string>("");
@@ -150,7 +179,7 @@ const Form = () => {
           <div className={styles["seperating-containers"]}>
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputName">
-                Name
+                {formData.nameLabel}
               </label>
 
               {/* Real time validation message */}
@@ -158,7 +187,7 @@ const Form = () => {
                 userName.length < 2 ? (
                   <span className={styles["error-message"]}>
                     {" "}
-                    * Please enter at least 2 characters
+                    {formData.nameErrorMessage}
                   </span>
                 ) : null
               ) : null}
@@ -176,7 +205,7 @@ const Form = () => {
             {/*  Email */}
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputEmail">
-                email
+               {formData.emailLabel}
               </label>
 
               {/* Real time validation message */}
@@ -184,7 +213,7 @@ const Form = () => {
                 !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userEmail) ? (
                   <span className={styles["error-message"]}>
                     {" "}
-                    * Please enter a valid email address
+                    {formData.emailErrorMessage}
                   </span>
                 ) : null
               ) : null}
@@ -202,7 +231,7 @@ const Form = () => {
             {/* Subject */}
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputSubject">
-                Subject
+                {formData.subjectLabel}
               </label>
 
               {/* Real time validation message */}
@@ -210,7 +239,7 @@ const Form = () => {
                 messageSubject.length < 2 ? (
                   <span className={styles["error-message"]}>
                     {" "}
-                    * Please enter at least 2 characters
+                    {formData.subjectErrorMessage}
                   </span>
                 ) : null
               ) : null}
@@ -230,7 +259,7 @@ const Form = () => {
           <div className={styles["seperating-containers"]}>
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputMessage">
-                Message
+                {formData.messageLabel}
               </label>
 
               {/* Real time validation message */}
@@ -238,7 +267,7 @@ const Form = () => {
                 messageText.trim().split(/\s+/).length < 5 ? (
                   <span className={styles["error-message"]}>
                     {" "}
-                    * Please enter at least 5 words
+                    {formData.messageErrorMessage}
                   </span>
                 ) : null
               ) : null}
@@ -257,7 +286,7 @@ const Form = () => {
           <div className={styles["button-wrapper"]}>
             {isSending ? (
               <button className={styles["sending-button"]}>
-                <span> Sending </span>
+                <span> {formData.buttonSending} </span>
                 <PulseLoader color="#cececc" size={8} />
               </button>
             ) : (
@@ -266,15 +295,18 @@ const Form = () => {
                 onClick={submitMessage}
                 type="submit"
               >
-                Send
+                {formData.buttonSend}
               </button>
             )}
           </div>
         </form>
       ) : (
         // If Message has been sent successfully then render thank you message
-        <span data-aos="zoom-in" className={styles["message-sent-notification"]}>
-          Thanks for your message, I'll get back to you in a jiffy!
+        <span
+          data-aos="zoom-in"
+          className={styles["message-sent-notification"]}
+        >
+          {formData.sentSuccessfullyMessage}
         </span>
       )}
     </>

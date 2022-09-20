@@ -10,8 +10,8 @@ const ContactForm = () => {
 
   const closeContactFormModal = () => {
     setContactOpen(false);
-    // If user is on Web View, and nav dropdown - hode dropdown when user uses contact form
-    // Todo: Once built add all sub pages of Web and the same for Art
+    // If user is on Web View, and mobile nav dropdown - hide dropdown when user uses contact form
+    // Todo: Once built add same functionality for all sub pages of Web and the same for Art or create Layout and and add there
     <Web /> && navOpen === true ? setNavOpen(false) : null;
   };
 
@@ -26,7 +26,7 @@ const ContactForm = () => {
             close
           </button>
         </div>
-        <Form />
+        <Form nameLabel={""} emailLabel={""} subjectLabel={""} messageLabel={""} nameErrorMessage={""} emailErrorMessage={""} subjectErrorMessage={""} messageErrorMessage={""} sentSuccessfullyMessage={""} buttonSend={""} buttonSending={""} />
       </div>
     </div>
   );
