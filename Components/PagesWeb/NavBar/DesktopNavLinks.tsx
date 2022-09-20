@@ -37,7 +37,7 @@ const DesktopNavLinks = ({}: DesktopNavProps) => {
           <li onClick={openContactFormModal}>{desktopNavData.contact}</li>
         </ul>
       </div>
-      {contactOpen && <ContactForm />}
+      {contactOpen && <ContactForm closeButton={""} />}
     </>
   );
 };

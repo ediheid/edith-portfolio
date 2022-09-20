@@ -3,7 +3,15 @@ import Form from "./Form";
 import Web from "../../../pages/web";
 import styles from "./contact-form.module.scss";
 
-const ContactForm = () => {
+type ContactFormProps = {
+  closeButton: string;
+};
+
+let contactFormData = {
+  closeButton: "close",
+};
+
+const ContactForm = ({}: ContactFormProps) => {
   const { setContactOpen } = useGlobalContext();
   const { setNavOpen } = useGlobalContext();
   const { navOpen } = useGlobalContext();
@@ -23,10 +31,22 @@ const ContactForm = () => {
             className={styles["close-button"]}
             onClick={closeContactFormModal}
           >
-            close
+            {contactFormData.closeButton}
           </button>
         </div>
-        <Form nameLabel={""} emailLabel={""} subjectLabel={""} messageLabel={""} nameErrorMessage={""} emailErrorMessage={""} subjectErrorMessage={""} messageErrorMessage={""} sentSuccessfullyMessage={""} buttonSend={""} buttonSending={""} />
+        <Form
+          nameLabel={""}
+          emailLabel={""}
+          subjectLabel={""}
+          messageLabel={""}
+          nameErrorMessage={""}
+          emailErrorMessage={""}
+          subjectErrorMessage={""}
+          messageErrorMessage={""}
+          sentSuccessfullyMessage={""}
+          buttonSend={""}
+          buttonSending={""}
+        />
       </div>
     </div>
   );

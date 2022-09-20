@@ -48,7 +48,7 @@ const MobileNavLinks = ({}: MobileNavLinkProps) => {
           </Link>
         </ul>
       </div>
-      {contactOpen && <ContactForm />}
+      {contactOpen && <ContactForm closeButton={""} />}
     </>
   );
 };
