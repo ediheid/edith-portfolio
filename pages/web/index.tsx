@@ -25,7 +25,7 @@ const Web = ({}: WebAppProps) => {
 
       <NavBar />
 
-      <main>This will be the main section of the web SPA</main>
+      <main>This will be the main section of the web SPA (components)</main>
     </div>
   );
 };
