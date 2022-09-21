@@ -5,9 +5,15 @@ import styles from "./desktop-nav-bar.module.scss";
 const DesktopNavBar = () => {
   return (
     <div className={styles["nav-container"]}>
-      <LogoLink initials={""} extraText={""}  />
+      <LogoLink initials={""} extraText={""} />
 
-      <DesktopNavLinks />
+      <DesktopNavLinks
+        about={""}
+        webPages={""}
+        webDesign={""}
+        webApps={""}
+        contact={""}
+      />
     </div>
   );
 };
