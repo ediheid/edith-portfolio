@@ -10,18 +10,18 @@
   display: flex;
   list-style: none;
   width: auto;
-  padding: 0 2rem 0 0;
+  padding: 0 3rem 0 0;
 
   li {
-    margin: 0 0 0 2rem;
+    margin: 0 0 0 3rem;
     color: $web-navbar-text-colour;
     font-family: $nav-font;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
 
     &:active {
       color: $web-nav-hover-colour;
-      font-family: $desktop-nav-hover-font;
+      font-family: $nav-hover-font;
     }
   }
 }
@@ -29,7 +29,7 @@
 @media (hover: hover) {
   .nav-list > li:hover {
     color: $web-nav-hover-colour;
-    font-family: $desktop-nav-hover-font;
+    font-family: $nav-hover-font;
   }
 }
 
@@ -38,7 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 7rem;
+    height: 9rem;
     width: 100vw;
     background-color: $web-nav-bg;
   }
@@ -46,8 +46,8 @@
 
 @include desktop {
   .nav-container {
-    height: 8.5rem;
     padding: 0 3rem 0 0;
+    overflow: hidden;
   }
 
   .nav-list > li {

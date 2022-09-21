@@ -3,17 +3,10 @@
 
 .home-link-container {
   font-family: $logo-font;
-  font-size: 2rem;
-  padding: 0 0 0 1.2rem;
+  font-size: 3rem;
+  padding: 0 0 0 1.5rem;
   color: $logo-colour;
   cursor: pointer;
-
-  span {
-    &:nth-child(2) {
-      font-family: $logo-font-italic;
-      font-size: 1.4rem;
-    }
-  }
 
   &:active {
     font-weight: bold;
@@ -29,25 +22,13 @@
 @include large-tablet {
   .home-link-container {
     padding: 0 0 0 2rem;
-    font-size: 2.8rem;
-
-    span {
-      &:nth-child(2) {
-        font-size: 1.7rem;
-      }
-    }
+    font-size: 3.5rem;
   }
 }
 
 @include desktop {
   .home-link-container {
     padding: 0 0 0 2.5rem;
-    font-size: 3.5rem;
-
-    span {
-      &:nth-child(2) {
-        font-size: 2.1rem;
-      }
-    }
+    font-size: 4rem;
   }
 }

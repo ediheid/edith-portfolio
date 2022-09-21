@@ -10,12 +10,12 @@ const MobileNavBar = () => {
 
   return (
     <div className={styles["nav-container"]}>
-      <LogoLink initials={""} extraText={""} />
+      <LogoLink initials={""}  />
 
       <div className={styles["hamburger-container"]}>
         <Hamburger
           label="Show menu"
-          size={20}
+          size={25}
           toggled={navOpen}
           toggle={setNavOpen}
         />
