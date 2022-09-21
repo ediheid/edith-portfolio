@@ -38,7 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 7rem;
+    height: 9rem;
     width: 100vw;
     background-color: $web-nav-bg;
   }
@@ -46,7 +46,6 @@
 
 @include desktop {
   .nav-container {
-    height: 8.5rem;
     padding: 0 3rem 0 0;
   }
 

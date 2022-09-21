@@ -339,3 +339,12 @@
   font-display: fallback;
   src: local("Barlow Thin"), url("./Barlow/Barlow-Thin.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Jet Brains Mono Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: local("Jet Brains Mono Regular"), url("./JetBrains/static/JetBrainsMono-Regular.ttf")
+ 
+}
