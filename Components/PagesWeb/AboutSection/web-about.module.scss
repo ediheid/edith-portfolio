@@ -8,9 +8,14 @@
 }
 
 .content-container {
-  display: flex wrap;
+  display: flex;
+  flex-wrap: wrap;
+  
   width: 80%;
+  height: auto;
   color: $main-font-colour;
+
+  margin-top: 5rem;
 
   h2 {
     font-family: $home-heading-font;
@@ -29,12 +34,24 @@
   }
 }
 
-.image-container{
-    margin: 5.5rem 0 0 0;
+.image-container {
+  margin: 5.5rem 0 0 0;
 }
 
 .image {
   border-radius: 50%;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
+}
+
+@include large-tablet {
+  .image-container {
+    width: 50%;
+    background-color: red;
+  }
+
+  .text-container {
+    width: 50%;
+    background-color: aqua;
+  }
 }
