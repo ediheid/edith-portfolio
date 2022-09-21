@@ -58,6 +58,10 @@ $montserrat-thin: Montserrat Thin, sans-serif;
 
 // Nav
 $jetbrains-regular: Jet Brains Mono Regular, sans-serif;
+$jetbrains-bold-italic: Jet Brains Mono Bold Italic, sans-serif;
+
+
+
 // ? Global Variables
 $contact-form-modal-bg: $black;
 $contact-form-bg: rgba(113, 113, 112, 0.6);
@@ -84,17 +88,16 @@ $side-bar-contact-font: $jakarta-font-medium;
 $side-bar-hover-colour: $jam;
 
 // ? Logo variables
-$logo-font: $jakarta-font-regular;
-$logo-font-italic: $jakarta-font-light-italic;
+$logo-font: $jetbrains-regular;
+$logo-font-italic: $jetbrains-bold-italic;
 $logo-colour: $jam;
 
 // ? Global Nav Variables
-$nav-font: $jakarta-font-medium;
-$mobile-nav-hover-font: $jakarta-font-bold-italic;
-$desktop-nav-hover-font: $jakarta-font-medium-italic;
+$nav-font: $jetbrains-regular;
+$nav-hover-font: $jetbrains-bold-italic;
 
 // ? Web View Nav Variables
 $web-view-hamburger-colour: $jam;
 $web-nav-bg: $papaya;
-$web-navbar-text-colour: lighten($pale-grey, 15%);
-$web-nav-hover-colour: $jam;
+$web-navbar-text-colour: $jam;
+$web-nav-hover-colour: lighten($pale-grey, 15%);

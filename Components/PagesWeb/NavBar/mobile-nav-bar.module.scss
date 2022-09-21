@@ -10,11 +10,13 @@
   width: 100vw;
 
   background-color: $web-nav-bg;
+  overflow: hidden;
 }
 
 .hamburger-container {
   color: $web-view-hamburger-colour;
   cursor: pointer;
+  padding-right: .5rem;
 
   &:active {
     transform: scale(1.05);
@@ -32,7 +34,7 @@
   justify-content: flex-end;
   position: absolute;
   top: 0;
-  margin-top: 6rem;
+  margin-top: 8rem;
   width: 100%;
   overflow: hidden;
   z-index: 10;
@@ -49,12 +51,13 @@
     padding: 1rem 0 1rem 0;
     color: $web-navbar-text-colour;
     font-family: $nav-font;
-    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    font-size: 1.6rem;
     cursor: pointer;
 
     &:active {
       color: $web-nav-hover-colour;
-      font-family: $mobile-nav-hover-font;
+      font-family: $nav-hover-font;
     }
   }
 }
@@ -62,7 +65,7 @@
 @media (hover: hover) {
   .nav-list > li:hover {
     color: $web-nav-hover-colour;
-    font-family: $mobile-nav-hover-font;
+    font-family: $nav-hover-font;
   }
 }
 
