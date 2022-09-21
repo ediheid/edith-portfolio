@@ -4,16 +4,18 @@ import NavBar from "../../Components/PagesWeb/NavBar/NavBar";
 import styles from "./web.module.scss";
 
 type WebAppProps = {
-  // eg.
-  // message:string;
-  // const App = ({ message }: AppProps) => <div>{message}</div>;
+  title: string;
+};
+
+let webAppData = {
+  title: "EH · Web",
 };
 
 const Web = ({}: WebAppProps) => {
   return (
     <div className={styles["web-view-container"]}>
       <Head>
-        <title>EH · Web</title>
+        <title>{webAppData.title}</title>
         <meta
           name="description"
           content="Web Developer - Web Designer - Visual Artist based in Berlin, hailing from Sydney, Australia. Available for contract and freelance projects."
@@ -23,7 +25,7 @@ const Web = ({}: WebAppProps) => {
 
       <NavBar />
 
-      <main>This will be the main section of the web SPA</main>
+      <main>This will be the main section of the web SPA (components)</main>
     </div>
   );
 };

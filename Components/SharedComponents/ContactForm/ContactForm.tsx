@@ -20,7 +20,7 @@ const ContactForm = ({}: ContactFormProps) => {
     setContactOpen(false);
     // If user is on Web View, and mobile nav dropdown - hide dropdown when user uses contact form
     // Todo: Once built add same functionality for all sub pages of Web and the same for Art or create Layout and and add there
-    <Web /> && navOpen === true ? setNavOpen(false) : null;
+    <Web title={""} /> && navOpen === true ? setNavOpen(false) : null;
   };
 
   return (
