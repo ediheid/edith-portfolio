@@ -1,6 +1,6 @@
 import Head from "next/head";
-import NavBar from "../../Components/PagesWeb/NavBar/NavBar";
 import WebLayout from "../../Layout/WebLayout";
+import WebAbout from "../../Components/PagesWeb/AboutSection/WebAbout";
 import styles from "./web.module.scss";
 
 type WebAppProps = {
@@ -23,7 +23,7 @@ const Web = ({}: WebAppProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>This will be the main section of the web SPA (components)</main>
+      <WebAbout sectionHeading={""} paragraphOne={""} paragraphTwo={""} />
     </WebLayout>
   );
 };
