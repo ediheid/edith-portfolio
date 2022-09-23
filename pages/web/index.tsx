@@ -1,7 +1,6 @@
 import Head from "next/head";
 import WebLayout from "../../Layout/WebLayout";
 import WebAbout from "../../Components/PagesWeb/AboutSection/WebAbout";
-import styles from "./web.module.scss";
 
 type WebAppProps = {
   title: string;

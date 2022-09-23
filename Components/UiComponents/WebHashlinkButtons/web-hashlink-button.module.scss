@@ -1,7 +1,7 @@
 @import "/styles/variables";
 @import "/styles/mixins";
 
-// Button text will be a span nested individual whem the component is used
+// ? Button text is a span nested in individual component when called
 
 .button-circle,
 .button-circle * {
@@ -12,6 +12,7 @@
   width: 16rem;
   height: 16rem;
   cursor: pointer;
+  z-index: 10;
 }
 
 .button-circle * {
@@ -32,14 +33,24 @@
   text-decoration: underline;
   text-underline-offset: 0.3rem;
   text-decoration-thickness: 0.3rem;
+
+  box-shadow: rgba(64, 143, 170, 0.17) 15px 15px 49px 47px;
+
+  &:active {
+    background-color: $pale-blue;
+    color: lighten($jam, 10%);
+    text-decoration: none;
+    font-size: 2.9rem;
+    transition: ease-in-out 0.1s;
+  }
 }
 
 @media (hover: hover) {
   .button-circle:hover * {
     background-color: $pale-blue;
-    color: lighten($jam, 15%);
+    color: lighten($jam, 10%);
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 2.9rem;
     transition: ease-in-out 0.1s;
   }
 }
@@ -55,33 +66,23 @@
   margin: 3rem;
 }
 
+.letter {
+  position: absolute;
+  left: 50%;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transform-origin: 0 11rem;
+  font-family: $nav-font;
+  color: darken($pale-blue, 30%);
+  font-weight: bolder;
+}
+
 .animated-text {
   position: absolute;
   width: 100%;
   height: 100%;
 
   animation: animateText 12s infinite reverse linear;
-
-  span {
-    position: absolute;
-    left: 50%;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    transform-origin: 0 11rem;
-
-    // &:nth-of-type(1) {
-    //   transform: rotate(0deg);
-    // }
-    // &:nth-of-type(2) {
-    //   transform: rotate(10deg);
-    // }
-    // &:nth-of-type(3) {
-    //   transform: rotate(20deg);
-    // }
-    // &:nth-of-type(4) {
-    //   transform: rotate(30deg);
-    // }
-  }
 }
 
 @keyframes animateText {
@@ -94,11 +95,13 @@
   }
 }
 
+// for every nth of type increase rotate degrees by 10
 $deg: 0;
 @for $i from 0 through 100 {
-$deg: $deg + 10;
-.letter {&:nth-of-type(#{$i}){
-transform: rotate(0deg + $deg);
-}}
-
+  $deg: $deg + 10;
+  .letter {
+    &:nth-of-type(#{$i}) {
+      transform: rotate(0deg + $deg);
+    }
+  }
 }

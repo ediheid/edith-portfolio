@@ -40,20 +40,17 @@ const WebAbout = ({}: AboutProps) => {
             <b>UI/UX</b> - creating dynamic, sophisticated and scalable websites
             and web apps.
           </p>
+
+          <div className={styles["hashlinks-container"]}>
+            <WebHashlinkButton>
+              <span className={styles["link-text"]}>Tools & Tech</span>
+            </WebHashlinkButton>
+
+            <WebHashlinkButton>
+              <span className={styles["link-text"]}>Portfolio</span>
+            </WebHashlinkButton>
+          </div>
         </div>
-      </div>
-      {/* hashlinks to different sections */}
-      <div className={styles["hashlinks-container"]}>
-   <h2>Explore..</h2>
-
-
-        <WebHashlinkButton>
-          <span className={styles["link-text"]}>Tools & Tech</span>
-        </WebHashlinkButton>
-
-        <WebHashlinkButton>
-          <span className={styles["link-text"]}>Portfolio</span>
-        </WebHashlinkButton>
       </div>
     </section>
   );
