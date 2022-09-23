@@ -21,19 +21,20 @@ const WebAbout = ({}: AboutProps) => {
   return (
     <section id="about-section" className={styles["about-section-container"]}>
       <div className={styles["content-container"]}>
-
         <div className={styles["image-container"]}>
-        <Image
-          className={styles["image"]}
-          src={portrait}
-          alt="Blue and white portrait of Edith - long curly hair and glasses."
-        ></Image>
+          <Image
+            className={styles["image"]}
+            src={portrait}
+            alt="Blue and white portrait of Edith - long curly hair and glasses."
+          ></Image>
         </div>
 
-        <h2>{aboutData.heading}</h2>
-        <p>{aboutData.paragraphOne}</p>
+        <div className={styles["text-container"]}>
+          <h2>{aboutData.heading}</h2>
+          <p>{aboutData.paragraphOne}</p>
 
-        <p>{aboutData.paragraphTwo}</p>
+          <p>{aboutData.paragraphTwo}</p>
+        </div>
       </div>
     </section>
   );
