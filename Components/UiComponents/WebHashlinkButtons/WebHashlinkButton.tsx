@@ -5,7 +5,7 @@ type Props = {
 };
 
 const WebHashlinkButton = ({ children }: Props) => {
-  let textToAnimate = "Link here";
+  let textToAnimate = "Link here * Link here * Link here";
 
   return (
     <div className={styles["outer-circle"]}>

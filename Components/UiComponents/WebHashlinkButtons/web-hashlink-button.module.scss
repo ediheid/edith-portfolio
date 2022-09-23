@@ -49,8 +49,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 21rem;
-  height: 21rem;
+  width: 22rem;
+  height: 22rem;
   border-radius: 50%;
   margin: 3rem;
 }
@@ -67,7 +67,7 @@
     left: 50%;
     text-transform: uppercase;
     font-size: 1.3rem;
-    transform-origin: 0 10rem;
+    transform-origin: 0 11rem;
 
     // &:nth-of-type(1) {
     //   transform: rotate(0deg);
@@ -94,11 +94,11 @@
   }
 }
 
-$count: 0;
+$deg: 0;
+@for $i from 0 through 100 {
+$deg: $deg + 10;
+.letter {&:nth-of-type(#{$i}){
+transform: rotate(0deg + $deg);
+}}
 
-@while $count < 8 {
-    .length-#{$count}{
-        transform: rotate(10 * $count + deg);
-    }
-    $count: $count + 1;
 }
