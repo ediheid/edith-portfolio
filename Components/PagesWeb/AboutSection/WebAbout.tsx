@@ -5,16 +5,12 @@ import portrait from "../../../public/static/portrait.png";
 
 type AboutProps = {
   heading: string;
-  paragraphOne: string;
-  paragraphTwo: string;
+  altTag: string,
 };
 
 let aboutData = {
   heading: "Who?",
-  paragraphOne:
-    " Australian born, Berlin based - creative full-stack web developer and web designer with a background in fine arts.",
-  paragraphTwo:
-    " Specialising in frontend development, particularly in ReactJS, NextJS and Sass/Scss with a keen interest in UI/UX - creating dynamic, sophisticated and scalable websites and web apps.",
+  altTag: "Blue and white portrait of Edith - long curly hair and glasses."
 };
 
 const WebAbout = ({}: AboutProps) => {
@@ -25,15 +21,15 @@ const WebAbout = ({}: AboutProps) => {
           <Image
             className={styles["image"]}
             src={portrait}
-            alt="Blue and white portrait of Edith - long curly hair and glasses."
+            alt={aboutData.altTag}
           ></Image>
         </div>
 
         <div className={styles["text-container"]}>
           <h2>{aboutData.heading}</h2>
-          <p>{aboutData.paragraphOne}</p>
+          <p>Australian born, Berlin based - creative full-stack <b>web developer</b> and <b>web designer</b> with a background in fine arts.</p>
 
-          <p>{aboutData.paragraphTwo}</p>
+          <p>Specialising in frontend development, particularly in <b>ReactJS</b>, <b>NextJS</b> and <b>Sass/Scss</b> with a keen interest in <b>UI/UX</b> - creating dynamic, sophisticated and scalable websites and web apps.</p>
         </div>
       </div>
     </section>

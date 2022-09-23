@@ -17,7 +17,7 @@
   height: auto;
   color: $main-font-colour;
 
-  margin-top: 5rem;
+  padding: 5rem 0 5rem 0;
 
   h2 {
     font-family: $home-heading-font;
@@ -50,29 +50,36 @@
 }
 
 @include small-tablet {
-  .image-container{
-    margin: 4.5rem 0 0 0 ;
+  .image-container {
+    margin: 4.5rem 0 0 0;
   }
 
-  .text-container{
+  .text-container {
     padding-top: 1rem;
   }
 }
 
-@include large-tablet {
-  .text-container {
-    max-width: 70rem;
+@include small-laptop {
+  .content-container {
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 120rem;
+    // padding: 6rem 0 6rem 0;
   }
-}
 
-@include small-laptop{
-  .image-container{
-    max-width: 35rem;
+  .text-container {
+    width: 70%;
+    max-width: 60rem;
+    margin-left: 5rem;
+  }
+
+  .image {
+    width: 20%;
   }
 }
 
 @include desktop {
   .content-container {
-    flex-direction: row;
+    padding: 8rem 0 8rem 0;
   }
 }

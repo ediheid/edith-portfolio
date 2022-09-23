@@ -23,7 +23,7 @@ const Web = ({}: WebAppProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <WebAbout  paragraphOne={""} paragraphTwo={""} heading={""} />
+      <WebAbout heading={""} altTag={""} />
     </WebLayout>
   );
 };
