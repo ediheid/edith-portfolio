@@ -1,16 +1,17 @@
 import Image from "next/image";
+import WebHashlinkButton from "../../UiComponents/WebHashlinkButtons/WebHashlinkButton";
 import styles from "./web-about.module.scss";
 
 import portrait from "../../../public/static/portrait.png";
 
 type AboutProps = {
   heading: string;
-  altTag: string,
+  altTag: string;
 };
 
 let aboutData = {
   heading: "Who?",
-  altTag: "Blue and white portrait of Edith - long curly hair and glasses."
+  altTag: "Blue and white portrait of Edith - long curly hair and glasses.",
 };
 
 const WebAbout = ({}: AboutProps) => {
@@ -27,10 +28,32 @@ const WebAbout = ({}: AboutProps) => {
 
         <div className={styles["text-container"]}>
           <h2>{aboutData.heading}</h2>
-          <p>Australian born, Berlin based - creative full-stack <b>web developer</b> and <b>web designer</b> with a background in fine arts.</p>
+          <p>
+            Australian born, Berlin based - creative full-stack{" "}
+            <b>web developer</b> and <b>web designer</b> with a background in
+            fine arts.
+          </p>
 
-          <p>Specialising in frontend development, particularly in <b>ReactJS</b>, <b>NextJS</b> and <b>Sass/Scss</b> with a keen interest in <b>UI/UX</b> - creating dynamic, sophisticated and scalable websites and web apps.</p>
+          <p>
+            Specialising in frontend development, particularly in <b>ReactJS</b>
+            , <b>NextJS</b> and <b>Sass/Scss</b> with a keen interest in{" "}
+            <b>UI/UX</b> - creating dynamic, sophisticated and scalable websites
+            and web apps.
+          </p>
         </div>
+      </div>
+      {/* hashlinks to different sections */}
+      <div className={styles["hashlinks-container"]}>
+   <h2>Explore..</h2>
+
+
+        <WebHashlinkButton>
+          <span className={styles["link-text"]}>Tools & Tech</span>
+        </WebHashlinkButton>
+
+        <WebHashlinkButton>
+          <span className={styles["link-text"]}>Portfolio</span>
+        </WebHashlinkButton>
       </div>
     </section>
   );

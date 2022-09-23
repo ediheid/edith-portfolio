@@ -35,4 +35,14 @@
     }
 }
 
+// ? UI
+
+@mixin  web-headings {
+    font-family: $headings-font;
+    font-size: 4rem;
+    text-align: center;
+    padding: 4rem 0 3rem 0;
+    color: $main-font-colour;
+}
+
 
