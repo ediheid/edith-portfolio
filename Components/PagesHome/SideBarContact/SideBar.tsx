@@ -48,7 +48,7 @@ export const SideBar = ({}: Props) => {
       </button>
 
       {/* Display contact form when state is set to true */}
-      {contactOpen && <ContactForm closeButton={""} />}
+      {contactOpen && <ContactForm />}
 
       {/* Vertical dividing line */}
       <div className={styles["vertical-line"]}></div>

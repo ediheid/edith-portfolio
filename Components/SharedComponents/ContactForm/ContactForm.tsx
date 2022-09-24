@@ -1,39 +1,11 @@
-import { useGlobalContext } from "../../../Context";
 import Form from "./Form";
-import Web from "../../../pages/web";
 import styles from "./contact-form.module.scss";
 
-type ContactFormProps = {
-  closeButton: string;
-};
-
-let contactFormData = {
-  closeButton: "close",
-};
-
-const ContactForm = ({}: ContactFormProps) => {
-  const { setContactOpen } = useGlobalContext();
-  const { setNavOpen } = useGlobalContext();
-  const { navOpen } = useGlobalContext();
-
-  const closeContactFormModal = () => {
-    setContactOpen(false);
-    // If user is on Web View, and mobile nav dropdown - hide dropdown when user uses contact form
-    // Todo: Once built add same functionality for all sub pages of Web and the same for Art or create Layout and and add there
-    <Web title={""} /> && navOpen === true ? setNavOpen(false) : null;
-  };
-
+const ContactForm = () => {
   return (
     <div className={styles["contact-form-page-container"]}>
       <div data-aos="zoom-in" className={styles["contact-modal"]}>
-        <div className={styles["button-container"]}>
-          <button
-            className={styles["close-button"]}
-            onClick={closeContactFormModal}
-          >
-            {contactFormData.closeButton}
-          </button>
-        </div>
+        <h2 className={styles["form-heading"]}>Want to work together? Or just say hi?</h2>
         <Form
           nameLabel={""}
           emailLabel={""}
@@ -46,6 +18,7 @@ const ContactForm = ({}: ContactFormProps) => {
           sentSuccessfullyMessage={""}
           buttonSend={""}
           buttonSending={""}
+          closeButton={""}
         />
       </div>
     </div>

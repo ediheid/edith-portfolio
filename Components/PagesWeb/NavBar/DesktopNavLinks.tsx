@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useGlobalContext } from "../../../Context";
 import ContactForm from "../../SharedComponents/ContactForm/ContactForm";
 import styles from "./desktop-nav-bar.module.scss";
@@ -38,7 +37,7 @@ const DesktopNavLinks = ({}: DesktopNavProps) => {
           <li onClick={openContactFormModal}>{desktopNavData.contact}</li>
         </ul>
       </div>
-      {contactOpen && <ContactForm closeButton={""} />}
+      {contactOpen && <ContactForm />}
     </>
   );
 };

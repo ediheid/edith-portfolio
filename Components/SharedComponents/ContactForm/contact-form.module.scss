@@ -41,44 +41,15 @@
   scrollbar-width: none; /* Firefox */
 }
 
-.close-button {
-  font-family: $contact-form-font;
-  color: $contact-form-text-colour;
-  letter-spacing: 0.1rem;
-  background: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.5s;
-  z-index: 1;
-  width: 7rem;
-  height: 2.5rem;
-  font-size: 1.6rem;
-}
-
-.close-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: $home-page-main-text-colour;
-  z-index: -1;
-  transition: all 0.5s;
-}
-
-.close-button:hover::before {
+.form-heading {
   width: 100%;
-}
-
-.close-button:hover {
-  color: $black;
-}
-
-.close-button:active:before {
-  background: $home-page-main-text-colour;
+  font-family: $montserrat-light;
+  font-size: 2.1rem;
+  letter-spacing: 0.15rem;
+  color: $contact-form-text-colour;
+  text-align: center;
+  line-height: 3.2rem;
+  padding: 8rem 0 2rem 0;
 }
 
 .form {
@@ -167,13 +138,55 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 6rem 0 0 0;
+}
+
+.close-button {
+  font-family: $contact-form-font;
+  color: $contact-form-text-colour;
+  letter-spacing: 0.1rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  width: 7rem;
+  height: 2.5rem;
+  font-size: 1.6rem;
+}
+
+.close-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: $home-page-main-text-colour;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.close-button:hover::before {
+  width: 100%;
+}
+
+.close-button:hover {
+  color: $black;
+}
+
+.close-button:active:before {
+  background: $home-page-main-text-colour;
 }
 
 .submit-button,
 .sending-button {
   display: flex;
   align-items: center;
-  margin: 6rem 1rem 0 1rem;
+  margin: 0 0 0 3rem;
   padding: 1rem 2rem 1rem 2rem;
   font-size: 1.8rem;
   color: $home-page-main-text-colour;
@@ -222,18 +235,33 @@
 
 // ? Breakpoints
 
-@include extra-small-devices{
-  .contact-modal{
+@include extra-small-devices {
+  .contact-modal {
     padding-top: 16rem;
+  }
+
+  .form-heading {
+    display: none;
   }
 }
 
 @include small-tablet {
-  .button-container {
-    margin: 0 0 4rem 0;
+  .form-heading {
+    max-width: 40rem;
+    font-size: 2.7rem;
+    line-height: 3.7rem;
+    padding: 0 0 3rem 0;
   }
 
   .text-area {
     height: 17.2rem;
+  }
+}
+
+@include small-laptop {
+  .form-heading {
+    font-size: 2.9rem;
+    line-height: 4rem;
+    padding: 0 0 5rem 0;
   }
 }

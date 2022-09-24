@@ -6,6 +6,8 @@ import styles from "./contact-form.module.scss";
 import React from "react";
 import PulseLoader from "react-spinners/PulseLoader";
 import { init } from "emailjs-com";
+import { useGlobalContext } from "../../../Context";
+import Web from "../../../pages/web";
 init("userId");
 
 declare let process: {
@@ -21,6 +23,7 @@ let TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 let USER_ID = process.env.NEXT_PUBLIC_USER_ID;
 
 type FormProps = {
+  closeButton: string;
   nameLabel: string;
   emailLabel: string;
   subjectLabel: string;
@@ -35,6 +38,7 @@ type FormProps = {
 };
 
 let formData = {
+  closeButton: "close",
   nameLabel: "Name",
   emailLabel: "email",
   subjectLabel: "Subject",
@@ -49,7 +53,10 @@ let formData = {
   buttonSending: "Sending",
 };
 
-const Form = ({} : FormProps) => {
+const Form = ({}: FormProps) => {
+  const { setContactOpen } = useGlobalContext();
+  const { setNavOpen } = useGlobalContext();
+  const { navOpen } = useGlobalContext();
   const [userName, setUserName] = useState<string>("");
   let [userEmail, setUserEmail] = useState<string>("");
   const [messageSubject, setMessageSubject] = useState<string>("");
@@ -63,6 +70,14 @@ const Form = ({} : FormProps) => {
     useState<boolean>(false);
   const [messageTextErrorMessage, setMessageTextErrorMessage] =
     useState<boolean>(false);
+
+  const closeContactFormModal = () => {
+    setContactOpen(false);
+    // If user is on Web View, and mobile nav dropdown - hide dropdown when user uses contact form
+    // !
+    // Todo: Once built add same functionality for all sub pages of Web and the same for Art or create Layout and and add there
+    <Web title={""} /> && navOpen === true ? setNavOpen(false) : null;
+  };
 
   // Toast alerts
   const fillAllFieldsNotification = () => {
@@ -205,7 +220,7 @@ const Form = ({} : FormProps) => {
             {/*  Email */}
             <div className={styles["label-input-containers"]}>
               <label className={styles["labels"]} htmlFor="inputEmail">
-               {formData.emailLabel}
+                {formData.emailLabel}
               </label>
 
               {/* Real time validation message */}
@@ -284,6 +299,13 @@ const Form = ({} : FormProps) => {
 
           {/* // ? Buttons */}
           <div className={styles["button-wrapper"]}>
+            <button
+              className={styles["close-button"]}
+              onClick={closeContactFormModal}
+            >
+              {formData.closeButton}
+            </button>
+
             {isSending ? (
               <button className={styles["sending-button"]}>
                 <span> {formData.buttonSending} </span>
