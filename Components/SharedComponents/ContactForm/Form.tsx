@@ -70,8 +70,8 @@ const Form = ({} : FormProps) => {
       "Message not sent - Please fill out all fields and try again. 👀 ",
       {
         position: "top-center",
-        autoClose: false,
-        hideProgressBar: false,
+        // autoClose: false,
+        // hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
@@ -85,8 +85,8 @@ const Form = ({} : FormProps) => {
       "Something went wrong 😔 Please check your connection and try again.",
       {
         position: "top-center",
-        autoClose: false,
-        hideProgressBar: false,
+        // autoClose: false,
+        // hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
