@@ -15,7 +15,6 @@
   align-items: center;
   width: 80%;
   height: auto;
-  color: $main-font-colour;
   padding: 5rem 0 2rem 0;
 
   h2 {
@@ -23,12 +22,9 @@
   }
 
   p {
-    font-family: $main-text-font;
-    font-size: 1.8rem;
+    @include web-paragraph-text;
     text-align: center;
     padding: 0 0 2rem 0;
-    line-height: 2.8rem;
-    letter-spacing: 0.05rem;
   }
 }
 

@@ -44,3 +44,11 @@
   padding: 4rem 0 3rem 0;
   color: $main-font-colour;
 }
+
+@mixin web-paragraph-text {
+  font-family: $main-text-font;
+  font-size: $paragraph-font-size;
+  color: $main-font-colour;
+  line-height: 2.8rem;
+  letter-spacing: 0.05rem;
+}
