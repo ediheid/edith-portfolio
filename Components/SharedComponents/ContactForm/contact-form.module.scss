@@ -41,10 +41,6 @@
   scrollbar-width: none; /* Firefox */
 }
 
-.button-container {
-  margin: 0 0 3rem 0;
-}
-
 .close-button {
   font-family: $contact-form-font;
   color: $contact-form-text-colour;
@@ -226,8 +222,12 @@
 
 // ? Breakpoints
 
-@include large-tablet {
+@include small-tablet {
+  .button-container {
+    margin: 0 0 4rem 0;
+  }
+
   .text-area {
-    height: 16.5rem;
+    height: 17.2rem;
   }
 }
