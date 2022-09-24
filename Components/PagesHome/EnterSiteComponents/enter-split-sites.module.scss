@@ -67,22 +67,22 @@
   content: "art";
 }
 
-#web-bg:active {
-  animation: none;
-  opacity: 0.8;
-  background-image: url("/static/web-bg.png");
+// #web-bg:active {
+//   animation: none;
+//   opacity: 0.8;
+//   background-image: url("/static/web-bg.png");
 
-  #web::before {
-    color: $jam;
-    content: "enter";
-  }
-  .site-name {
-    padding-bottom: 0;
-  }
-  .enter-heading {
-    display: none;
-  }
-}
+//   #web::before {
+//     color: $jam;
+//     content: "enter";
+//   }
+//   .site-name {
+//     padding-bottom: 0;
+//   }
+//   .enter-heading {
+//     display: none;
+//   }
+// }
 
 @media (hover: hover) {
   #web-bg:hover {
@@ -103,21 +103,21 @@
   }
 }
 
-#art-bg:active {
-  animation: none;
-  opacity: 0.8;
-  background: url("/static/art-bg.png");
-  #art::before {
-    color: $jam;
-    content: "enter";
-  }
-  .site-name {
-    padding-bottom: 0;
-  }
-  .enter-heading {
-    display: none;
-  }
-}
+// #art-bg:active {
+//   animation: none;
+//   opacity: 0.8;
+//   background: url("/static/art-bg.png");
+//   #art::before {
+//     color: $jam;
+//     content: "enter";
+//   }
+//   .site-name {
+//     padding-bottom: 0;
+//   }
+//   .enter-heading {
+//     display: none;
+//   }
+// }
 
 @media (hover: hover) {
   #art-bg:hover {
