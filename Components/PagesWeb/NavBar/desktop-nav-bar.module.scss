@@ -4,6 +4,8 @@
 // Set to display none until large-tablet breakpoint kicks in
 .nav-container {
   display: none;
+  position: fixed;
+  z-index: 100;
 }
 
 .nav-list {

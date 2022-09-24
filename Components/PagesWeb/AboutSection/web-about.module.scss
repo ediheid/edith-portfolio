@@ -6,6 +6,9 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
+
+  background-size: cover;
+  background-image: url("/static/pexels-olga-v-5506216.jpg");
 }
 
 .content-container {
@@ -63,6 +66,8 @@
 }
 
 @include small-tablet {
+
+
   .image-container {
     margin: 4.5rem 0 0 0;
   }
@@ -76,6 +81,9 @@
 }
 
 @include large-tablet {
+  .about-section-container{
+    padding-top: 9rem;
+  }
   .hashlinks-container {
     flex-direction: row;
     width: 80%;
