@@ -84,7 +84,7 @@ const Form = ({}: FormProps) => {
     toast.warning(
       "Message not sent - Please fill out all fields and try again. 👀 ",
       {
-        position: "top-center",
+        position: "bottom-center",
         // autoClose: false,
         // hideProgressBar: false,
         closeOnClick: true,
@@ -99,7 +99,7 @@ const Form = ({}: FormProps) => {
     toast.error(
       "Something went wrong 😔 Please check your connection and try again.",
       {
-        position: "top-center",
+        position: "bottom-center",
         // autoClose: false,
         // hideProgressBar: false,
         closeOnClick: true,
