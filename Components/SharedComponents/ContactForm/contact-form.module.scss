@@ -3,8 +3,9 @@
 
 .contact-form-page-container {
   width: 100vw;
-  height: 100vh;
-  position: absolute;
+  height: auto;
+  min-height: 100%;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -17,15 +18,13 @@
 }
 
 .contact-modal {
-  width: 80%;
-  height: auto;
-  max-height: 90%;
+  width: 100vw;
+  height: 100vh;
   padding: 9rem 9rem 7rem 9rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: $contact-form-modal-bg;
-  border-radius: 15rem;
   position: relative;
 }
 
@@ -226,6 +225,13 @@
 // ? Breakpoints
 
 @include small-tablet {
+  .contact-modal {
+    height: auto;
+    max-height: 90%;
+    width: 80%;
+    border-radius: 15rem;
+  }
+
   .sending-button {
     border: 0.2rem solid $home-page-main-text-colour;
   }
