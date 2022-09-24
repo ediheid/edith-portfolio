@@ -11,8 +11,7 @@ const WebHashlinkButton = ({ children }: Props) => {
   return (
     <div className={styles["outer-circle"]}>
       <p className={styles["animated-text"]}>
-        {textToAnimate.split("").map((letter) => {
-          let index = textToAnimate.indexOf(letter);
+        {textToAnimate.split("").map((letter, index) => {
           return (
             <span className={styles["letter"]} key={index}>
               {letter}
