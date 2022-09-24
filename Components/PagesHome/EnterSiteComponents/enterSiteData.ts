@@ -1,5 +1,3 @@
-
-
 export const enterSiteData: {
   id: string;
   href: string;

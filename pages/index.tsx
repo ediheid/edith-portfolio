@@ -32,7 +32,13 @@ export default function Home({}: HomeProps) {
 
       <main className={styles.background}>
         {/* Side bar with contact and social media links */}
-        <SideBar contactButtonText={""} linkedIn={""} gitHub={""} instagram={""} darkroom={""} />
+        <SideBar
+          contactButtonText={""}
+          linkedIn={""}
+          gitHub={""}
+          instagram={""}
+          darkroom={""}
+        />
 
         <div className={styles["landing-page-content-container"]}>
           {/* Landing page headings */}
@@ -67,8 +73,9 @@ export default function Home({}: HomeProps) {
 
           {/* Components to enter art or web  */}
           <section className={styles["enter-components-container"]}>
-            {enterSiteData.map((site, index) => {
-              return <EnterSitesComponent key={index} site={site} />;
+            {enterSiteData.map((site) => {
+              // eslint-disable-next-line react/jsx-key
+              return <EnterSitesComponent site={site} />;
             })}
           </section>
         </div>
