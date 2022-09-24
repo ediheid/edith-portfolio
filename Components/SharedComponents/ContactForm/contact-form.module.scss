@@ -22,7 +22,7 @@
   width: 100vw;
   height: 100vh;
   overflow-y: auto !important;
-  padding: 9rem 9rem 7rem 9rem;
+  padding: 10rem 9rem 7rem 9rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,6 +221,12 @@
 }
 
 // ? Breakpoints
+
+@include extra-small-devices{
+  .contact-modal{
+    padding-top: 16rem;
+  }
+}
 
 @include small-tablet {
   .button-container {
