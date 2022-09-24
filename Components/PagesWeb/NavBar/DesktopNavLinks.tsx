@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useGlobalContext } from "../../../Context";
 import ContactForm from "../../SharedComponents/ContactForm/ContactForm";
 import styles from "./desktop-nav-bar.module.scss";

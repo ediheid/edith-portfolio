@@ -17,12 +17,12 @@ interface GlobalContextProps {
 export const GlobalContext = React.createContext<GlobalContextProps>({
   contactOpen: false,
   setContactOpen: () => {},
-  navOpen:false,
+  navOpen: false,
   setNavOpen: () => {},
 });
 
 export const GlobalContextProvider = ({ children }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   // ?  Global Window events
@@ -30,26 +30,36 @@ export const GlobalContextProvider = ({ children }: Props) => {
     //  Initialise AOS
     AOS.init();
 
-    // Todo: Seperate nav for web and art
+    // !
+    // Todo: Crate same for art page view nav dropdown
     // Closes mobile nav dropdown if it is open and the user scrolls down the page past 100px
-    // window.onscroll = function () {
-    //   if (window.scrollY > 100) {
-    //     setIsNavOpen(false);
-    //   }
-    // };
+    window.onscroll = function () {
+      if (window.scrollY > 100) {
+        setIsNavOpen(false);
+      }
+    };
 
     // Scroll to top on browser refresh
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
-    // ! (Page needs to be rendered before accessing window)
+    // (Page needs to be rendered before accessing window)
   }, []);
+
+  // ? Stops scrolling on site whenever contact modal is open
+  useEffect(() => {
+    if (isContactOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  });
 
   return (
     <GlobalContext.Provider
       value={{
-        contactOpen: isOpen,
-        setContactOpen: setIsOpen,
+        contactOpen: isContactOpen,
+        setContactOpen: setIsContactOpen,
         navOpen: isNavOpen,
         setNavOpen: setIsNavOpen,
       }}
