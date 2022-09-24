@@ -2,9 +2,6 @@
 @import "/styles/mixins";
 
 .contact-form-page-container {
-  width: 100vw;
-  height: auto;
-  min-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,25 +14,35 @@
   color: $contact-form-text-colour;
 }
 
-.contact-modal {
-  width: 100vw;
-  height: 100vh;
-  padding: 9rem 9rem 7rem 9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $contact-form-modal-bg;
-  position: relative;
-}
-
 .contact-modal * {
   font-family: $contact-form-font;
 }
 
+.contact-modal {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto !important;
+  padding: 9rem 9rem 7rem 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: $contact-form-bg;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.contact-modal::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.contact-modal {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .button-container {
-  position: absolute;
-  top: 10%;
-  font-size: 1.4rem;
+  margin: 0 0 3rem 0;
 }
 
 .close-button {
@@ -51,6 +58,7 @@
   z-index: 1;
   width: 7rem;
   height: 2.5rem;
+  font-size: 1.6rem;
 }
 
 .close-button::before {
@@ -79,6 +87,7 @@
 
 .form {
   width: 100%;
+  max-width: 70rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -89,17 +98,17 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  width: 20rem;
+  width: 25rem;
 }
 
 .labels {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   padding-bottom: 0.5rem;
 }
 
 .input,
 .text-area {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-family: $contact-form-input-font;
   letter-spacing: 0.1rem;
   background: transparent;
@@ -154,14 +163,12 @@
 
 .error-message {
   color: $error-message-text;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.05rem;
-  // padding-bottom: 1rem;
 }
 
 .button-wrapper {
   width: 100%;
-
   display: flex;
   justify-content: center;
 }
@@ -170,9 +177,9 @@
 .sending-button {
   display: flex;
   align-items: center;
-  margin: 4rem 1rem 0 1rem;
+  margin: 6rem 1rem 0 1rem;
   padding: 1rem 2rem 1rem 2rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: $home-page-main-text-colour;
   cursor: pointer;
   border: 0.2rem solid $home-page-main-text-colour;
@@ -181,11 +188,6 @@
   position: relative;
   transition: all 0.5s;
   z-index: 1;
-
-  // Only applies to 'sending-button'
-  span {
-    margin-right: 1rem;
-  }
 }
 
 .sending-button {
@@ -224,26 +226,8 @@
 
 // ? Breakpoints
 
-@include small-tablet {
-  .contact-modal {
-    height: auto;
-    max-height: 90%;
-    width: 80%;
-    border-radius: 15rem;
-  }
-
-  .sending-button {
-    border: 0.2rem solid $home-page-main-text-colour;
-  }
-}
-
 @include large-tablet {
   .text-area {
-    height: 16.3rem;
-  }
-
-  .contact-modal {
-    max-width: 80rem;
-    min-height: 26rem;
+    height: 16.5rem;
   }
 }
