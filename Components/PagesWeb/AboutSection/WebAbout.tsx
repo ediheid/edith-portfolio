@@ -7,11 +7,15 @@ import portrait from "../../../public/static/portrait.png";
 type AboutProps = {
   heading: string;
   altTag: string;
+  buttonText1: string;
+  buttonText2: string;
 };
 
-let aboutData = {
-  heading: "Who?",
+let aboutData: AboutProps = {
+  heading: "Who",
   altTag: "Blue and white portrait of Edith - long curly hair and glasses.",
+  buttonText1: "Tools & Tech",
+  buttonText2: "Portfolio",
 };
 
 const WebAbout = ({}: AboutProps) => {
@@ -43,11 +47,15 @@ const WebAbout = ({}: AboutProps) => {
 
           <div className={styles["hashlinks-container"]}>
             <WebHashlinkButton>
-              <span className={styles["link-text"]}>Tools & Tech</span>
+              <span className={styles["link-text"]}>
+                {aboutData.buttonText1}
+              </span>
             </WebHashlinkButton>
 
             <WebHashlinkButton>
-              <span className={styles["link-text"]}>Portfolio</span>
+              <span className={styles["link-text"]}>
+                {aboutData.buttonText2}
+              </span>
             </WebHashlinkButton>
           </div>
         </div>

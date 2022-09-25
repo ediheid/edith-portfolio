@@ -5,12 +5,11 @@ import LogoLink from "../LogoLink/LogoLink";
 import styles from "./mobile-nav-bar.module.scss";
 
 const MobileNavBar = () => {
-  const { navOpen } = useGlobalContext();
-  const { setNavOpen } = useGlobalContext();
+  const { navOpen, setNavOpen } = useGlobalContext();
 
   return (
     <div className={styles["nav-container"]}>
-      <LogoLink initials={""}  />
+      <LogoLink initials={""} />
 
       <div className={styles["hamburger-container"]}>
         <Hamburger
@@ -21,7 +20,16 @@ const MobileNavBar = () => {
         />
       </div>
 
-      {navOpen && <MobileNavLinks about={""} webPages={""} webDesign={""} webApps={""} contact={""} home={""} />}
+      {navOpen && (
+        <MobileNavLinks
+          about={""}
+          webPages={""}
+          webDesign={""}
+          webApps={""}
+          contact={""}
+          home={""}
+        />
+      )}
     </div>
   );
 };

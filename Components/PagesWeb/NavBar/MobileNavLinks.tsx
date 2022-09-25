@@ -12,7 +12,7 @@ type MobileNavLinkProps = {
   home: string;
 };
 
-let mobileNavLinkData = {
+let mobileNavLinkData: MobileNavLinkProps = {
   about: "About",
   webPages: "Web-Pages",
   webDesign: "Web-Design",
@@ -22,17 +22,7 @@ let mobileNavLinkData = {
 };
 
 const MobileNavLinks = ({}: MobileNavLinkProps) => {
-  const { contactOpen } = useGlobalContext();
-  const { setContactOpen } = useGlobalContext();
-  const { setNavOpen } = useGlobalContext();
-
-  const openContactFormModal = () => {
-    setContactOpen(true);
-  };
-
-  const closeNav = () => {
-    setNavOpen(false);
-  };
+  const { contactOpen, closeNav, openContactFormModal } = useGlobalContext();
 
   return (
     <>
@@ -48,7 +38,7 @@ const MobileNavLinks = ({}: MobileNavLinkProps) => {
           </Link>
         </ul>
       </div>
-      {contactOpen && <ContactForm />}
+      {contactOpen && <ContactForm heading={""} />}
     </>
   );
 };

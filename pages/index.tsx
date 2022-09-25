@@ -9,11 +9,14 @@ import AnimatedText from "react-animated-text-content";
 interface HomeProps {
   fullName: string;
   animatedText: string;
+  metaContent: string;
 }
 
-let homeData = {
+let homeData: HomeProps = {
   fullName: "Edith Heidmann",
   animatedText: "Web Developer/ Designer and Visual Artist.",
+  metaContent:
+    "Web Developer - Web Designer - Visual Artist based in Berlin, hailing from Sydney, Australia. Available for contract and freelance projects.",
 };
 
 export default function Home({}: HomeProps) {
@@ -23,10 +26,7 @@ export default function Home({}: HomeProps) {
     <div className={styles.container}>
       <Head>
         <title>{homeData.fullName}</title>
-        <meta
-          name="description"
-          content="Web Developer - Web Designer - Visual Artist based in Berlin, hailing from Sydney, Australia. Available for contract and freelance projects."
-        />
+        <meta name="description" content={homeData.metaContent} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

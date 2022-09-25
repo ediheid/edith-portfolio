@@ -10,7 +10,7 @@ type DesktopNavProps = {
   contact: string;
 };
 
-let desktopNavData = {
+let desktopNavData: DesktopNavProps = {
   about: "About",
   webPages: "Web-Pages",
   webDesign: "Web-Design",
@@ -19,12 +19,7 @@ let desktopNavData = {
 };
 
 const DesktopNavLinks = ({}: DesktopNavProps) => {
-  const { contactOpen } = useGlobalContext();
-  const { setContactOpen } = useGlobalContext();
-
-  const openContactFormModal = () => {
-    setContactOpen(true);
-  };
+  const { contactOpen, openContactFormModal } = useGlobalContext();
 
   return (
     <>
@@ -37,7 +32,7 @@ const DesktopNavLinks = ({}: DesktopNavProps) => {
           <li onClick={openContactFormModal}>{desktopNavData.contact}</li>
         </ul>
       </div>
-      {contactOpen && <ContactForm />}
+      {contactOpen && <ContactForm heading={""} />}
     </>
   );
 };

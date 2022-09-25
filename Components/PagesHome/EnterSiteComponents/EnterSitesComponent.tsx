@@ -15,7 +15,7 @@ const EnterSitesComponent = ({
           aria-label={site.aria}
         >
           <h2 className={styles["site-name"]} id={styles[`${site.id}`]}></h2>
-          <h2 className={styles["enter-heading"]}>enter</h2>
+          <h2 className={styles["enter-heading"]}>{site.enterHeading}</h2>
         </div>
       </Link>
     </>

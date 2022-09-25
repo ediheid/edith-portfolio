@@ -5,7 +5,7 @@ type LogoProps = {
   initials: string;
 };
 
-let logoData = {
+let logoData: LogoProps = {
   initials: "eh.",
 };
 

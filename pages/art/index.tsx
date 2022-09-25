@@ -4,7 +4,7 @@ type ArtAppProps = {
   title: string;
 };
 
-let artAppData = {
+let artAppData: ArtAppProps = {
   title: "EH · Art",
 };
 

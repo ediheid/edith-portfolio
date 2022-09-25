@@ -4,10 +4,12 @@ import WebAbout from "../../Components/PagesWeb/AboutSection/WebAbout";
 
 type WebAppProps = {
   title: string;
+  metaContent: string;
 };
 
-let webAppData = {
+let webAppData : WebAppProps = {
   title: "EH · Web",
+  metaContent: "Web Developer - Web Designer - Visual Artist based in Berlin, hailing from Sydney, Australia. Available for contract and freelance projects."
 };
 
 const Web = ({}: WebAppProps) => {
@@ -17,12 +19,12 @@ const Web = ({}: WebAppProps) => {
         <title>{webAppData.title}</title>
         <meta
           name="description"
-          content="Web Developer - Web Designer - Visual Artist based in Berlin, hailing from Sydney, Australia. Available for contract and freelance projects."
+          content={webAppData.metaContent}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <WebAbout heading={""} altTag={""} />
+      <WebAbout heading={""} altTag={""} buttonText1={""} buttonText2={""} />
     </WebLayout>
   );
 };

@@ -12,6 +12,8 @@ interface GlobalContextProps {
   setContactOpen: React.Dispatch<React.SetStateAction<boolean>>;
   navOpen: boolean;
   setNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  openContactFormModal: () => void;
+  closeNav: () => void;
 }
 
 export const GlobalContext = React.createContext<GlobalContextProps>({
@@ -19,11 +21,21 @@ export const GlobalContext = React.createContext<GlobalContextProps>({
   setContactOpen: () => {},
   navOpen: false,
   setNavOpen: () => {},
+  openContactFormModal: () => {},
+  closeNav: () => {},
 });
 
 export const GlobalContextProvider = ({ children }: Props) => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const openContactFormModal = () => {
+    setIsContactOpen(true);
+  };
+
+  const closeNav = () => {
+    setIsNavOpen(false);
+  };
 
   // ?  Global Window events
   useEffect(() => {
@@ -62,6 +74,8 @@ export const GlobalContextProvider = ({ children }: Props) => {
         setContactOpen: setIsContactOpen,
         navOpen: isNavOpen,
         setNavOpen: setIsNavOpen,
+        openContactFormModal: openContactFormModal,
+        closeNav: closeNav,
       }}
     >
       {children}

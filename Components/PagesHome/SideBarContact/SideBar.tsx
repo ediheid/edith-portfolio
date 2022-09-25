@@ -17,7 +17,7 @@ type Props = {
   darkroom: string;
 };
 
-let sideBarData = {
+let sideBarData: Props = {
   contactButtonText: "Contact Form",
   linkedIn: "https://www.linkedin.com/in/edith-heidmann/",
   gitHub: "https://github.com/ediheid",
@@ -26,12 +26,7 @@ let sideBarData = {
 };
 
 export const SideBar = ({}: Props) => {
-  const { contactOpen } = useGlobalContext();
-  const { setContactOpen } = useGlobalContext();
-
-  const openContactFormModal = () => {
-    setContactOpen(true);
-  };
+  const { contactOpen, openContactFormModal } = useGlobalContext();
 
   return (
     <div
@@ -48,7 +43,7 @@ export const SideBar = ({}: Props) => {
       </button>
 
       {/* Display contact form when state is set to true */}
-      {contactOpen && <ContactForm />}
+      {contactOpen && <ContactForm heading={""} />}
 
       {/* Vertical dividing line */}
       <div className={styles["vertical-line"]}></div>

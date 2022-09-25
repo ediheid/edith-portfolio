@@ -37,7 +37,7 @@ type FormProps = {
   buttonSending: string;
 };
 
-let formData = {
+let formData: FormProps = {
   closeButton: "close",
   nameLabel: "Name",
   emailLabel: "email",
@@ -54,9 +54,7 @@ let formData = {
 };
 
 const Form = ({}: FormProps) => {
-  const { setContactOpen } = useGlobalContext();
-  const { setNavOpen } = useGlobalContext();
-  const { navOpen } = useGlobalContext();
+  const { setContactOpen, setNavOpen, navOpen } = useGlobalContext();
   const [userName, setUserName] = useState<string>("");
   let [userEmail, setUserEmail] = useState<string>("");
   const [messageSubject, setMessageSubject] = useState<string>("");
@@ -76,7 +74,7 @@ const Form = ({}: FormProps) => {
     // If user is on Web View, and mobile nav dropdown - hide dropdown when user uses contact form
     // !
     // Todo: Once built add same functionality for all sub pages of Web and the same for Art or create Layout and and add there
-    <Web title={""} /> && navOpen === true ? setNavOpen(false) : null;
+    <Web title={""} metaContent={""} /> && navOpen === true ? setNavOpen(false) : null;
   };
 
   // Toast alerts
