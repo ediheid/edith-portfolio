@@ -2,6 +2,8 @@ import Head from "next/head";
 import WebLayout from "../../Layout/WebLayout";
 import WebAbout from "../../Components/PagesWeb/AboutSection/WebAbout";
 
+import styles from "./web.module.scss";
+
 type WebAppProps = {
   title: string;
   metaContent: string;
@@ -22,7 +24,10 @@ const Web = ({}: WebAppProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <WebAbout heading={""} altTag={""} buttonText1={""} buttonText2={""} />
+      {/* Page container */}
+      <div className={styles["web-bg"]}>
+        <WebAbout heading={""} altTag={""} buttonText1={""} buttonText2={""} />
+      </div>
     </WebLayout>
   );
 };

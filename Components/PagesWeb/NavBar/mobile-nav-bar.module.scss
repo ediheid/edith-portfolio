@@ -1,22 +1,31 @@
 @import "/styles/variables";
 @import "/styles/mixins";
 
-.nav-container {
+
+
+.nav-container
+ {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   height: 8rem;
   width: 100vw;
+  position: fixed;
+  z-index: 100;
+}
 
+.nav-closed-bg {
   background-color: $web-nav-bg;
-  overflow: hidden;
+}
+
+.nav-open-bg {
+  background-color: $web-nav-bg-solid;
 }
 
 .hamburger-container {
   color: $web-view-hamburger-colour;
   cursor: pointer;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
 
   &:active {
     transform: scale(1.05);
@@ -38,7 +47,7 @@
   width: 100%;
   overflow: hidden;
   z-index: 10;
-  background-color: $web-nav-bg;
+  background-color: $web-nav-bg-solid;
 }
 
 .nav-list {

@@ -6,9 +6,7 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
-
-  background-size: cover;
-  background-image: url("/static/pexels-olga-v-5506216.jpg");
+  padding-top: 8rem;
 }
 
 .content-container {
@@ -19,6 +17,7 @@
   width: 80%;
   height: auto;
   padding: 5rem 0 2rem 0;
+  
 
   h2 {
     @include web-headings;
