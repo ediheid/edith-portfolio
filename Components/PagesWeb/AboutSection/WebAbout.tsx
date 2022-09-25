@@ -12,7 +12,7 @@ type AboutProps = {
 };
 
 let aboutData: AboutProps = {
-  heading: "Who",
+  heading: "Who?",
   altTag: "Blue and white portrait of Edith - long curly hair and glasses.",
   buttonText1: "Tools & Tech",
   buttonText2: "Portfolio",
