@@ -14,6 +14,7 @@ interface GlobalContextProps {
   setNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
   openContactFormModal: () => void;
   closeNav: () => void;
+  navVisible: boolean;
 }
 
 export const GlobalContext = React.createContext<GlobalContextProps>({
@@ -23,12 +24,16 @@ export const GlobalContext = React.createContext<GlobalContextProps>({
   setNavOpen: () => {},
   openContactFormModal: () => {},
   closeNav: () => {},
+  navVisible: true,
 });
 
 export const GlobalContextProvider = ({ children }: Props) => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
+  const [visible, setVisible] = useState(true);
 
+  // ? Functions
   const openContactFormModal = () => {
     setIsContactOpen(true);
   };
@@ -42,9 +47,9 @@ export const GlobalContextProvider = ({ children }: Props) => {
     //  Initialise AOS
     AOS.init();
 
+    // Close mobile nav dropdown if it is open and the user scrolls down the page past 100px
     // !
-    // Todo: Crate same for art page view nav dropdown
-    // Closes mobile nav dropdown if it is open and the user scrolls down the page past 100px
+    // Todo: Crate same for art page view nav dropdown when built
     window.onscroll = function () {
       if (window.scrollY > 100) {
         setIsNavOpen(false);
@@ -57,6 +62,21 @@ export const GlobalContextProvider = ({ children }: Props) => {
     };
     // (Page needs to be rendered before accessing window)
   }, []);
+
+  // ? Hide nav bar on scroll down and display on scroll up
+  const handleScroll = () => {
+    const currentPosition = window.scrollY;
+
+    setVisible(prevScrollPos > currentPosition || currentPosition < 20);
+
+    setPrevScrollPos(currentPosition);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
 
   // ? Stops scrolling on site whenever contact modal is open
   useEffect(() => {
@@ -76,6 +96,7 @@ export const GlobalContextProvider = ({ children }: Props) => {
         setNavOpen: setIsNavOpen,
         openContactFormModal: openContactFormModal,
         closeNav: closeNav,
+        navVisible: visible,
       }}
     >
       {children}
