@@ -25,7 +25,10 @@ const Web = ({}: WebAppProps) => {
       </Head>
 
       {/* Page container */}
-      <div className={styles["web-bg"]}>
+      <div
+        className={styles["web-bg"]}
+        aria-label="Background photo of white textured wall paint by Olga V: https://www.pexels.com/photo/white-painted-wall-5506216/"
+      >
         <WebAbout heading={""} altTag={""} buttonText1={""} buttonText2={""} />
       </div>
     </WebLayout>
