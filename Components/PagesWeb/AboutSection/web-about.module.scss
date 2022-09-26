@@ -17,7 +17,6 @@
   width: 80%;
   height: auto;
   padding: 5rem 0 2rem 0;
-  
 
   h2 {
     @include web-headings;
@@ -65,8 +64,6 @@
 }
 
 @include small-tablet {
-
-
   .image-container {
     margin: 4.5rem 0 0 0;
   }
@@ -80,7 +77,7 @@
 }
 
 @include large-tablet {
-  .about-section-container{
+  .about-section-container {
     padding-top: 9rem;
   }
   .hashlinks-container {
@@ -115,6 +112,10 @@
 
   .image {
     width: 20%;
+  }
+
+  .hashlinks-container {
+    width: 100%;
   }
 }
 
