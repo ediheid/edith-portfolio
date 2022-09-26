@@ -1,6 +1,7 @@
 import Head from "next/head";
 import WebLayout from "../../Layout/WebLayout";
 import WebAbout from "../../Components/PagesWeb/AboutSection/WebAbout";
+import ToolsAndTech from "../../Components/PagesWeb/ToolsAndTechSection/ToolsAndTech";
 
 import styles from "./web.module.scss";
 
@@ -30,6 +31,8 @@ const Web = ({}: WebAppProps) => {
         aria-label="Background photo of white textured wall paint by Olga V: https://www.pexels.com/photo/white-painted-wall-5506216/"
       >
         <WebAbout heading={""} altTag={""} buttonText1={""} buttonText2={""} />
+
+        <ToolsAndTech />
       </div>
     </WebLayout>
   );

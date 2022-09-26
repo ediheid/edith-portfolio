@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "Components/PagesHome/SideBarContact/SideBar.tsx",
-    "Context/AppContext.js"
+    "Context/AppContext.js",
+    "Components/PagesWeb/ToolsAndTechSection/IconSlider.tsx"
   ],
   "exclude": ["node_modules"]
 }
