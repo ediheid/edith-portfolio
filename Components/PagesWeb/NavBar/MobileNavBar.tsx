@@ -9,7 +9,7 @@ const MobileNavBar = () => {
 
   return (
     <div
-      style={{ top: navVisible ? "0" : "-100px", transition: "ease .3s" }}
+      style={{ top: navVisible ? "0" : "-100px", transition: "top ease .1s" }}
       className={`${styles["nav-container"]} ${
         navOpen ? styles["nav-open-bg"] : styles["nav-closed-bg"]
       }`}

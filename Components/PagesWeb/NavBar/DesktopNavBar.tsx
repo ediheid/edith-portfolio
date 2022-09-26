@@ -7,7 +7,7 @@ const DesktopNavBar = () => {
   const { navVisible } = useGlobalContext();
   return (
     <div
-      style={{ top: navVisible ? "0" : "-100px", transition: "ease .5s" }}
+      style={{ top: navVisible ? "0" : "-100px", transition: " top ease .5s" }}
       className={styles["nav-container"]}
     >
       <LogoLink initials={""} />
