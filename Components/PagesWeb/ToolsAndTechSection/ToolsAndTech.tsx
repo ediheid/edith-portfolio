@@ -38,16 +38,31 @@ const icons2 = [
   <SiNodedotjs />,
   <SiExpress />,
   <SiMongodb />,
-  <FaNpm/>,
-  <SiPostman/>,
-  <FaGitAlt/>,
-  <SiGithub/>,
-  <SiGitlab/>
+  <FaNpm />,
+  <SiPostman />,
+  <FaGitAlt />,
+  <SiGithub />,
+  <SiGitlab />,
 ];
+
+const allIconsArray = icons.concat(icons2);
 
 const ToolsAndTech = () => {
   return (
     <section className={styles["tools-tech-container"]}>
+      {/* Small screens only */}
+      <div className={styles["icons-container-mobile"]}>
+        {allIconsArray.map((icon, index) => {
+          return (
+            <div className={styles["icon"]} key={index}>
+              {icon}
+            </div>
+          );
+        })}
+      </div>
+
+      {/*  Laptop and higher.. */}
+      {/* to left */}
       <div className={styles["animation-container"]}>
         <div className={`${styles["animation-element"]} ${styles["primary"]}`}>
           {icons.map((icon, index) => {
@@ -72,10 +87,8 @@ const ToolsAndTech = () => {
         </div>
       </div>
 
-
-       {/*  Other direction */}
-
-       <div className={styles["animation-container"]}>
+      {/* To right */}
+      <div className={styles["animation-container"]}>
         <div className={`${styles["animation-element"]} ${styles["primary2"]}`}>
           {icons2.map((icon, index) => {
             return (
