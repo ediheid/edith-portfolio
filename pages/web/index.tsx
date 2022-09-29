@@ -30,7 +30,13 @@ const Web = ({}: WebAppProps) => {
         className={styles["web-bg"]}
         aria-label="Background photo of white textured wall paint by Olga V: https://www.pexels.com/photo/white-painted-wall-5506216/"
       >
-        <WebAbout heading={""} altTag={""} buttonText1={""} buttonText2={""} />
+        <WebAbout
+          heading={""}
+          altTag={""}
+          buttonToolsAndTech={""}
+          buttonPortfolio={""}
+          currentWorkWebsite={""}
+          currentWork={""} jobTitle={""}        />
 
         <ToolsAndTech />
       </div>

@@ -8,15 +8,21 @@ import portrait from "../../../public/static/portrait.png";
 type AboutProps = {
   heading: string;
   altTag: string;
-  buttonText1: string;
-  buttonText2: string;
+  buttonToolsAndTech: string;
+  buttonPortfolio: string;
+  jobTitle: string;
+  currentWork: string;
+  currentWorkWebsite: string;
 };
 
 let aboutData: AboutProps = {
   heading: "Who?",
   altTag: "Blue and white portrait of Edith - long curly hair and glasses.",
-  buttonText1: "Tools & Tech",
-  buttonText2: "Portfolio",
+  buttonToolsAndTech: "Tools & Tech",
+  buttonPortfolio: "Portfolio",
+  jobTitle: "Junior Frontend Web Developer",
+  currentWork: "HOLOPLOT Gmbh",
+  currentWorkWebsite: "https://holoplot.com/",
 };
 
 const WebAbout = ({}: AboutProps) => {
@@ -46,6 +52,20 @@ const WebAbout = ({}: AboutProps) => {
             and web apps.
           </p>
 
+          <p>
+            Working as a {aboutData.jobTitle} at{" "}
+            <a
+              className={styles["company-link"]}
+              href={aboutData.currentWorkWebsite}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {aboutData.currentWork}
+            </a>{" "}
+            and as a freelance Developer/Designer for multiple small business
+            sites in Germany.
+          </p>
+
           <div className={styles["hashlinks-container"]}>
             <WebHashlinkButton>
               <span className={styles["link-text"]}>
@@ -56,14 +76,14 @@ const WebAbout = ({}: AboutProps) => {
                   duration={500}
                   isDynamic={true}
                 >
-                  {aboutData.buttonText1}
+                  {aboutData.buttonToolsAndTech}
                 </Hashlink>
               </span>
             </WebHashlinkButton>
 
             <WebHashlinkButton>
               <span className={styles["link-text"]}>
-                {aboutData.buttonText2}
+                {aboutData.buttonPortfolio}
               </span>
             </WebHashlinkButton>
           </div>
