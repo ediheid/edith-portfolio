@@ -66,8 +66,11 @@ const ToolsAndTech = () => {
         <div className={`${styles["animation-element"]} ${styles["animation-stop"]} ${styles["primary"]}`}>
           {icons.map((icon, index) => {
             return (
+              <div className={styles["icon-container"]}>
               <div className={styles["icon"]} key={index}>
                 {icon}
+              </div>
+              <span className={styles["icon-name"]}>Test</span>
               </div>
             );
           })}
@@ -78,8 +81,11 @@ const ToolsAndTech = () => {
         >
           {icons.map((icon, index) => {
             return (
+              <div className={styles["icon-container"]}>
               <div className={styles["icon"]} key={index}>
                 {icon}
+              </div>
+              <span className={styles["icon-name"]}>Test</span>
               </div>
             );
           })}
@@ -91,8 +97,11 @@ const ToolsAndTech = () => {
         <div className={`${styles["animation-element"]} ${styles["primary2"]}`}>
           {icons2.map((icon, index) => {
             return (
+              <div className={styles["icon-container"]}>
               <div className={styles["icon"]} key={index}>
                 {icon}
+              </div>
+              <span className={styles["icon-name"]}>Test</span>
               </div>
             );
           })}
@@ -103,8 +112,11 @@ const ToolsAndTech = () => {
         >
           {icons2.map((icon, index) => {
             return (
+               <div className={styles["icon-container"]}>
               <div className={styles["icon"]} key={index}>
                 {icon}
+              </div>
+              <span className={styles["icon-name"]}>Test</span>
               </div>
             );
           })}

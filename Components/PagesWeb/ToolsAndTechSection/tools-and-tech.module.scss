@@ -19,15 +19,22 @@
   display: none;
 }
 
-//!
-// Todo: animations on icon hover - for larger devices where they are animation across screen make animation stop on hover
-// Also add a wavy animation for large devices
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10rem;
+}
 
 .icon {
   padding: 2rem 3rem 2rem 3rem;
   font-size: 3rem;
   color: darken($main-font-colour, 10%);
   opacity: 0.9;
+}
+
+.icon-name {
+  display: none;
 }
 
 @include extra-small-devices {
@@ -154,10 +161,33 @@
 }
 
 @media (hover: hover) {
-  .icon:hover {
-    transform: scale(1.5);
-    color: $jam;
-    transition: .3s;
+  .icon-container:hover {
+    .icon {
+      transform: scale(1.5);
+      color: $jam;
+      transition: 0.3s;
+      height: 10rem;
+    }
+
+    .icon-name {
+      animation: fadeIn 1.2s;
+      display: flex;
+      position: absolute;
+      bottom: 2rem;
+      font-family: $jakarta-font-bold;
+      letter-spacing: 0.05rem;
+      font-size: 1.5rem;
+      color: $jam;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .animation-container:hover * {
