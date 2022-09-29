@@ -68,17 +68,17 @@ const WebAbout = ({}: AboutProps) => {
 
           <div className={styles["hashlinks-container"]}>
             <WebHashlinkButton>
-              <span className={styles["link-text"]}>
-                <Hashlink
-                  to="tools"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  isDynamic={true}
-                >
+              <Hashlink
+                to="tools"
+                spy={true}
+                smooth={true}
+                duration={500}
+                isDynamic={true}
+              >
+                <span className={styles["link-text"]}>
                   {aboutData.buttonToolsAndTech}
-                </Hashlink>
-              </span>
+                </span>
+              </Hashlink>
             </WebHashlinkButton>
 
             <WebHashlinkButton>
