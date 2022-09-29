@@ -48,7 +48,7 @@ const allIconsArray = icons.concat(icons2);
 
 const ToolsAndTech = () => {
   return (
-    <section className={styles["tools-tech-container"]}>
+    <section className={styles["tools-tech-container"]} id="tools">
       {/* Small screens only - no animation */}
       <div className={styles["icons-container-mobile"]}>
         {allIconsArray.map((icon, index) => {

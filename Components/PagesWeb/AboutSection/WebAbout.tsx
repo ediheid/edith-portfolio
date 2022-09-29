@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Link as Hashlink } from "react-scroll";
 import WebHashlinkButton from "../../UiComponents/WebHashlinkButtons/WebHashlinkButton";
 import styles from "./web-about.module.scss";
 
@@ -48,7 +49,15 @@ const WebAbout = ({}: AboutProps) => {
           <div className={styles["hashlinks-container"]}>
             <WebHashlinkButton>
               <span className={styles["link-text"]}>
-                {aboutData.buttonText1}
+                <Hashlink
+                  to="tools"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  isDynamic={true}
+                >
+                  {aboutData.buttonText1}
+                </Hashlink>
               </span>
             </WebHashlinkButton>
 
