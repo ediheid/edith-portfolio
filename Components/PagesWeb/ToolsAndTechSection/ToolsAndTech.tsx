@@ -64,7 +64,7 @@ const ToolsAndTech = () => {
       {/*  Laptop and higher.. */}
       {/* to left */}
       <div className={styles["animation-container"]}>
-        <div className={`${styles["animation-element"]} ${styles["primary"]}`}>
+        <div className={`${styles["animation-element"]} ${styles["animation-stop"]} ${styles["primary"]}`}>
           {icons.map((icon, index) => {
             return (
               <div className={styles["icon"]} key={index}>
@@ -75,7 +75,7 @@ const ToolsAndTech = () => {
         </div>
 
         <div
-          className={`${styles["animation-element"]} ${styles["secondary"]}`}
+          className={`${styles["animation-element"]}  ${styles["animation-stop"]} ${styles["secondary"]}`}
         >
           {icons.map((icon, index) => {
             return (
