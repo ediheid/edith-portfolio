@@ -19,6 +19,11 @@ import { SiGithub } from "react-icons/si";
 import { SiGitlab } from "react-icons/si";
 
 import styles from "./tools-and-tech.module.scss";
+import { IconType } from "react-icons/lib";
+
+const test: { icon: any; iconName: string }[] = [
+  { icon: <SiJavascript />, iconName: "JavaScript" },
+];
 
 const icons = [
   <SiJavascript />,
@@ -63,14 +68,16 @@ const ToolsAndTech = () => {
       {/*  Laptop and higher.. start animation - two mirrored animation elements for each row for seamless effect */}
       {/* to left */}
       <div className={styles["animation-container"]}>
-        <div className={`${styles["animation-element"]} ${styles["animation-stop"]} ${styles["primary"]}`}>
+        <div
+          className={`${styles["animation-element"]} ${styles["animation-stop"]} ${styles["primary"]}`}
+        >
           {icons.map((icon, index) => {
             return (
               <div className={styles["icon-container"]}>
-              <div className={styles["icon"]} key={index}>
-                {icon}
-              </div>
-              <span className={styles["icon-name"]}>Test</span>
+                <div className={styles["icon"]} key={index}>
+                  {icon}
+                </div>
+                <span className={styles["icon-name"]}>Test</span>
               </div>
             );
           })}
@@ -82,10 +89,10 @@ const ToolsAndTech = () => {
           {icons.map((icon, index) => {
             return (
               <div className={styles["icon-container"]}>
-              <div className={styles["icon"]} key={index}>
-                {icon}
-              </div>
-              <span className={styles["icon-name"]}>Test</span>
+                <div className={styles["icon"]} key={index}>
+                  {icon}
+                </div>
+                <span className={styles["icon-name"]}>Test</span>
               </div>
             );
           })}
@@ -98,10 +105,10 @@ const ToolsAndTech = () => {
           {icons2.map((icon, index) => {
             return (
               <div className={styles["icon-container"]}>
-              <div className={styles["icon"]} key={index}>
-                {icon}
-              </div>
-              <span className={styles["icon-name"]}>Test</span>
+                <div className={styles["icon"]} key={index}>
+                  {icon}
+                </div>
+                <span className={styles["icon-name"]}>Test</span>
               </div>
             );
           })}
@@ -112,11 +119,11 @@ const ToolsAndTech = () => {
         >
           {icons2.map((icon, index) => {
             return (
-               <div className={styles["icon-container"]}>
-              <div className={styles["icon"]} key={index}>
-                {icon}
-              </div>
-              <span className={styles["icon-name"]}>Test</span>
+              <div className={styles["icon-container"]}>
+                <div className={styles["icon"]} key={index}>
+                  {icon}
+                </div>
+                <span className={styles["icon-name"]}>Test</span>
               </div>
             );
           })}
