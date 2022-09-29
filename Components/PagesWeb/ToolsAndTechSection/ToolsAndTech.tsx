@@ -21,7 +21,6 @@ import { SiGitlab } from "react-icons/si";
 import styles from "./tools-and-tech.module.scss";
 
 const icons = [
-  // eslint-disable-next-line react/jsx-key
   <SiJavascript />,
   <SiTypescript />,
   <SiReact />,
@@ -50,7 +49,7 @@ const allIconsArray = icons.concat(icons2);
 const ToolsAndTech = () => {
   return (
     <section className={styles["tools-tech-container"]}>
-      {/* Small screens only */}
+      {/* Small screens only - no animation */}
       <div className={styles["icons-container-mobile"]}>
         {allIconsArray.map((icon, index) => {
           return (
@@ -61,7 +60,7 @@ const ToolsAndTech = () => {
         })}
       </div>
 
-      {/*  Laptop and higher.. */}
+      {/*  Laptop and higher.. start animation - two mirrored animation elements for each row for seamless effect */}
       {/* to left */}
       <div className={styles["animation-container"]}>
         <div className={`${styles["animation-element"]} ${styles["animation-stop"]} ${styles["primary"]}`}>
