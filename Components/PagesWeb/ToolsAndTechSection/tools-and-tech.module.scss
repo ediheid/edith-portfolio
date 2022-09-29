@@ -156,6 +156,8 @@
 @media (hover: hover) {
   .icon:hover {
     transform: scale(1.5);
+    color: $jam;
+    transition: .3s;
   }
 
   .animation-container:hover * {
