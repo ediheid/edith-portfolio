@@ -1,7 +1,8 @@
 @import "/styles/variables";
 @import "/styles/mixins";
 
-.web-bg{
-    background-size: cover;
-    background-image: url("/static/pexels-olga-v-5506216.jpg");
+.web-bg {
+  background-size: cover;
+  background-image: url("/static/pexels-olga-v-5506216.jpg");
+  overflow: hidden;
 }

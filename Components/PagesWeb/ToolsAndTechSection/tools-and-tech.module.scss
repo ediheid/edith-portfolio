@@ -56,7 +56,7 @@
     position: relative;
     width: 100%;
     height: 10rem;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .animation-element {
@@ -155,7 +155,7 @@
 
 @media (hover: hover) {
   .icon:hover {
-    transform: scale(2);
+    transform: scale(1.5);
   }
 
   .animation-container:hover * {
