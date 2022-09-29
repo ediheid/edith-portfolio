@@ -1,4 +1,5 @@
 import { useGlobalContext } from "../../../Context";
+import Link from "next/link";
 import ContactForm from "../../SharedComponents/ContactForm/ContactForm";
 import styles from "./desktop-nav-bar.module.scss";
 
@@ -8,6 +9,7 @@ type DesktopNavProps = {
   webDesign: string;
   webApps: string;
   contact: string;
+  home: string;
 };
 
 let desktopNavData: DesktopNavProps = {
@@ -16,6 +18,7 @@ let desktopNavData: DesktopNavProps = {
   webDesign: "Web-Design",
   webApps: "Web-Apps",
   contact: "Contact",
+  home: "Home",
 };
 
 const DesktopNavLinks = ({}: DesktopNavProps) => {
@@ -30,6 +33,9 @@ const DesktopNavLinks = ({}: DesktopNavProps) => {
           <li>{desktopNavData.webDesign}</li>
           <li>{desktopNavData.webApps}</li>
           <li onClick={openContactFormModal}>{desktopNavData.contact}</li>
+          <Link href="/">
+            <li>{desktopNavData.home}</li>
+          </Link>
         </ul>
       </div>
       {contactOpen && <ContactForm heading={""} />}

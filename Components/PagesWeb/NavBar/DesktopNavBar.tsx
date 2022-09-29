@@ -17,8 +17,7 @@ const DesktopNavBar = () => {
         webPages={""}
         webDesign={""}
         webApps={""}
-        contact={""}
-      />
+        contact={""} home={""}      />
     </div>
   );
 };
