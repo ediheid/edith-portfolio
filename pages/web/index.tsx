@@ -45,7 +45,7 @@ const Web = ({}: WebAppProps) => {
 
         <ToolsAndTech />
 
-        <Portfolio />
+        <Portfolio portfolioSectionId={""} />
       </div>
     </WebLayout>
   );
