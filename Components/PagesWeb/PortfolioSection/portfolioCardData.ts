@@ -2,8 +2,9 @@
 
 export const portfolioCardData: {
   id: string;
-  internalLink?: string;
-  externalLink?: string;
+  // If internal or extrenal don't exist then "" in object
+  internalLink: string;
+  externalLink: string;
   projectName: string;
   projectImage: string;
   projectImageAltText: string;
@@ -12,7 +13,8 @@ export const portfolioCardData: {
   backgroundColourId?: string;
 }[] = [
   {
-    id: "internalLink",
+    id: "externalLink",
+    internalLink: "",
     externalLink: "https://www.reverberationfest.com/",
     projectName: "Reverberation Festival",
     projectImage: "/static/portrait.png",

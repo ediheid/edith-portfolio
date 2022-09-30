@@ -7,7 +7,7 @@ import {
   ReactPortal,
 } from "react";
 
-import styles from "./portfolio-card.module.scss"
+import styles from "./portfolio-card.module.scss";
 
 const PortfolioCard = ({
   card,
@@ -16,35 +16,35 @@ const PortfolioCard = ({
 }) => {
   return (
     <>
-      {/* External link card */}
-      {/* Something like 'if ID = external then return this.. else return internal */}
-
-      <a>
-        This will be the card
-        <div className={styles["image-container"]}>
-          <Image
-            src={card.projectImage}
-            alt={card.projectImageAltText}
-          // Overwritten in image container
-            height="300"
-            width="300"
-          ></Image>
-        </div>
-      </a>
-
-      {/* Internal link card */}
-
-      <Link href={card.externalLink}>
-        <div className={styles["image-container"]}>
-          <Image
-            src={card.projectImage}
-            alt={card.projectImageAltText}
-          // Overwritten in image container
-            height="300"
-            width="300"
-          ></Image>
-        </div>
-      </Link>
+      {/* Conditionally render card with <a></a> for external link wrapper or <Link> for internal depending on ID */}
+      {card.id === "externalLink" ? (
+        // External Link Card
+        <a href={card.externalLink} target="_blank" rel="noopener noreferrer">
+          This will be the card
+          <div className={styles["image-container"]}>
+            <Image
+              src={card.projectImage}
+              alt={card.projectImageAltText}
+              // Overwritten in image container
+              height="300"
+              width="300"
+            ></Image>
+          </div>
+        </a>
+      ) : (
+        // Internal Link Card
+        <Link href={card.internalLink}>
+          <div className={styles["image-container"]}>
+            <Image
+              src={card.projectImage}
+              alt={card.projectImageAltText}
+              // Overwritten in image container
+              height="300"
+              width="300"
+            ></Image>
+          </div>
+        </Link>
+      )}
     </>
   );
 };
