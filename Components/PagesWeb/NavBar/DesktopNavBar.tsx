@@ -14,7 +14,12 @@ const DesktopNavBar = () => {
 
       <DesktopNavLinks
         about={""}
-        contact={""} home={""} portfolio={""}      />
+        contact={""}
+        home={""}
+        portfolio={""}
+        aboutSectionID={""}
+        portfolioSectionID={""}
+      />
     </div>
   );
 };

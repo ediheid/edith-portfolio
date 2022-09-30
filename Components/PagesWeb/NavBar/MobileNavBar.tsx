@@ -26,7 +26,14 @@ const MobileNavBar = () => {
       </div>
 
       {navOpen && (
-        <MobileNavLinks about={""} contact={""} home={""} portfolio={""} />
+        <MobileNavLinks
+          about={""}
+          contact={""}
+          home={""}
+          portfolio={""}
+          aboutSectionID={""}
+          portfolioSectionID={""}
+        />
       )}
     </div>
   );

@@ -9,6 +9,8 @@ type MobileNavLinkProps = {
   portfolio: string;
   contact: string;
   home: string;
+  aboutSectionID: string;
+  portfolioSectionID: string;
 };
 
 let mobileNavLinkData: MobileNavLinkProps = {
@@ -16,6 +18,8 @@ let mobileNavLinkData: MobileNavLinkProps = {
   portfolio: "Portfolio",
   contact: "Contact",
   home: "Home",
+  aboutSectionID: "about-section",
+  portfolioSectionID: "portfolio-section",
 };
 
 const MobileNavLinks = ({}: MobileNavLinkProps) => {
@@ -28,7 +32,7 @@ const MobileNavLinks = ({}: MobileNavLinkProps) => {
           <li>
             <Hashlink
               onClick={closeNav}
-              to="about-section"
+              to={mobileNavLinkData.aboutSectionID}
               spy={true}
               smooth={true}
               duration={500}
@@ -37,7 +41,18 @@ const MobileNavLinks = ({}: MobileNavLinkProps) => {
               {mobileNavLinkData.about}
             </Hashlink>
           </li>
-          <li onClick={closeNav}>{mobileNavLinkData.portfolio}</li>
+          <li>
+            <Hashlink
+              onClick={closeNav}
+              to={mobileNavLinkData.portfolioSectionID}
+              spy={true}
+              smooth={true}
+              duration={500}
+              isDynamic={true}
+            >
+              {mobileNavLinkData.portfolio}
+            </Hashlink>
+          </li>
           <li onClick={openContactFormModal}>{mobileNavLinkData.contact}</li>
           <Link href="/">
             <li onClick={closeNav}>{mobileNavLinkData.home}</li>

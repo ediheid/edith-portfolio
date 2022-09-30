@@ -2,6 +2,7 @@ import Head from "next/head";
 import WebLayout from "../../Layout/WebLayout";
 import WebAbout from "../../Components/PagesWeb/AboutSection/WebAbout";
 import ToolsAndTech from "../../Components/PagesWeb/ToolsAndTechSection/ToolsAndTech";
+import Portfolio from "../../Components/PagesWeb/PortfolioSection/Portfolio";
 
 import styles from "./web.module.scss";
 
@@ -36,9 +37,15 @@ const Web = ({}: WebAppProps) => {
           buttonToolsAndTech={""}
           buttonPortfolio={""}
           currentWorkWebsite={""}
-          currentWork={""} jobTitle={""}        />
+          currentWork={""}
+          jobTitle={""}
+          toolsAndTechSectionID={""}
+          portfolioSectionID={""}
+        />
 
         <ToolsAndTech />
+
+        <Portfolio />
       </div>
     </WebLayout>
   );

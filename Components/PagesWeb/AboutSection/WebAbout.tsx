@@ -13,6 +13,8 @@ type AboutProps = {
   jobTitle: string;
   currentWork: string;
   currentWorkWebsite: string;
+  toolsAndTechSectionID: string;
+  portfolioSectionID: string;
 };
 
 let aboutData: AboutProps = {
@@ -23,6 +25,8 @@ let aboutData: AboutProps = {
   jobTitle: "Junior Frontend Web Developer",
   currentWork: "HOLOPLOT Gmbh",
   currentWorkWebsite: "https://holoplot.com/",
+  toolsAndTechSectionID: "tools",
+  portfolioSectionID: "portfolio-section",
 };
 
 const WebAbout = ({}: AboutProps) => {
@@ -69,7 +73,7 @@ const WebAbout = ({}: AboutProps) => {
           <div className={styles["hashlinks-container"]}>
             <WebHashlinkButton>
               <Hashlink
-                to="tools"
+                to={aboutData.toolsAndTechSectionID}
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -82,9 +86,17 @@ const WebAbout = ({}: AboutProps) => {
             </WebHashlinkButton>
 
             <WebHashlinkButton>
-              <span className={styles["link-text"]}>
-                {aboutData.buttonPortfolio}
-              </span>
+              <Hashlink
+                to={aboutData.portfolioSectionID}
+                spy={true}
+                smooth={true}
+                duration={500}
+                isDynamic={true}
+              >
+                <span className={styles["link-text"]}>
+                  {aboutData.buttonPortfolio}
+                </span>
+              </Hashlink>
             </WebHashlinkButton>
           </div>
         </div>

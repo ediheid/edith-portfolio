@@ -10,6 +10,8 @@ type DesktopNavProps = {
   portfolio: string;
   contact: string;
   home: string;
+  aboutSectionID: string;
+  portfolioSectionID: string;
 };
 
 let desktopNavData: DesktopNavProps = {
@@ -17,6 +19,8 @@ let desktopNavData: DesktopNavProps = {
   portfolio: "Portfolio",
   contact: "Contact",
   home: "Home",
+  aboutSectionID: "about-section",
+  portfolioSectionID: "portfolio-section",
 };
 
 const DesktopNavLinks = ({}: DesktopNavProps) => {
@@ -28,7 +32,7 @@ const DesktopNavLinks = ({}: DesktopNavProps) => {
         <ul className={styles["nav-list"]}>
           <li>
             <Hashlink
-              to="about-section"
+              to={desktopNavData.aboutSectionID}
               spy={true}
               smooth={true}
               duration={500}
@@ -37,7 +41,17 @@ const DesktopNavLinks = ({}: DesktopNavProps) => {
               {desktopNavData.about}
             </Hashlink>
           </li>
-          <li>{desktopNavData.portfolio}</li>
+          <li>
+            <Hashlink
+              to={desktopNavData.portfolioSectionID}
+              spy={true}
+              smooth={true}
+              duration={500}
+              isDynamic={true}
+            >
+              {desktopNavData.portfolio}
+            </Hashlink>
+          </li>
           <li onClick={openContactFormModal}>{desktopNavData.contact}</li>
           <Link href="/">
             <li>{desktopNavData.home}</li>
