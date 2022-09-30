@@ -19,34 +19,30 @@ import { SiGithub } from "react-icons/si";
 import { SiGitlab } from "react-icons/si";
 
 import styles from "./tools-and-tech.module.scss";
-import { IconType } from "react-icons/lib";
+import React from "react";
 
-const test: { icon: any; iconName: string }[] = [
+const icons: { icon: React.ReactNode; iconName: string }[] = [
   { icon: <SiJavascript />, iconName: "JavaScript" },
+  { icon: <SiTypescript />, iconName: "TypeScript" },
+  { icon: <SiReact />, iconName: "ReactJS" },
+  { icon: <TbBrandNextjs />, iconName: "Next.js" },
+  { icon: <FaVuejs />, iconName: "Vue.js" },
+  { icon: <FaSass />, iconName: "Sass" },
+  { icon: <SiCss3 />, iconName: "CSS3" },
+  { icon: <SiHtml5 />, iconName: "HTML5" },
+  { icon: <FaFigma />, iconName: "Figma" },
 ];
 
-const icons = [
-  <SiJavascript />,
-  <SiTypescript />,
-  <SiReact />,
-  <TbBrandNextjs />,
-  <FaVuejs />,
-  <FaSass />,
-  <SiCss3 />,
-  <SiHtml5 />,
-  <FaFigma />,
-];
-
-const icons2 = [
-  <SiAdobephotoshop />,
-  <SiNodedotjs />,
-  <SiExpress />,
-  <SiMongodb />,
-  <FaNpm />,
-  <SiPostman />,
-  <FaGitAlt />,
-  <SiGithub />,
-  <SiGitlab />,
+const icons2: { icon: React.ReactNode; iconName: string }[] = [
+  { icon: <SiAdobephotoshop />, iconName: "PhotoShop" },
+  { icon: <SiNodedotjs />, iconName: "Node.js" },
+  { icon: <SiExpress />, iconName: "Express.js" },
+  { icon: <SiMongodb />, iconName: "MongoDB" },
+  { icon: <FaNpm />, iconName: "npm" },
+  { icon: <SiPostman />, iconName: "Postman" },
+  { icon: <FaGitAlt />, iconName: "Git" },
+  { icon: <SiGithub />, iconName: "GitHub" },
+  { icon: <SiGitlab />, iconName: "GitLab" },
 ];
 
 const allIconsArray = icons.concat(icons2);
@@ -59,7 +55,7 @@ const ToolsAndTech = () => {
         {allIconsArray.map((icon, index) => {
           return (
             <div className={styles["icon"]} key={index}>
-              {icon}
+              {icon.icon}
             </div>
           );
         })}
@@ -73,11 +69,9 @@ const ToolsAndTech = () => {
         >
           {icons.map((icon, index) => {
             return (
-              <div className={styles["icon-container"]}>
-                <div className={styles["icon"]} key={index}>
-                  {icon}
-                </div>
-                <span className={styles["icon-name"]}>Test</span>
+              <div className={styles["icon-container"]} key={index}>
+                <div className={styles["icon"]}>{icon.icon}</div>
+                <span className={styles["icon-name"]}>{icon.iconName}</span>
               </div>
             );
           })}
@@ -88,11 +82,9 @@ const ToolsAndTech = () => {
         >
           {icons.map((icon, index) => {
             return (
-              <div className={styles["icon-container"]}>
-                <div className={styles["icon"]} key={index}>
-                  {icon}
-                </div>
-                <span className={styles["icon-name"]}>Test</span>
+              <div className={styles["icon-container"]} key={index}>
+                <div className={styles["icon"]}>{icon.icon}</div>
+                <span className={styles["icon-name"]}>{icon.iconName}</span>
               </div>
             );
           })}
@@ -104,11 +96,9 @@ const ToolsAndTech = () => {
         <div className={`${styles["animation-element"]} ${styles["primary2"]}`}>
           {icons2.map((icon, index) => {
             return (
-              <div className={styles["icon-container"]}>
-                <div className={styles["icon"]} key={index}>
-                  {icon}
-                </div>
-                <span className={styles["icon-name"]}>Test</span>
+              <div className={styles["icon-container"]} key={index}>
+                <div className={styles["icon"]}>{icon.icon}</div>
+                <span className={styles["icon-name"]}>{icon.iconName}</span>
               </div>
             );
           })}
@@ -119,11 +109,9 @@ const ToolsAndTech = () => {
         >
           {icons2.map((icon, index) => {
             return (
-              <div className={styles["icon-container"]}>
-                <div className={styles["icon"]} key={index}>
-                  {icon}
-                </div>
-                <span className={styles["icon-name"]}>Test</span>
+              <div className={styles["icon-container"]} key={index}>
+                <div className={styles["icon"]}>{icon.icon}</div>
+                <span className={styles["icon-name"]}>{icon.iconName}</span>
               </div>
             );
           })}
