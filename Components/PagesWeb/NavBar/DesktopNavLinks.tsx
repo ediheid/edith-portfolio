@@ -7,18 +7,14 @@ import styles from "./desktop-nav-bar.module.scss";
 
 type DesktopNavProps = {
   about: string;
-  webPages: string;
-  webDesign: string;
-  webApps: string;
+  portfolio: string;
   contact: string;
   home: string;
 };
 
 let desktopNavData: DesktopNavProps = {
   about: "About",
-  webPages: "Web-Pages",
-  webDesign: "Web-Design",
-  webApps: "Web-Apps",
+  portfolio: "Portfolio",
   contact: "Contact",
   home: "Home",
 };
@@ -41,9 +37,7 @@ const DesktopNavLinks = ({}: DesktopNavProps) => {
               {desktopNavData.about}
             </Hashlink>
           </li>
-          <li>{desktopNavData.webPages}</li>
-          <li>{desktopNavData.webDesign}</li>
-          <li>{desktopNavData.webApps}</li>
+          <li>{desktopNavData.portfolio}</li>
           <li onClick={openContactFormModal}>{desktopNavData.contact}</li>
           <Link href="/">
             <li>{desktopNavData.home}</li>

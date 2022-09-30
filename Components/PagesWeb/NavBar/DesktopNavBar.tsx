@@ -14,10 +14,7 @@ const DesktopNavBar = () => {
 
       <DesktopNavLinks
         about={""}
-        webPages={""}
-        webDesign={""}
-        webApps={""}
-        contact={""} home={""}      />
+        contact={""} home={""} portfolio={""}      />
     </div>
   );
 };
