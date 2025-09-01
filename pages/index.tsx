@@ -4,7 +4,7 @@ import styles from "./home.module.scss";
 import { SideBar } from "../Components/PagesHome/SideBarContact/SideBar";
 import { enterSiteData } from "../Components/PagesHome/EnterSiteComponents/enterSiteData";
 import EnterSitesComponent from "../Components/PagesHome/EnterSiteComponents/EnterSitesComponent";
-import AnimatedText from "react-animated-text-content";
+import { motion } from "framer-motion";
 
 interface HomeProps {
   fullName: string;
@@ -44,28 +44,28 @@ export default function Home({}: HomeProps) {
           {/* Landing page headings */}
           <section className={styles["intro-text-container"]}>
             <div>
-              <AnimatedText
-                // if contact from is open, hide animated text
+              <motion.div
                 className={
                   !contactOpen
                     ? `${styles["intro-text"]}`
                     : `${styles["intro-text-low-index"]}`
                 }
-                type="words" // animate words or chars
-                animation={{
-                  x: "200px",
-                  y: "-20px",
-                  scale: 1.1,
-                  ease: "ease-in-out",
-                }}
-                animationType="float"
-                interval={0.06}
-                duration={0.8}
-                threshold={0.1}
-                rootMargin="20%"
+                initial={{ opacity: 0, y: -20 }} // start above and invisible
+                animate={{ opacity: 1, y: 0 }} // animate to visible and position
+                transition={{ duration: 1, ease: "easeInOut" }}
               >
-                {homeData.animatedText}
-              </AnimatedText>
+                {homeData.animatedText.split(" ").map((word, index) => (
+                  <motion.span
+                    key={index}
+                    style={{ display: "inline-block", marginRight: "0.25rem" }}
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.06 }} // stagger words
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.div>
 
               <h2 className={styles["name-heading"]}>{homeData.fullName}</h2>
             </div>
