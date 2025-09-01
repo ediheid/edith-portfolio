@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import WebHashlinkButton from "../../UiComponents/WebHashlinkButtons/WebHashlinkButton";
 import styles from "./web-about.module.scss";
 
@@ -37,7 +38,7 @@ const WebAbout = ({}: AboutProps) => {
             className={styles["image"]}
             src={portrait}
             alt={aboutData.altTag}
-          ></Image>
+          />
         </div>
 
         <div className={styles["text-container"]}>
@@ -71,31 +72,19 @@ const WebAbout = ({}: AboutProps) => {
 
           <div className={styles["hashlinks-container"]}>
             <WebHashlinkButton>
-              <Hashlink
-                to={aboutData.toolsAndTechSectionID}
-                spy={true}
-                smooth={true}
-                duration={500}
-                isDynamic={true}
-              >
+              <Link href={`#${aboutData.toolsAndTechSectionID}`}>
                 <span className={styles["link-text"]}>
                   {aboutData.buttonToolsAndTech}
                 </span>
-              </Hashlink>
+              </Link>
             </WebHashlinkButton>
 
             <WebHashlinkButton>
-              <Hashlink
-                to={aboutData.portfolioSectionID}
-                spy={true}
-                smooth={true}
-                duration={500}
-                isDynamic={true}
-              >
+              <Link href={`#${aboutData.portfolioSectionID}`}>
                 <span className={styles["link-text"]}>
                   {aboutData.buttonPortfolio}
                 </span>
-              </Hashlink>
+              </Link>
             </WebHashlinkButton>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import { useGlobalContext } from "../../../Context";
 import Link from "next/link";
-import { Link as Hashlink } from "react-scroll";
 
 import ContactForm from "../../SharedComponents/ContactForm/ContactForm";
 import styles from "./desktop-nav-bar.module.scss";
@@ -31,31 +30,19 @@ const DesktopNavLinks = ({}: DesktopNavProps) => {
       <div className={styles["nav-links-container"]}>
         <ul className={styles["nav-list"]}>
           <li>
-            <Hashlink
-              to={desktopNavData.aboutSectionID}
-              spy={true}
-              smooth={true}
-              duration={500}
-              isDynamic={true}
-            >
+            <Link href={`#${desktopNavData.aboutSectionID}`}>
               {desktopNavData.about}
-            </Hashlink>
+            </Link>
           </li>
           <li>
-            <Hashlink
-              to={desktopNavData.portfolioSectionID}
-              spy={true}
-              smooth={true}
-              duration={500}
-              isDynamic={true}
-            >
+            <Link href={`#${desktopNavData.portfolioSectionID}`}>
               {desktopNavData.portfolio}
-            </Hashlink>
+            </Link>
           </li>
           <li onClick={openContactFormModal}>{desktopNavData.contact}</li>
-          <Link href="/">
-            <li>{desktopNavData.home}</li>
-          </Link>
+          <li>
+            <Link href="/">{desktopNavData.home}</Link>
+          </li>
         </ul>
       </div>
       {contactOpen && <ContactForm heading={""} />}

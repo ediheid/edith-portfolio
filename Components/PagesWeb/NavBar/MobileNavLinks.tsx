@@ -1,6 +1,5 @@
 import { useGlobalContext } from "../../../Context";
 import Link from "next/link";
-import { Link as Hashlink } from "react-scroll";
 import ContactForm from "../../SharedComponents/ContactForm/ContactForm";
 import styles from "./mobile-nav-bar.module.scss";
 
@@ -30,33 +29,21 @@ const MobileNavLinks = ({}: MobileNavLinkProps) => {
       <div data-aos="fade-down" className={styles["nav-dropdown-container"]}>
         <ul className={styles["nav-list"]}>
           <li>
-            <Hashlink
-              onClick={closeNav}
-              to={mobileNavLinkData.aboutSectionID}
-              spy={true}
-              smooth={true}
-              duration={500}
-              isDynamic={true}
-            >
-              {mobileNavLinkData.about}
-            </Hashlink>
+            <Link href={`#${mobileNavLinkData.aboutSectionID}`}>
+              <span onClick={closeNav}>{mobileNavLinkData.about}</span>
+            </Link>
           </li>
           <li>
-            <Hashlink
-              onClick={closeNav}
-              to={mobileNavLinkData.portfolioSectionID}
-              spy={true}
-              smooth={true}
-              duration={500}
-              isDynamic={true}
-            >
-              {mobileNavLinkData.portfolio}
-            </Hashlink>
+            <Link href={`#${mobileNavLinkData.portfolioSectionID}`}>
+              <span onClick={closeNav}>{mobileNavLinkData.portfolio}</span>
+            </Link>
           </li>
           <li onClick={openContactFormModal}>{mobileNavLinkData.contact}</li>
-          <Link href="/">
-            <li onClick={closeNav}>{mobileNavLinkData.home}</li>
-          </Link>
+          <li>
+            <Link href="/">
+              <span onClick={closeNav}>{mobileNavLinkData.home}</span>
+            </Link>
+          </li>
         </ul>
       </div>
       {contactOpen && <ContactForm heading={""} />}
