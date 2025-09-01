@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Link as Hashlink } from "react-scroll";
 import WebHashlinkButton from "../../UiComponents/WebHashlinkButtons/WebHashlinkButton";
 import styles from "./web-about.module.scss";
 
